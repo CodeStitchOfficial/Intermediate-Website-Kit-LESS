@@ -6,41 +6,41 @@
 
 /* Mobile */
 @media only screen and (min-width: 0em) {
-	// Dark Mode Color Scheme
-	:root {
-		--dark: #082032;
-		--medium: #2c394b;
-		--accent: #334756;
-	}
+    // Dark Mode Color Scheme
+    :root {
+        --dark: #082032;
+        --medium: #2c394b;
+        --accent: #334756;
+    }
 
-	body.dark-mode {
-		background-color: var(--dark);
+    body.dark-mode {
+        background-color: var(--dark);
 
-		p,
-		li,
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			color: #fff;
-		}
+        p,
+        li,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #fff;
+        }
 
-		// hide all light classes
-		.light {
-			display: none;
-		}
+        // hide all light classes
+        .light {
+            display: none;
+        }
 
-		// show all dark classes
-		.dark {
-			display: block !important;
-		}
-	}
+        // show all dark classes
+        .dark {
+            display: block !important;
+        }
+    }
 
-	.dark {
-		display: none;
-	}
+    .dark {
+        display: none;
+    }
 }
 
 /*-- -------------------------- -->
@@ -49,75 +49,75 @@
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-	body.dark-mode {
-		#dark-mode-toggle {
-			.cs-sun {
-				transform: translate(-50%, -50%);
-				opacity: 1;
-			}
+    body.dark-mode {
+        #dark-mode-toggle {
+            .cs-sun {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
 
-			.cs-moon {
-				transform: translate(-50%, -150%);
-				opacity: 0;
-				fill: #fff;
-			}
-		}
-	}
+            .cs-moon {
+                opacity: 0;
+                transform: translate(-50%, -150%);
+                fill: #fff;
+            }
+        }
+    }
 
-	#dark-mode-toggle {
-		display: block;
-		position: absolute;
-		top: (10/16rem);
-		right: (70/16rem);
-		width: (48/16rem);
-		height: (48/16rem);
-		background: transparent;
-		border: none;
-		overflow: hidden;
-		padding: 0;
-		z-index: 1000;
+    #dark-mode-toggle {
+        width: (48/16rem);
+        height: (48/16rem);
+        padding: 0;
+        background: transparent;
+        border: none;
+        display: block;
+        position: absolute;
+        top: (10/16rem);
+        right: (70/16rem);
+        z-index: 1000;
+        overflow: hidden;
 
-		img,
-		svg {
-			//center image inside button
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			width: (20/16rem);
-			height: (20/16rem);
-			pointer-events: none;
-		}
+        img,
+        svg {
+            width: (20/16rem);
+            height: (20/16rem);
+            //center image inside button
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
 
-		.cs-moon {
-			z-index: 2;
-			// Transition properties
-			transition: transform 0.3s, opacity 0.3s;
+        .cs-moon {
+            z-index: 2;
+            // Transition properties
+            transition: transform 0.3s, opacity 0.3s;
 
-			// fill: yellow; --> uncomment to change the color of the moon if needed
-		}
+            // fill: yellow; --> uncomment to change the color of the moon if needed
+        }
 
-		.cs-sun {
-			z-index: 1;
-			// Transition property
-			transform: translate(-50%, 100%);
-			opacity: 0;
-			transition: transform 0.3s, opacity 0.3s;
-		}
-	}
+        .cs-sun {
+            opacity: 0;
+            z-index: 1;
+            // Transition property
+            transform: translate(-50%, 100%);
+            transition: transform 0.3s, opacity 0.3s;
+        }
+    }
 }
 
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-	#dark-mode-toggle {
-		position: relative;
-		transform: none;
-		top: auto;
-		right: auto;
-		margin: 0;
+    #dark-mode-toggle {
+        margin: 0;
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
 
-		&:hover {
-			cursor: pointer;
-		}
-	}
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
