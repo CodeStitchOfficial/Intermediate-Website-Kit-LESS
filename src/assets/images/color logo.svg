@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 2267 679" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="Artboard1" transform="matrix(0.78677,0,0,1.23475,303.629,-2392.34)">
+        <path d="M2494.31,2074.91C2494.31,1999.08 2397.69,1937.52 2278.69,1937.52L-170.298,1937.52C-289.302,1937.52 -385.919,1999.08 -385.919,2074.91L-385.919,2349.69C-385.919,2425.52 -289.302,2487.09 -170.298,2487.09L2278.69,2487.09C2397.69,2487.09 2494.31,2425.52 2494.31,2349.69L2494.31,2074.91Z" style="fill:none;"/>
+        <clipPath id="_clip1">
+            <path d="M2494.31,2074.91C2494.31,1999.08 2397.69,1937.52 2278.69,1937.52L-170.298,1937.52C-289.302,1937.52 -385.919,1999.08 -385.919,2074.91L-385.919,2349.69C-385.919,2425.52 -289.302,2487.09 -170.298,2487.09L2278.69,2487.09C2397.69,2487.09 2494.31,2425.52 2494.31,2349.69L2494.31,2074.91Z"/>
+        </clipPath>
+        <g clip-path="url(#_clip1)">
+            <g transform="matrix(0.777505,0,0,0.458453,-253.471,1993.35)">
+                <path d="M3534.1,177.896C3534.1,12.495 3409.83,-121.789 3256.78,-121.789L106.974,-121.789C-46.085,-121.789 -170.349,12.495 -170.349,177.896L-170.349,777.267C-170.349,942.668 -46.085,1076.95 106.974,1076.95L3256.78,1076.95C3409.83,1076.95 3534.1,942.668 3534.1,777.267L3534.1,177.896Z" style="fill:rgb(93,25,45);"/>
+            </g>
+            <g transform="matrix(1.96124,0,0,1.1038,-473.5,1803)">
+                <g transform="matrix(151.605,0,0,151.605,1387.94,430.394)">
+                </g>
+                <text x="176.921px" y="430.394px" style="font-family:'HiraMinProN-W3', 'Hiragino Mincho ProN', serif;font-weight:300;font-size:151.605px;fill:white;">W<tspan x="321.097px " y="430.394px ">a</tspan>tercolor Tales</text>
+            </g>
+        </g>
+    </g>
+</svg>
