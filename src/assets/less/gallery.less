@@ -1,0 +1,602 @@
+/*-- -------------------------- -->
+<---          Banner            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #banner-1402 {
+        padding: var(--sectionPadding);
+        /* 190px - 268px */
+        padding-top: clamp(11.875rem, 25vw, 16.75rem);
+        padding-bottom: (100/16rem);
+        /* clips the line from causing overflow issues for going off screen */
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        .cs-container {
+            text-align: center;
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            /* 8px - 12px */
+            gap: clamp(0.5rem, 1vw, 0.75rem);
+        }
+
+        .cs-int-title {
+            /* 39px - 61px */
+            font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
+            font-weight: 900;
+            line-height: 1.2em;
+            text-align: inherit;
+            margin: 0;
+            color: var(--bodyTextColorWhite);
+            position: relative;
+        }
+
+        .cs-breadcrumbs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cs-link {
+            font-size: (16/16rem);
+            line-height: 1.2em;
+            text-decoration: none;
+            color: var(--bodyTextColorWhite);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:last-of-type {
+                /* remove the chevron on the last list item */
+                &::after {
+                    display: none;
+                }
+            }
+
+            &:after {
+                /* chevron */
+                content: "";
+                width: (7/16rem);
+                height: (12/16rem);
+                margin: 0 (16/16rem);
+                background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/white-chev.svg");
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                position: relative;
+                display: block;
+            }
+
+            &.cs-active {
+                color: var(--primary);
+            }
+        }
+
+        .cs-background {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+            &:before {
+                /* gradient overlay */
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: #000;
+                opacity: 0.4;
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+
+            &:after {
+                /* gradient overlay */
+                content: "";
+                width: 100%;
+                height: 40%;
+                background: -webkit-gradient(
+                    linear,
+                    left top,
+                    left bottom,
+                    from(rgba(0, 0, 0, 1)),
+                    to(rgba(0, 0, 0, 0))
+                );
+                background: -o-linear-gradient(
+                    top,
+                    rgba(0, 0, 0, 1) 0%,
+                    rgba(0, 0, 0, 0) 100%
+                );
+                background: linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, 1) 0%,
+                    rgba(0, 0, 0, 0) 100%
+                );
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 0;
+                z-index: 2;
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                /* Makes img tag act as a background image */
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #banner-1402 {
+        .cs-background {
+            &:before {
+                width: 50%;
+                height: 100%;
+                background: -webkit-gradient(
+                    linear,
+                    left top,
+                    right top,
+                    from(rgba(0, 0, 0, 1)),
+                    to(rgba(0, 0, 0, 0))
+                );
+                background: -o-linear-gradient(
+                    left,
+                    rgba(0, 0, 0, 1) 0%,
+                    rgba(0, 0, 0, 0) 100%
+                );
+                background: linear-gradient(
+                    to right,
+                    rgba(0, 0, 0, 1) 0%,
+                    rgba(0, 0, 0, 0) 100%
+                );
+                opacity: 1;
+            }
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---        Content Page        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    @keyframes floatAnimation {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-2rem);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes floatAnimation2 {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-3rem);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    #content-page-1402 {
+        padding: var(--sectionPadding);
+        background-color: #fff;
+        /* clips the wave background from causing overflow issues when it goes off screen */
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 40px - 64px */
+            gap: clamp(2.5rem, 4vw, 4rem);
+            position: relative;
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: left;
+            width: 100%;
+            max-width: (738/16rem);
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: flex-start;
+        }
+
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 700;
+            text-align: inherit;
+            margin: 0 0 (16/16rem) 0;
+            color: var(--headerColor);
+        }
+
+        h2 {
+            font-size: (32/16rem);
+            margin-top: (32/16rem);
+        }
+
+        h3 {
+            font-size: (24/16rem);
+            color: var(--primary);
+        }
+
+        h4,
+        h5,
+        h6 {
+            font-size: (20/16rem);
+        }
+
+        .cs-button-solid {
+            margin-bottom: (32/16rem);
+        }
+
+        .cs-no-margin {
+            margin: 0;
+        }
+
+        .cs-color {
+            color: var(--primary);
+        }
+
+        p {
+            font-size: var(--bodyFontSize);
+            line-height: 1.5em;
+            text-align: inherit;
+            width: 100%;
+            margin: 0 0 (16/16rem) 0;
+            color: var(--bodyTextColor);
+            &:last-of-type {
+                margin-bottom: (32/16rem);
+            }
+
+            a {
+                font-size: inherit;
+                line-height: inherit;
+                text-decoration: underline;
+                color: var(--primary);
+                filter: brightness(120%);
+            }
+        }
+
+        ol,
+        ul {
+            padding-left: (24/16rem);
+            margin: 0 0 (32/16rem) 0;
+            color: var(--bodyTextColor);
+            display: flex;
+            flex-direction: column;
+            gap: (16/16rem);
+        }
+
+        ul {
+            li {
+                list-style: none;
+                color: inherit;
+                position: relative;
+
+                &:before {
+                    /* custom list bullet */
+                    content: "";
+                    width: 3px;
+                    height: 3px;
+                    background: currentColor;
+                    opacity: 1;
+                    border-radius: 50%;
+                    position: absolute;
+                    display: block;
+                    top: (10/16rem);
+                    left: (-12/16rem);
+                }
+            }
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .cs-image-group {
+            width: 100%;
+            display: none;
+            flex-direction: column;
+            /* 16px - 20px */
+            gap: clamp(1rem, 2.6vw, 1.25rem);
+            position: relative;
+        }
+
+        .cs-flex {
+            position: relative;
+        }
+
+        .cs-background {
+            width: 100%;
+            height: 100%;
+            /* 32px - 48px */
+            border-radius: clamp(2rem, 4vw, 3rem);
+            /* clips the corners of the children around the border radius */
+            overflow: hidden;
+            /* makes it cover the parent dimensions */
+            object-fit: cover;
+            display: block;
+
+            img {
+                width: 100%;
+                height: 100%;
+                /* makes it cover the parent like a backgorund image */
+                object-fit: cover;
+                display: block;
+            }
+        }
+
+        .cs-box {
+            text-align: left;
+            width: 100%;
+            max-width: (200/16rem);
+            padding: (32/16rem);
+            /* prevents padding from affecting height and width */
+            box-sizing: border-box;
+            background-color: var(--primary);
+            /* 48px - 80px */
+            border-radius: (32/16rem);
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: (24/16rem);
+            position: absolute;
+            /* 12px - 20px */
+            right: clamp(0.75rem, 1.9vw, 1.5rem);
+            /* 12px - 20px */
+            bottom: clamp(0.75rem, 1.9vw, 1.5rem);
+        }
+
+        .cs-box-icon {
+            width: (60/16rem);
+            height: auto;
+            display: block;
+        }
+
+        .cs-desc {
+            font-size: (20/16rem);
+            line-height: 1.2em;
+            text-align: inherit;
+            font-weight: 700;
+            width: 100%;
+            margin: 0;
+            color: var(--bodyTextColorWhite);
+        }
+
+        .cs-card-group {
+            width: 100%;
+            max-width: (630/16rem);
+            margin: 0 0 (24/16rem) 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(15.265rem, 1fr));
+            align-items: center;
+            gap: clamp(1rem, 2vw, 1.25rem);
+        }
+
+        .cs-item {
+            list-style: none;
+            /* 16px - 24px */
+            padding: clamp(1rem, 3vw, 1.5rem);
+            /* prevents padding from affecting height and width */
+            box-sizing: border-box;
+            background-color: #f7f7f7;
+            border-radius: (16/16rem);
+            border: 1px solid #e8e8e8;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: (12/16rem);
+
+            &:before {
+                display: none;
+            }
+        }
+
+        .cs-h3 {
+            font-size: (20/16rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            margin: 0;
+            color: var(--headerColor);
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: (8/16rem);
+        }
+
+        .cs-h3-icon {
+            width: (32/16rem);
+            height: auto;
+            display: block;
+        }
+
+        .cs-item-text {
+            font-size: (14/16rem);
+            line-height: 1.5em;
+            margin: 0;
+            color: var(--bodyTextColor);
+
+            &:last-of-type {
+                margin: 0;
+            }
+        }
+
+        .cs-ul {
+            width: 100%;
+            margin: 0 0 (24/16rem) 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: (12/16rem);
+        }
+
+        .cs-li {
+            font-size: var(--bodyFontSize);
+            list-style: none;
+            line-height: 1.5em;
+            width: 100%;
+            color: var(--bodyTextColor);
+            display: flex;
+            justify-content: flex-start;
+            /* push icon top the top so if the list item goes to two lines the icon stays at the top */
+            align-items: flex-start;
+            gap: (8/16rem);
+        }
+
+        .cs-icon {
+            width: (24/16rem);
+            height: auto;
+            /* adds extra space between the icon and top of parent so it's more centered */
+            margin-top: 1px;
+            display: block;
+        }
+
+        .cs-bubbles {
+            font-size: ~"min(2.5vw, .7em)";
+            width: (582/16em);
+            height: (557/16em);
+            display: none;
+            position: absolute;
+            /* changes to auto at larger desktop */
+            left: (-260/16em);
+            /* changes to -220px at large desktop */
+            bottom: (-50/16em);
+            z-index: -1;
+
+            &:before {
+                /* white border bubble */
+                content: "";
+                width: (464/16em);
+                height: (464/16em);
+                background: transparent;
+                border: 1px solid #1a1a1a;
+                border-radius: 50%;
+                opacity: 1;
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 0;
+                animation-name: floatAnimation;
+                animation-duration: 5s;
+                animation-timing-function: ease-in-out;
+                animation-fill-mode: forwards;
+                animation-iteration-count: infinite;
+            }
+
+            &:after {
+                /* orange bubble */
+                content: "";
+                width: (366/16em);
+                height: (366/16em);
+                background: var(--primary);
+                opacity: 0.15;
+                border-radius: 50%;
+                display: block;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                z-index: -1;
+                animation-name: floatAnimation2;
+                animation-duration: 14s;
+                animation-timing-function: ease-in-out;
+                animation-fill-mode: forwards;
+                animation-iteration-count: infinite;
+            }
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #content-page-1402 {
+        .cs-container {
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .cs-content {
+            width: 50%;
+            max-width: (674/16rem);
+            /* prevents flexbox from squishing it */
+            flex: none;
+        }
+
+        .cs-image-group {
+            width: 44%;
+            max-width: (542/16rem);
+            display: flex;
+        }
+    }
+}
+
+/* Desktop - 1200px */
+@media only screen and (min-width: 75rem) {
+    #content-page-1402 {
+        .cs-content {
+            width: 53%;
+        }
+
+        .cs-image-group {
+            width: 43%;
+        }
+
+        .cs-box {
+            display: flex;
+        }
+
+        .cs-bubbles {
+            font-size: 1em;
+            margin-right: (600/16rem);
+            display: block;
+            left: auto;
+            right: 50%;
+            bottom: (-220/16rem);
+        }
+    }
+}
+
+                                
