@@ -505,7 +505,7 @@
             margin-right: 0;
             opacity: 0;
             /* transition from these values */
-            transform: translateX(-40/16rem);
+            transform: translateX(calc(-40 / 16 * 1rem));
             transition: transform 0.6s, opacity 0.9s;
 
             &:nth-of-type(1) {
@@ -556,7 +556,7 @@
                 opacity: 1;
                 display: none;
                 position: absolute;
-                bottom: (-2/16rem);
+                bottom: calc(-2 / 16 * 1rem);
                 left: 0;
             }
 
@@ -635,7 +635,7 @@
             height: auto;
             position: absolute;
             top: 50%;
-            right: (-20/16rem);
+            right: calc(-20 / 16 * 1rem);
             transform: translateY(-50%);
         }
 
@@ -730,7 +730,7 @@
             color: var(--bodyTextColor);
             opacity: 0;
             display: block;
-            transform: translateY(-10/16rem);
+            transform: translateY(calc(-10 / 16 * 1rem));
             transition: opacity 0.6s, transform 0.6s;
 
             &:nth-of-type(1) {
@@ -1004,7 +1004,7 @@
         }
 
         h1 {
-            font-size: 64/30rem;
+            font-size: (64/30rem);
             text-align: center;
             width: 96%;
             max-width: (500/16rem);
@@ -1096,9 +1096,9 @@
         }
 
         .title {
-            font-size: ~"min(9vw, 3rem)";
+            font-size: min(9vw, 3rem);
             font-weight: 900;
-            line-height: 58/48;
+            line-height: (58/48em);
             text-align: center;
             margin-bottom: (36/16rem);
             color: #fff;
@@ -1192,7 +1192,7 @@
 /* Mobile */
 @media only screen and (min-width: 0em) {
     #footer {
-        font-size: ~"min(4vw, 1.2em)";
+        font-size: min(4vw, 1.2em);
         padding: (84/16rem) 0 (20/16rem);
         background: #1c1c1c;
 
@@ -1217,10 +1217,10 @@
 
             p {
                 font-size: (14/16rem);
-                line-height: 27/14;
+                line-height: (27/14rem);
                 text-align: center;
                 width: 100%;
-                width: 307/14rem;
+                width: (307/14rem);
                 margin: auto;
                 color: #fff;
                 opacity: 0.9;
@@ -1265,7 +1265,7 @@
                         opacity: 0.9;
 
                         a {
-                            line-height: 21/18em;
+                            line-height: (21/18em);
                             text-decoration: none;
                             color: #fff;
                             transition: color 0.3s;
@@ -1277,7 +1277,7 @@
                     h2 {
                         font-size: (18/16rem);
                         font-weight: bold;
-                        line-height: 21/18em;
+                        line-height: (21/18em);
                         text-transform: uppercase;
                         margin-bottom: (37/16rem);
                         color: #fff;
@@ -1291,7 +1291,7 @@
                             opacity: 1;
                             display: block;
                             position: absolute;
-                            bottom: (-16/16rem);
+                            bottom: calc(-16 / 16 * 1rem);
                             left: 0;
                         }
                     }
@@ -1341,7 +1341,7 @@
 /* Small Desktop */
 @media only screen and (min-width: 64em) {
     #footer {
-        font-size: ~"min(1.2vw, 1em)";
+        font-size: min(1.2vw, 1em);
         .container {
             width: 96%;
             max-width: (1320/16rem);
@@ -1401,7 +1401,7 @@
                                 opacity: 1;
                                 display: block;
                                 position: absolute;
-                                bottom: (-3/16rem);
+                                bottom: calc(-3 / 16 * 1rem);
                                 left: 0;
                                 transition: width 0.3s;
                             }

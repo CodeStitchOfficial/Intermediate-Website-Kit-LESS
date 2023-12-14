@@ -22,7 +22,7 @@
 
         .cs-left {
             /* scaling the font size with the view width */
-            font-size: ~"min(2.31vw, .7em)";
+            font-size: min(2.31vw, 0.7em);
             /* using ems so we can use font size to scale the whole section */
             width: (631/16em);
             height: (636/16em);
@@ -148,7 +148,7 @@
         }
 
         .cs-left {
-            font-size: ~"min(1.2vw, 1em)";
+            font-size: min(1.2vw, 1em);
             flex: none;
         }
 
@@ -225,7 +225,7 @@
 
         .cs-left {
             /* scaling the font size with the view width */
-            font-size: ~"min(2.31vw, .7em)";
+            font-size: min(2.31vw, 0.7em);
             /* using ems so we can use font size to scale the whole section */
             width: (631/16em);
             height: (636/16em);
@@ -346,7 +346,7 @@
         }
 
         .cs-left {
-            font-size: ~"min(1.2vw, 1em)";
+            font-size: min(1.2vw, 1em);
             /* sends it to the right */
             order: 2;
             flex: none;
@@ -435,7 +435,7 @@
 
         .cs-image-group {
             /* used rem so it doesn't scale with the font size of on parent */
-            font-size: ~"min(1.1vw, 1em)";
+            font-size: min(1.1vw, 1em);
             width: 100%;
             max-width: (1322/16em);
             margin: 0 auto (60/16rem);
@@ -601,7 +601,7 @@
             width: (80/16rem);
             height: (80/16rem);
             position: absolute;
-            top: (-40/16rem);
+            top: calc(-40 / 16 * 1rem);
         }
 
         .cs-item-p {

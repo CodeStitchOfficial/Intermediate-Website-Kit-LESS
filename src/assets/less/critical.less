@@ -126,7 +126,7 @@
         .cs-button-solid {
             line-height: clamp(2.875em, 5.5vw, 3.5em);
             height: initial;
-            margin-bottom: calc(16 / 16 * 1rem);
+            margin-bottom: (16/16rem);
         }
 
         .cs-button-transparent {
@@ -255,7 +255,7 @@
         width: 90%;
         max-width: (1320/16em);
         margin: auto;
-        margin-top: (-167/16em);
+        margin-top: calc(-167 / 16 * 1em);
         margin-bottom: (50/16em);
         padding: (50/16em) (20/16em);
         background: #fff;
@@ -293,13 +293,13 @@
             h2 {
                 font-size: (32/16em);
                 font-weight: 700;
-                line-height: 27/20em;
+                line-height: (27/20em);
                 text-align: center;
-                margin-bottom: 13/20em;
+                margin-bottom: (13/20em);
                 color: #1a1a1a;
             }
             p {
-                line-height: 24/18em;
+                line-height: (24/18em);
                 text-align: center;
                 width: 100%;
                 opacity: 0.7;
@@ -311,7 +311,7 @@
 /* Inbetween */
 @media only screen and (min-width: 768px) {
     .services {
-        font-size: ~"min(1.8vw, 1em)";
+        font-size: min(1.8vw, 1em);
         width: 98%;
         display: flex;
         justify-content: space-between;
