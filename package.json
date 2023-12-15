@@ -8,7 +8,7 @@
         "watch:less": "less-watch-compiler ./src/assets/less ./src/assets/css",
         "watch:eleventy": "cross-env ELEVENTY_ENV=DEV eleventy --serve",
         "build:eleventy": "cross-env ELEVENTY_ENV=PROD eleventy",
-        "watch:cms": "npx netlify-cms-proxy-server",
+        "watch:cms": "npx decap-server",
         "start": "del-cli ./public --force && npm-run-all --parallel watch:*",
         "build": "run-s build:*"
     },
