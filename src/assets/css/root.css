@@ -45,41 +45,29 @@
     color: var(--bodyTextColor);
   }
   .cs-button-solid {
-    font-size: 1rem;
-    font-weight: bold;
-    line-height: 3.125em;
     text-align: center;
-    text-transform: uppercase;
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 8vw, 3.5rem);
     text-decoration: none;
-    width: auto;
-    height: 3.125rem;
-    padding: 0 1.875rem;
-    color: #000;
+    font-weight: 700;
+    min-width: 10.875rem;
+    margin: 0;
+    color: var(--headerColor);
+    padding: 0 1.5rem;
+    /* prevents padding and border from affecting height and width */
+    box-sizing: border-box;
     background-color: var(--primary);
+    box-shadow: 4px 4px 0px 0px #1a1a1a;
     display: inline-block;
     position: relative;
     z-index: 1;
-    transition: color 0.3s;
-    transition-delay: 0.1s;
+    transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
   }
   .cs-button-solid:hover {
     color: #fff;
-  }
-  .cs-button-solid:hover:before {
-    width: 100%;
-  }
-  .cs-button-solid:before {
-    content: "";
-    width: 0;
-    height: 100%;
-    background-color: #000;
-    opacity: 1;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: width 0.3s;
+    background-color: #1a1a1a;
+    box-shadow: 0px 0px 0px 0px #1a1a1a;
   }
 }
 /* Fonts and general styles */
@@ -244,40 +232,128 @@
   }
 }
 /*-- -------------------------- -->
+<---      Dark Mode Toggle      -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #dark-mode-toggle .cs-sun {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+  body.dark-mode #dark-mode-toggle .cs-moon {
+    transform: translate(-50%, -150%);
+    opacity: 0;
+  }
+  #cs-navigation.cs-active .cs-moon {
+    fill: #fff;
+  }
+  #dark-mode-toggle {
+    display: block;
+    position: absolute;
+    top: 0.625rem;
+    right: 4.375rem;
+    width: 3rem;
+    height: 3rem;
+    background: transparent;
+    border: none;
+    overflow: hidden;
+    padding: 0;
+    z-index: 1000;
+  }
+  #dark-mode-toggle img,
+  #dark-mode-toggle svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1.25rem;
+    height: 1.25rem;
+    pointer-events: none;
+  }
+  #dark-mode-toggle .cs-moon {
+    z-index: 2;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  #dark-mode-toggle .cs-sun {
+    z-index: 1;
+    transform: translate(-50%, 100%);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #dark-mode-toggle {
+    position: relative;
+    transform: none;
+    top: auto;
+    right: auto;
+    margin: 0 0 0 1.5rem;
+  }
+  #dark-mode-toggle:hover {
+    cursor: pointer;
+  }
+}
+/*-- -------------------------- -->
 <---     Mobile Navigation      -->
 <--- -------------------------- -*/
+body,
+html {
+  /* reset margin and padding so there's no gap between the nav and the screen edges */
+  margin: 0;
+  padding: 0;
+}
 /* Mobile - 1023px */
 @media only screen and (max-width: 63.9375rem) {
   body.cs-open {
     overflow: hidden;
   }
   #cs-navigation {
-    /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
-    font-family: "Roboto", "Arial", sans-serif;
     width: 100%;
-    /* prevents padding from affecting height and width */
-    box-sizing: border-box;
     padding: 0.75rem 1rem;
+    /* prevents padding and border from affecting height and width */
+    box-sizing: border-box;
     background-color: #fff;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     position: fixed;
+    top: 0;
     z-index: 10000;
   }
+  #cs-navigation:after {
+    /* on hover green bar */
+    content: "";
+    width: 40%;
+    max-width: 9.125rem;
+    height: 100%;
+    background: var(--primary);
+    opacity: 1;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0%;
+    z-index: -1;
+    transition: width 0.2s, max-width 0.3s, background-color 0.3s;
+  }
   #cs-navigation:before {
-    /* black blurred overlay */
+    /* grey blurred overlay */
     content: "";
     width: 0%;
     height: 100vh;
     background: rgba(0, 0, 0, 0.6);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     opacity: 0;
-    display: block;
     position: absolute;
+    display: block;
     top: 100%;
     right: 0;
     z-index: -11;
     transition: width 0.5s, opacity 0.3s;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+  }
+  #cs-navigation.cs-active:after {
+    width: 100%;
+    max-width: 100%;
+    background-color: #484848;
   }
   #cs-navigation.cs-active:before {
     width: 100%;
@@ -289,26 +365,22 @@
     transition-delay: 0.2s;
   }
   #cs-navigation.cs-active .cs-li {
-    opacity: 1;
     transform: translateX(0);
-  }
-  #cs-navigation .cs-container {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    opacity: 1;
   }
   #cs-navigation .cs-logo {
     width: 40%;
     max-width: 9.125rem;
     height: 100%;
-    margin: 0 auto 0 0;
-    /* prevents padding from affecting height and width */
+    padding: 0.75rem 1rem;
+    /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: 10;
   }
   #cs-navigation .cs-logo img {
@@ -324,9 +396,9 @@
     width: clamp(2.75rem, 6vw, 3rem);
     height: clamp(2.75rem, 6vw, 3rem);
     margin: 0 0 0 auto;
-    background-color: transparent;
-    border: none;
     border-radius: 0.25rem;
+    background-color: #484848;
+    border: none;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -337,12 +409,12 @@
   }
   #cs-navigation .cs-active .cs-line2 {
     top: 50%;
-    transform: translate(-50%, -50%) translateY(0) rotate(-225deg);
     transform-origin: center;
+    transform: translate(-50%, -50%) translateY(0) rotate(-225deg);
   }
   #cs-navigation .cs-active .cs-line3 {
-    opacity: 0;
     bottom: 100%;
+    opacity: 0;
   }
   #cs-navigation .cs-box {
     /* 24px - 28px */
@@ -354,20 +426,20 @@
   #cs-navigation .cs-line {
     width: 100%;
     height: 2px;
-    background-color: #1a1a1a;
     border-radius: 2px;
+    background-color: #fff;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
   }
   #cs-navigation .cs-line1 {
     top: 0;
+    transform-origin: center;
     transition: transform 0.5s, top 0.3s, left 0.3s;
     animation-duration: 0.7s;
     animation-timing-function: ease;
-    animation-direction: normal;
     animation-fill-mode: forwards;
-    transform-origin: center;
+    animation-direction: normal;
   }
   #cs-navigation .cs-line2 {
     top: 50%;
@@ -375,8 +447,8 @@
     transition: top 0.3s, left 0.3s, transform 0.5s;
     animation-duration: 0.7s;
     animation-timing-function: ease;
-    animation-direction: normal;
     animation-fill-mode: forwards;
+    animation-direction: normal;
   }
   #cs-navigation .cs-line3 {
     bottom: 0;
@@ -384,41 +456,40 @@
   }
   #cs-navigation .cs-ul-wrapper {
     height: 100vh;
+    opacity: 0;
     background-color: #fff;
     box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
-    opacity: 0;
+    overflow: hidden;
     position: absolute;
     top: 100%;
-    right: 0;
     left: auto;
+    right: 0;
     z-index: -1;
-    overflow: hidden;
     transform: scaleX(0);
-    transition: transform 0.4s, opacity 0.3s;
     transform-origin: top right;
+    transition: transform 0.4s, opacity 0.3s;
   }
   #cs-navigation .cs-ul {
-    width: auto;
-    min-width: 40%;
-    height: 65vh;
     margin: 0;
     /* 28px - 40px */
     padding: 3rem clamp(1.75rem, 3vw, 2.5rem) 2rem 4.375rem;
+    width: auto;
+    min-width: 40%;
+    height: 65vh;
+    overflow: scroll;
     display: flex;
-    flex-direction: column;
     justify-content: flex-start;
+    flex-direction: column;
     align-items: flex-end;
     gap: 1.25rem;
-    overflow: scroll;
   }
   #cs-navigation .cs-li {
     text-align: right;
     list-style: none;
-    width: 100%;
     margin-right: 0;
-    opacity: 0;
     /* transition from these values */
-    transform: translateX(calc(-40 / 16 * 1rem));
+    transform: translateX(-2.5rem);
+    opacity: 0;
     transition: transform 0.6s, opacity 0.9s;
   }
   #cs-navigation .cs-li:nth-of-type(1) {
@@ -448,6 +519,18 @@
   #cs-navigation .cs-li:nth-of-type(9) {
     transition-delay: 0.45s;
   }
+  #cs-navigation .cs-li:nth-of-type(10) {
+    transition-delay: 0.5s;
+  }
+  #cs-navigation .cs-li:nth-of-type(11) {
+    transition-delay: 0.55s;
+  }
+  #cs-navigation .cs-li:nth-of-type(12) {
+    transition-delay: 0.6s;
+  }
+  #cs-navigation .cs-li:nth-of-type(13) {
+    transition-delay: 0.65s;
+  }
   #cs-navigation .cs-li-link {
     /* 16px - 24px */
     font-size: clamp(1rem, 2.5vw, 1.5rem);
@@ -456,7 +539,6 @@
     margin: 0;
     color: var(--headerColor);
     display: inline-block;
-    position: relative;
   }
   #cs-navigation .cs-li-link:before {
     /* active state underline */
@@ -465,9 +547,9 @@
     height: 1px;
     background: currentColor;
     opacity: 1;
-    display: none;
     position: absolute;
-    bottom: calc(-2 / 16 * 1rem);
+    display: none;
+    bottom: -0.125rem;
     left: 0;
   }
   #cs-navigation .cs-li-link.cs-active:before {
@@ -482,203 +564,23 @@
   body.dark-mode #cs-navigation {
     background-color: var(--dark);
   }
-  body.dark-mode #cs-navigation .cs-logo {
-    /* makes it white */
-    filter: grayscale(1) brightness(1000%);
-  }
-  body.dark-mode #cs-navigation .cs-line {
-    background-color: #fff;
-  }
   body.dark-mode #cs-navigation .cs-ul-wrapper {
-    background-color: var(--medium);
+    background-color: var(--dark);
+  }
+  body.dark-mode #cs-navigation .cs-ul-wrapper:before {
+    /* dark overlay */
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.2;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
   }
   body.dark-mode #cs-navigation .cs-li-link {
     color: var(--bodyTextColorWhite);
-  }
-}
-/*-- -------------------------- -->
-<---     Navigation Dropdown    -->
-<--- -------------------------- -*/
-/* Mobile - 1023px */
-@media only screen and (max-width: 63.9375rem) {
-  #cs-navigation .cs-dropdown {
-    color: var(--bodyTextColorWhite);
-    position: relative;
-  }
-  #cs-navigation .cs-dropdown.cs-active .cs-drop-ul {
-    height: auto;
-    margin: 0.75rem 0 0 0;
-    padding: 1.5rem;
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-  }
-  #cs-navigation .cs-dropdown.cs-active .cs-drop-link {
-    opacity: 1;
-  }
-  #cs-navigation .cs-dropdown .cs-li-link {
-    position: relative;
-    transition: opacity 0.3s;
-  }
-  #cs-navigation .cs-drop-icon {
-    width: 0.9375rem;
-    height: auto;
-    position: absolute;
-    top: 50%;
-    right: calc(-20 / 16 * 1rem);
-    transform: translateY(-50%);
-  }
-  #cs-navigation .cs-drop-ul {
-    width: 100%;
-    height: 0;
-    margin: 0;
-    box-sizing: border-box;
-    padding: 0 1.5rem 0 1.5rem;
-    background-color: var(--primary);
-    opacity: 0;
-    display: flex;
-    visibility: hidden;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
-    gap: 0.75rem;
-    overflow: hidden;
-    transform: scale(0);
-    transition: padding 0.3s, margin 0.3s, height 0.3s, opacity 0.3s, transform 0.3s, visibility 0.3s;
-    transform-origin: top right;
-  }
-  #cs-navigation .cs-drop-li {
-    text-align: inherit;
-    list-style: none;
-  }
-  #cs-navigation .cs-li-link.cs-drop-link {
-    /* 14px - 16px */
-    font-size: clamp(0.875rem, 2vw, 1.25rem);
-    color: #fff;
-  }
-}
-/* Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-  #cs-navigation .cs-dropdown {
-    position: relative;
-  }
-  #cs-navigation .cs-dropdown:hover {
-    cursor: pointer;
-  }
-  #cs-navigation .cs-dropdown:hover .cs-drop-ul {
-    opacity: 1;
-    visibility: visible;
-    transform: scaleY(1);
-  }
-  #cs-navigation .cs-dropdown:hover .cs-drop-li {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  #cs-navigation .cs-drop-icon {
-    width: 0.9375rem;
-    height: auto;
-    display: inline-block;
-  }
-  #cs-navigation .cs-drop-ul {
-    min-width: 12.5rem;
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 10px 16px;
-    opacity: 0;
-    border-bottom: 5px solid var(--primary);
-    visibility: hidden;
-    /* if you have 8 or more links in your dropdown nav, uncomment the columns property to make the list into 2 even columns. Change it to 3 or 4 if you need extra columns. Then remove the transition delays on the cs-drop-li so they don't have weird scattered animations */
-    position: absolute;
-    top: 100%;
-    z-index: -100;
-    overflow: hidden;
-    transform: scaleY(0);
-    transition: transform 0.3s, visibility 0.3s, opacity 0.3s;
-    transform-origin: top;
-  }
-  #cs-navigation .cs-drop-li {
-    font-size: 1rem;
-    text-decoration: none;
-    list-style: none;
-    width: 100%;
-    height: auto;
-    color: var(--bodyTextColor);
-    opacity: 0;
-    display: block;
-    transform: translateY(calc(-10 / 16 * 1rem));
-    transition: opacity 0.6s, transform 0.6s;
-  }
-  #cs-navigation .cs-drop-li:nth-of-type(1) {
-    transition-delay: 0.05s;
-  }
-  #cs-navigation .cs-drop-li:nth-of-type(2) {
-    transition-delay: 0.1s;
-  }
-  #cs-navigation .cs-drop-li:nth-of-type(3) {
-    transition-delay: 0.15s;
-  }
-  #cs-navigation .cs-drop-li:nth-of-type(4) {
-    transition-delay: 0.2s;
-  }
-  #cs-navigation .cs-drop-li:nth-of-type(5) {
-    transition-delay: 0.25s;
-  }
-  #cs-navigation .cs-drop-li:nth-of-type(6) {
-    transition-delay: 0.3s;
-  }
-  #cs-navigation .cs-drop-li:nth-of-type(7) {
-    transition-delay: 0.35s;
-  }
-  #cs-navigation .cs-drop-li:nth-of-type(8) {
-    transition-delay: 0.4s;
-  }
-  #cs-navigation .cs-drop-li:nth-of-type(9) {
-    transition-delay: 0.45s;
-  }
-  #cs-navigation .cs-drop-li:nth-of-type(10) {
-    transition-delay: 0.5s;
-  }
-  #cs-navigation .cs-drop-li:nth-of-type(11) {
-    transition-delay: 0.55s;
-  }
-  #cs-navigation .cs-drop-li:nth-of-type(12) {
-    transition-delay: 0.6s;
-  }
-  #cs-navigation .cs-drop-li:nth-of-type(13) {
-    transition-delay: 0.65s;
-  }
-  #cs-navigation .cs-li-link.cs-drop-link {
-    font-size: 1rem;
-    line-height: 1.5em;
-    text-decoration: none;
-    white-space: nowrap;
-    width: 100%;
-    /* prevents padding from affecting height and width */
-    box-sizing: border-box;
-    padding: 0.75rem;
-    color: var(--bodyTextColor);
-    display: block;
-    transition: color 0.3s, background-color 0.3s;
-  }
-  #cs-navigation .cs-li-link.cs-drop-link:hover {
-    background-color: #f7f7f7;
-  }
-  #cs-navigation .cs-li-link.cs-drop-link:before {
-    display: none;
-  }
-}
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #cs-navigation .cs-drop-ul {
-    background-color: var(--dark);
-  }
-  body.dark-mode #cs-navigation .cs-li-link.cs-drop-link:hover {
-    background-color: var(--medium);
-  }
-  body.dark-mode #cs-navigation .cs-drop-icon {
-    /* turns it white */
-    filter: grayscale(1) brightness(1000%);
   }
 }
 /*-- -------------------------- -->
@@ -687,39 +589,37 @@
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
   #cs-navigation {
-    /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
-    font-family: "Roboto", "Arial", sans-serif;
     width: 100%;
-    /* prevents padding from affecting height and width */
+    /* 23px - 420px */
+    padding: 0rem 1rem 0rem clamp(14.6875rem, 23vw, 26.25rem);
+    /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
-    padding: 0 1rem;
     background-color: #fff;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: fixed;
     z-index: 10000;
-  }
-  #cs-navigation .cs-container {
-    width: 100%;
-    max-width: 80rem;
-    margin: auto;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 1.5rem;
   }
   #cs-navigation .cs-toggle {
     display: none;
   }
   #cs-navigation .cs-logo {
     width: 18.4%;
-    max-width: 21.875rem;
-    height: 4.0625rem;
-    /* margin-right auto pushes everything away from it to the right */
-    margin: 0 auto 0 0;
-    padding: 0;
+    max-width: 20rem;
+    height: 100%;
+    /* 32px - 64px */
+    padding: 1rem clamp(2rem, 4vw, 4rem);
+    background-color: var(--primary);
+    /* prevents padding and border from affecting height and width */
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: 100;
   }
   #cs-navigation .cs-logo img {
@@ -729,7 +629,6 @@
     object-fit: contain;
   }
   #cs-navigation .cs-ul {
-    width: 100%;
     margin: 0;
     padding: 0;
     display: flex;
@@ -743,6 +642,10 @@
     padding: 2rem 0;
     /* prevent flexbox from squishing it */
     flex: none;
+  }
+  #cs-navigation .cs-li:last-of-type {
+    /* pushes the button to the far roght */
+    margin-left: auto;
   }
   #cs-navigation .cs-li-link {
     /* 14px - 16px */
@@ -767,21 +670,23 @@
     height: 2px;
     background: var(--primary);
     opacity: 1;
-    display: block;
     position: absolute;
+    display: block;
     bottom: 0rem;
     left: 0;
     transition: width 0.3s;
   }
+  /* Dark Mode */
+  /*-- -------------------------- -->
+<---   Interior Page Header     -->
+<--- -------------------------- -*/
+  /* Mobile */
+  /* Tablet */
+  /* Small Desktop */
 }
-/* Dark Mode */
-@media only screen and (min-width: 64rem) {
+@media only screen and (min-width: 64rem) and only screen and (min-width: 64rem) {
   body.dark-mode #cs-navigation {
     background-color: var(--dark);
-  }
-  body.dark-mode #cs-navigation .cs-logo {
-    /* makes it turn white */
-    filter: grayscale(1) brightness(1000%);
   }
   body.dark-mode #cs-navigation .cs-li-link {
     color: var(--bodyTextColorWhite);
@@ -790,11 +695,7 @@
     background-color: var(--primaryLight);
   }
 }
-/*-- -------------------------- -->
-<---   Interior Page Header     -->
-<--- -------------------------- -*/
-/* Mobile */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 64rem) and only screen and (min-width: 0em) {
   #int-hero {
     min-height: 30vh;
     padding-top: 3.125rem;
@@ -854,8 +755,7 @@
     display: block;
   }
 }
-/* Tablet */
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: 64rem) and only screen and (min-width: 48em) {
   #int-hero {
     font-size: 100%;
   }
@@ -863,8 +763,7 @@
     font-size: 4rem;
   }
 }
-/* Small Desktop */
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 64rem) and only screen and (min-width: 64em) {
   #int-hero {
     font-size: inherit;
     height: auto;
@@ -872,336 +771,5 @@
     padding-top: 11.25rem;
     background-attachment: fixed;
     padding-block-end: 6.25rem;
-  }
-}
-/*-- -------------------------- -->
-<---    Final Call To Action    -->
-<--- -------------------------- -*/
-/* Mobile */
-@media only screen and (min-width: 0em) {
-  #cta {
-    padding: 3.125rem 0;
-    position: relative;
-  }
-  #cta:before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background: #000;
-    opacity: 0.7;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
-  #cta .container {
-    text-align: center;
-  }
-  #cta picture {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -2;
-  }
-  #cta picture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  #cta .title {
-    font-size: min(9vw, 3rem);
-    font-weight: 900;
-    line-height: 1.20833333em;
-    text-align: center;
-    margin-bottom: 2.25rem;
-    color: #fff;
-    position: relative;
-  }
-  #cta p {
-    text-align: center;
-    width: 96%;
-    max-width: 37.375rem;
-    margin: auto;
-    margin-bottom: 2.25rem;
-    color: #fff;
-    opacity: 1;
-  }
-}
-/* Small Desktop */
-@media only screen and (min-width: 64em) {
-  #cta {
-    padding: 10.5rem 0;
-  }
-}
-/* Large Desktop */
-@media only screen and (min-width: 1300px) {
-  #cta {
-    margin-top: 6.25rem;
-    position: relative;
-  }
-  #cta:before {
-    display: none;
-  }
-  #cta:after {
-    content: "";
-    width: 125rem;
-    height: 69.25rem;
-    background: url("/assets/svgs/cta-squares.svg");
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 1;
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    z-index: -3;
-    transform: translateX(-50%);
-  }
-  #cta .container {
-    width: 90.0625%;
-    margin: auto;
-  }
-  #cta picture {
-    width: 90.0625%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  #cta picture:before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background: #000;
-    opacity: 0.7;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-  }
-}
-/* Dark Mode */
-@media only screen and (min-width: 0em) {
-  body.dark-mode #cta:after {
-    display: none;
-  }
-}
-/*-- -------------------------- -->
-<---           Footer           -->
-<--- -------------------------- -*/
-/* Mobile */
-@media only screen and (min-width: 0em) {
-  #footer {
-    font-size: min(4vw, 1.2em);
-    padding: 5.25rem 0 1.25rem;
-    background: #1c1c1c;
-  }
-  #footer .left-section {
-    text-align: center;
-    margin: auto;
-    margin-bottom: 3.125rem;
-  }
-  #footer .left-section .logo {
-    text-align: center;
-    width: auto;
-    height: 2em;
-    margin: auto;
-    margin-bottom: 1.875em;
-    display: inline-block;
-  }
-  #footer .left-section .logo img {
-    width: auto;
-    height: 100%;
-    display: block;
-  }
-  #footer .left-section p {
-    font-size: 0.875rem;
-    line-height: 1.92857143rem;
-    text-align: center;
-    width: 100%;
-    width: 21.92857143rem;
-    margin: auto;
-    color: #fff;
-    opacity: 0.9;
-  }
-  #footer .right-section {
-    width: 96%;
-    max-width: 25.4375rem;
-    margin: auto;
-  }
-  #footer .right-section .lists {
-    width: 96%;
-    max-width: 19.1875rem;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  #footer .right-section .lists ul {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 0;
-  }
-  #footer .right-section .lists ul:nth-of-type(3) {
-    margin-top: 3.125rem;
-  }
-  #footer .right-section .lists ul:nth-of-type(3) li {
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  #footer .right-section .lists ul:nth-of-type(3) li:last-of-type {
-    margin-bottom: 0;
-  }
-  #footer .right-section .lists ul li {
-    font-size: 1.125rem;
-    list-style: none;
-    margin-bottom: 0.75rem;
-    color: #fff;
-    opacity: 0.9;
-  }
-  #footer .right-section .lists ul li a {
-    line-height: 1.16666667em;
-    text-decoration: none;
-    color: #fff;
-    transition: color 0.3s;
-  }
-  #footer .right-section .lists ul li a:hover {
-    color: var(--primary);
-  }
-  #footer .right-section .lists ul h2 {
-    font-size: 1.125rem;
-    font-weight: bold;
-    line-height: 1.16666667em;
-    text-transform: uppercase;
-    margin-bottom: 2.3125rem;
-    color: #fff;
-    position: relative;
-  }
-  #footer .right-section .lists ul h2:before {
-    content: "";
-    width: 6.0625rem;
-    height: 0.125rem;
-    background: var(--primary);
-    opacity: 1;
-    display: block;
-    position: absolute;
-    bottom: calc(-16 / 16 * 1rem);
-    left: 0;
-  }
-  #footer .right-section .buttons {
-    display: flex;
-    justify-content: center;
-  }
-  #footer .right-section .cs-button-solid {
-    width: 15.625rem;
-    height: 3.3125rem;
-    margin: 0;
-    padding-top: 0.1875rem;
-  }
-  #footer .credit {
-    font-size: 1rem;
-    line-height: 2.25rem;
-    text-align: center;
-    width: 96%;
-    margin: auto;
-    margin-top: 6.25rem;
-    color: #fff;
-  }
-  #footer .credit a {
-    font-size: 1rem;
-    text-decoration: none;
-    color: var(--primary);
-  }
-  #footer .credit a:hover {
-    text-decoration: underline;
-  }
-  #footer .credit .copyright {
-    font-size: 1rem;
-    display: block;
-  }
-}
-/* Small Desktop */
-@media only screen and (min-width: 64em) {
-  #footer {
-    font-size: min(1.2vw, 1em);
-  }
-  #footer .container {
-    width: 96%;
-    max-width: 82.5rem;
-    margin: auto;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-  }
-  #footer .left-section {
-    text-align: left;
-    width: 25.5625rem;
-    margin: 0;
-  }
-  #footer .left-section .logo {
-    text-align: left;
-    height: 2.5rem;
-    margin-left: 0;
-  }
-  #footer .left-section p {
-    text-align: left;
-    margin-left: 0;
-  }
-  #footer .right-section {
-    width: 38.0625rem;
-    max-width: none;
-    margin: 0;
-  }
-  #footer .right-section .lists {
-    width: 96%;
-    max-width: 48.0625rem;
-    max-width: initial;
-    margin: 0;
-  }
-  #footer .right-section .lists ul:nth-of-type(3) {
-    margin-top: 0;
-  }
-  #footer .right-section .lists ul:nth-of-type(3) li:first-of-type {
-    margin-bottom: 0;
-  }
-  #footer .right-section .lists ul li a {
-    position: relative;
-  }
-  #footer .right-section .lists ul li a:before {
-    content: "";
-    width: 0%;
-    height: 0.125rem;
-    background: var(--primary);
-    opacity: 1;
-    display: block;
-    position: absolute;
-    bottom: calc(-3 / 16 * 1rem);
-    left: 0;
-    transition: width 0.3s;
-  }
-  #footer .right-section .lists ul li a:hover:before {
-    width: 100%;
-  }
-  #footer .right-section .buttons {
-    justify-content: flex-start;
-  }
-  #footer .credit .copyright {
-    display: inline-block;
-  }
-}
-/* Dark Mode */
-@media only screen and (min-width: 0em) {
-  body.dark-mode #footer {
-    background: #061623;
   }
 }
