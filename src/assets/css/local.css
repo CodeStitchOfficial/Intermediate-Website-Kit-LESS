@@ -211,9 +211,6 @@
     /* centers content horizontally, set to flex-start to left align */
     align-items: flex-start;
   }
-  #sbs-1125 .cs-topper {
-    color: #767676;
-  }
   #sbs-1125 .cs-text {
     margin-bottom: 1rem;
   }
@@ -278,7 +275,7 @@
   #sbs-1125 .cs-picture img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover ;
     position: absolute;
     top: 0;
     left: 0;
