@@ -5,11 +5,11 @@
 /* CodeStitch Root and Helpers */
 @media only screen and (min-width: 0em) {
   :root {
-    --primary: #8e6973;
-    --primaryLight: #ffd675;
-    --secondary: #225588;
-    --secondaryLight: #091f36;
-    --headerColor: #817c7c;
+    --primary: #8c6873;
+    --primaryLight: #f0d0b9;
+    --secondary: #da9b9c;
+    --secondaryLight: #da9b9c;
+    --headerColor: #6c6874;
     --bodyTextColor: #4e4b66;
     --bodyTextColorWhite: #fafbfc;
     /* 13px - 16px */
@@ -58,7 +58,7 @@
     /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
     background-color: var(--primary);
-    box-shadow: 4px 4px 0px 0px #1a1a1a;
+    box-shadow: 4px 4px 0px 0px #ad858d;
     display: inline-block;
     position: relative;
     z-index: 1;
@@ -168,67 +168,6 @@
   body,
   html {
     font-size: 0.85vw;
-  }
-}
-/*-- -------------------------- -->
-<---      Dark Mode Toggle      -->
-<--- -------------------------- -*/
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #dark-mode-toggle .cs-sun {
-    opacity: 1;
-    transform: translate(-50%, -50%);
-  }
-  body.dark-mode #dark-mode-toggle .cs-moon {
-    opacity: 0;
-    transform: translate(-50%, -150%);
-    fill: #fff;
-  }
-  #dark-mode-toggle {
-    width: 3rem;
-    height: 3rem;
-    padding: 0;
-    background: transparent;
-    border: none;
-    display: block;
-    position: absolute;
-    top: 0.625rem;
-    right: 4.375rem;
-    z-index: 1000;
-    overflow: hidden;
-  }
-  #dark-mode-toggle img,
-  #dark-mode-toggle svg {
-    width: 1.25rem;
-    height: 1.25rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-  }
-  #dark-mode-toggle .cs-moon {
-    z-index: 2;
-    transition: transform 0.3s, opacity 0.3s;
-  }
-  #dark-mode-toggle .cs-sun {
-    opacity: 0;
-    z-index: 1;
-    transform: translate(-50%, 100%);
-    transition: transform 0.3s, opacity 0.3s;
-  }
-}
-/* Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-  #dark-mode-toggle {
-    margin: 0;
-    position: relative;
-    top: auto;
-    right: auto;
-    transform: none;
-  }
-  #dark-mode-toggle:hover {
-    cursor: pointer;
   }
 }
 /*-- -------------------------- -->
@@ -369,10 +308,10 @@ html {
     opacity: 1;
   }
   #cs-navigation .cs-logo {
-    width: 60%;
-    max-width: 10.125rem;
+    width: 40%;
+    max-width: 9.125rem;
     height: 100%;
-    /* padding: 0.75rem 1rem; */
+    padding: 0.75rem 1rem;
     /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
     display: flex;
@@ -610,7 +549,7 @@ html {
     max-width: 20rem;
     height: 100%;
     /* 32px - 64px */
-    /* padding: 1rem clamp(2rem, 4vw, 4rem); */
+    padding: 1rem clamp(2rem, 4vw, 4rem);
     background-color: var(--primary);
     /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
@@ -692,7 +631,7 @@ html {
     color: var(--bodyTextColorWhite);
   }
   body.dark-mode #cs-navigation .cs-li-link:before {
-    background-color: var(--primaryLight);
+    background-color: var(--dark);
   }
 }
 @media only screen and (min-width: 64rem) and only screen and (min-width: 0em) {
@@ -772,4 +711,8 @@ html {
     background-attachment: fixed;
     padding-block-end: 6.25rem;
   }
+}
+.header-right {
+  display: flex;
+  flex-direction: row;
 }
