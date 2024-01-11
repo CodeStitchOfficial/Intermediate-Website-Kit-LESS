@@ -624,7 +624,7 @@ html {
   /* Tablet */
   /* Small Desktop */
 }
-@media only screen and (min-width: 64rem) and only screen and (min-width: 64rem) {
+@media only screen and (min-width: 64rem)  {
   body.dark-mode #cs-navigation {
     background-color: var(--dark);
   }
@@ -635,7 +635,7 @@ html {
     background-color: var(--dark);
   }
 }
-@media only screen and (min-width: 64rem) and only screen and (min-width: 0em) {
+@media only screen and (min-width: 64rem) {
   #int-hero {
     min-height: 30vh;
     padding-top: 3.125rem;
@@ -695,7 +695,7 @@ html {
     display: block;
   }
 }
-@media only screen and (min-width: 64rem) and only screen and (min-width: 48em) {
+@media only screen and (min-width: 64rem) {
   #int-hero {
     font-size: 100%;
   }
@@ -703,7 +703,7 @@ html {
     font-size: 4rem;
   }
 }
-@media only screen and (min-width: 64rem) and only screen and (min-width: 64em) {
+@media only screen and (min-width: 64rem) {
   #int-hero {
     font-size: inherit;
     height: auto;
