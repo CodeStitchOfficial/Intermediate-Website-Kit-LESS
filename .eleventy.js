@@ -1,6 +1,6 @@
 // imports
 const pluginEleventyNavigation = require("@11ty/eleventy-navigation");
-const pluginMinifier = require("@sherby/eleventy-plugin-files-minifier");
+// const pluginMinifier = require("@sherby/eleventy-plugin-files-minifier");
 const pluginSitemap = require("@quasibit/eleventy-plugin-sitemap");
 
 const configCssExtension = require("./src/config/cssExtension");
@@ -27,9 +27,9 @@ module.exports = function (eleventyConfig) {
 
     // When in production ("npm run build" is ran), minify all HTML, CSS, JSON, XML, XSL and webmanifest files.
     // https://github.com/benjaminrancourt/eleventy-plugin-files-minifier
-    if (configServer.isProduction) {
-        eleventyConfig.addPlugin(pluginMinifier);
-    }
+    // if (configServer.isProduction) {
+    //     eleventyConfig.addPlugin(pluginMinifier);
+    // }
     // END PLUGINS
 
     // SERVER - Set how the eleventy dev server is run, using the options from https://www.11ty.dev/docs/dev-server/
