@@ -474,7 +474,7 @@
   }
   #services-448 .cs-item-text {
     /* 14px - 16px */
-    font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
     line-height: 1.5em;
     font-weight: 400;
     /* 20px - 24px */
