@@ -73,37 +73,80 @@
 }
 /* Fonts and general styles */
 @media only screen and (min-width: 0em) {
-  /* roboto-regular - latin */
+  /* lato-regular - latin */
   @font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Lato';
     font-style: normal;
-    font-family: "Roboto";
     font-weight: 400;
-    font-display: swap;
-    src: local(""), url("/assets/fonts/roboto-v29-latin-regular.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/roboto-v29-latin-regular.woff") format("woff");
-    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    src: url('../fonts/lato-v24-latin-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
-  /* roboto-700 - latin */
+  /* lato-italic - latin */
   @font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 400;
+    src: url('../fonts/lato-v24-latin-italic.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* lato-700 - latin */
+  @font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Lato';
     font-style: normal;
-    font-family: "Roboto";
     font-weight: 700;
-    font-display: swap;
-    src: local(""), url("/assets/fonts/roboto-v29-latin-700.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/roboto-v29-latin-700.woff") format("woff");
-    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    src: url('../fonts/lato-v24-latin-700.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
-  /* roboto-900 - latin */
+  /* lato-900 - latin */
   @font-face {
-    font-style: normal;
-    font-family: "Roboto";
-    font-weight: 900;
     font-display: swap;
-    src: local(""), url("/assets/fonts/roboto-v29-latin-900.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/roboto-v29-latin-900.woff") format("woff");
-    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/lato-v24-latin-900.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* neuton-regular - latin */
+  @font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Neuton';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/neuton-v22-latin-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* neuton-italic - latin */
+  @font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Neuton';
+    font-style: italic;
+    font-weight: 400;
+    src: url('../fonts/neuton-v22-latin-italic.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* neuton-800 - latin */
+  @font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Neuton';
+    font-style: normal;
+    font-weight: 800;
+    src: url('../fonts/neuton-v22-latin-800.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
   body,
   html {
-    font-family: "Roboto", Arial, sans-serif;
-    font-size: 100%;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 120%;
     margin: 0;
     padding: 0;
     color: var(--bodyTextColor);
