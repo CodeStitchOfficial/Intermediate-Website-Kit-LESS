@@ -1,6 +1,6 @@
 {
     "name": "Watercolor Tales",
-    "email": "laura@laurawinslow.com",
+    "email": "hello@laurawinslow.com",
     "phoneForTel": "555-779-4407",
     "phoneFormatted": "(555) 779-4407",
     "address": {
@@ -11,5 +11,5 @@
         "zip": "80206",
         "mapLink": "https://goo.gl/maps/UAQn4vuGDiwv7DV39"
     },
-    "domain": "https://www.codestitch.app"
+    "domain": "https://laurawinslow.com"
 }
