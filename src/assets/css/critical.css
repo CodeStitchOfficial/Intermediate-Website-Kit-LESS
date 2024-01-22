@@ -111,7 +111,7 @@
     box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.16);
     /* clips the img tag corners */
     overflow: hidden;
-    top: 200px;
+    top: 100px;
     display: block;
     position: relative;
   }
@@ -146,6 +146,7 @@
   #hero-855 .cs-container {
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 100px;
   }
   #hero-855 .cs-content {
     width: 40vw;
@@ -160,6 +161,7 @@
   #hero-855 .cs-picture {
     /* 623px - 814px */
     height: clamp(38.9375rem, 60vw, 50.875rem);
+    top: 100px;
   }
   #hero-855 .cs-wave {
     width: 100%;
@@ -337,5 +339,115 @@
   }
   body.dark-mode #services-1176 .cs-arrow {
     filter: grayscale(1) brightness(1000%);
+  }
+}
+/*-- -------------------------- -->
+<---            CTA             -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #cta-1693 {
+    padding: var(--sectionPadding);
+    background-color: var(--primary);
+    position: relative;
+    overflow: hidden;
+  }
+  #cta-1693 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #cta-1693 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+    gap: 1.5rem;
+  }
+  #cta-1693 .cs-title {
+    max-width: 30ch;
+    margin: 0;
+    color: #fff;
+  }
+  #cta-1693 .cs-button-solid {
+    font-size: 1rem;
+    font-weight: 700;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-align: center;
+    text-decoration: none;
+    min-width: 9.375rem;
+    margin: 0;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+    padding: 0 1.5rem;
+    color: var(--primary);
+    background-color: var(--bodyTextColorWhite);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+  }
+  #cta-1693 .cs-button-solid:before {
+    content: "";
+    width: 0%;
+    height: 100%;
+    background: #ededed;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
+  }
+  #cta-1693 .cs-button-solid:hover:before {
+    width: 100%;
+  }
+  #cta-1693 .cs-wrapper {
+    width: 100%;
+    max-width: 120rem;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 1;
+    /* prevents the mouse from interacting with it */
+    pointer-events: none;
+    transform: translateX(-50%);
+  }
+  #cta-1693 .cs-graphic {
+    width: 23.25rem;
+    height: 23.25rem;
+    opacity: 0.1;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  #cta-1693 .cs-graphic-1 {
+    left: -16.3125rem;
+  }
+  #cta-1693 .cs-graphic-2 {
+    right: -16.3125rem;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #cta-1693-1693 .cs-content {
+    text-align: left;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #cta-1693-1693 .cs-graphic-1 {
+    left: -7.8125rem;
+  }
+  #cta-1693-1693 .cs-graphic-2 {
+    right: -7.8125rem;
   }
 }
