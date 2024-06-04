@@ -1,12 +1,12 @@
 ---
 title: 'Page title for <title> and OG tags'
-description: 'Description for <meta> and OG tags'
+description: 'Description for <meta> description and OG tags'
 preloadImg: '/assets/images/imagename.format'
-permalink: '/page-path'
+permalink: 'page-path/'
 eleventyNavigation:
     key: Name to appear in navigation
-    parent: Delete, or put another page's key here to create a dropdown
     order: 1000
+    parent: Optional - Put another page's "key" here to create a dropdown
 ---
 
 {% extends "layouts/base.html" %}
