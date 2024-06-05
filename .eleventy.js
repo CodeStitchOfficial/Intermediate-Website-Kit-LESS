@@ -4,6 +4,7 @@ const pluginMinifier = require("@sherby/eleventy-plugin-files-minifier");
 const pluginSitemap = require("@quasibit/eleventy-plugin-sitemap");
 
 const configCss = require("./src/config/css");
+const configJs = require("./src/config/javascript");
 const configSitemap = require("./src/config/sitemap");
 
 const filterPostDate = require("./src/config/postDate");
@@ -22,6 +23,13 @@ module.exports = function (eleventyConfig) {
      */
     eleventyConfig.addTemplateFormats("css");
     eleventyConfig.addExtension("css", configCss);
+
+    /**
+     *  JS EXTENSION
+     *  Sets up JS files as an eleventy template language, which are compiled by esbuild. Allows bundling and minification of JS
+     */
+    eleventyConfig.addTemplateFormats("js");
+    eleventyConfig.addExtension("js", configJs);
     /**=====================================================================
                                 END EXTENSIONS
     =======================================================================*/
@@ -95,7 +103,7 @@ module.exports = function (eleventyConfig) {
      *  Gets the current year, which can be outputted with {% year %}. Used for the footer copyright. Updates with every build.
      *  Use - {% year %}
      */
-    eleventyConfig.addFilter("postDate", filterPostDate);
+    eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
     /**=====================================================================
                                 END SHORTCODES
     =======================================================================*/
