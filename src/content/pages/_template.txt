@@ -18,5 +18,5 @@ eleventyNavigation:
 {% endblock %}
 
 {% block body %}
-    <!-- Page HTML goes here, without a <main> wrapper -->
+    <!-- Page HTML goes here, without a <main> wrapper. The <main> tag is already presented in layouts/base.html -->
 {% endblock %}
