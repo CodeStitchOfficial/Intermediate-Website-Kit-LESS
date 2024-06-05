@@ -19,7 +19,7 @@
                 </div>
             </button>
             <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
-            <!-- This also allows for easy substitution of CodeStitch navigations. Just replace the .cs-ul-wrapper in the new navigation with this one -->
+            {# This also allows for easy substitution of CodeStitch navigations. Just replace the .cs-ul-wrapper in the new navigation with this one to have full eleventyNavigation support #}
             <div class="cs-ul-wrapper">
                 <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
                     {% set navPages = collections.all | eleventyNavigation %}
@@ -27,15 +27,25 @@
                     {# Loop through all pages with a eleventyNavigation in the frontmatter #}
                     {% for entry in navPages %}
 
-                        {# Define a hasChild variable to make it easier to test what navigation items are dropdowns #}
+                        {# Define a hasChild variable to make it easier to test what navigation items are have child dropdown pages #}
                         {% set hasChild = entry.children.length %}
 
                         {# If this page is a dropdown, give it the appropriate classes, icons and accessibility attributes #}
                         <li class="cs-li {% if hasChild %} cs-dropdown {% endif %}" {% if hasChild %} tabindex="0"{% endif %}>
 
-                            {# Dropdown pages are rendered as <span> tags. This is so mobile users can tap to open the dropdown without clicking through to a page #}
+                            {# If the page has child dropdown pages, render it as a <span> tag with the appropriate dropdown HTML #}
                             {% if hasChild %}
-                                <span class="cs-li-link {% if entry.url == page.url %} cs-active {% endif %}">
+
+                                {# Check to see if the user's current page is one of the child pages. If so, apply the cs-active class to the dropdown parent #}
+                                {% set activeClass = "" %}
+                                {% for child in entry.children %}
+                                    {% if child.url == page.url %}
+                                        {% set activeClass = "cs-active" %}
+                                    {% endif %}
+                                {% endfor %}
+
+                                {# Render the <span> with the active class, dropdown icon and child links #}
+                                <span class="cs-li-link {{ activeClass }}">
                                     {{ entry.key }}
                                     <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
                                 </span>
