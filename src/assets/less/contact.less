@@ -18,14 +18,14 @@
     }
 
     #cs-contact {
-        font-family: "Roboto", "Arial", sans-serif;
         padding: var(--sectionPadding);
+        font-family: "Roboto", "Arial", sans-serif;
 
         .cs-container {
-            width: 100%;
+            margin: auto;
             /* changes to 1280px at desktop */
             max-width: (800/16rem);
-            margin: auto;
+            width: 100%;
         }
 
         .cs-content {
@@ -33,38 +33,38 @@
         }
 
         .cs-topper {
-            text-align: left;
             /* 8px - 12px */
             margin-bottom: clamp(0.5rem, 1.4vw, 0.75rem);
+            text-align: left;
         }
 
         .cs-title {
-            text-align: left;
             max-width: (800/16rem);
+            text-align: left;
         }
 
         .cs-text {
-            text-align: left;
-            /* 404px - 522px */
-            max-width: clamp(25.25rem, 30vw, 32.625rem);
             margin: 0 auto 0 0;
             /* 40px - 48px */
             margin-bottom: clamp(2.5rem, 6.3vw, 3rem);
+            /* 404px - 522px */
+            max-width: clamp(25.25rem, 30vw, 32.625rem);
+            text-align: left;
         }
 
         #cs-form {
             margin-bottom: (40/16rem);
             label {
-                font-size: (16/16rem);
-                font-weight: 700;
-                line-height: 1.5em;
-                /* 12px - 20px */
-                margin-bottom: clamp(0.75rem, 1.3em, 1.25rem);
-                color: var(--headerColor);
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: flex-start;
+                /* 12px - 20px */
+                margin-bottom: clamp(0.75rem, 1.3em, 1.25rem);
+                font-size: (16/16rem);
+                line-height: 1.5em;
+                font-weight: 700;
+                color: var(--headerColor);
             }
 
             .cs-label-message {
@@ -74,15 +74,15 @@
 
             input,
             textarea {
-                font-size: (16/16rem);
-                width: 100%;
-                height: (64/16rem);
+                border: 1px solid #b4b2c7;
+                border-radius: (8/16rem);
                 margin-top: (4/16rem);
+                height: (64/16rem);
+                width: 100%;
                 /* prevents border & padding from affecting height */
                 box-sizing: border-box;
                 padding-left: (20/16rem);
-                border: 1px solid #b4b2c7;
-                border-radius: (8/16rem);
+                font-size: (16/16rem);
                 transition: border 0.3s;
 
                 &:hover {
@@ -91,64 +91,64 @@
             }
 
             textarea {
-                font-family: inherit;
                 min-height: (120/16rem);
                 padding-top: (20/16rem);
+                font-family: inherit;
             }
 
             .cs-button-solid {
-                width: 100%;
                 border: none;
+                width: 100%;
             }
         }
 
         .cs-right-section {
-            height: (320/16rem);
-            /* 24px - 40px top & bottom */
-            /* 20px - 40px left & right */
-            padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.25rem, 3vw, 2.5rem);
-            border-radius: (8/16rem);
+            position: relative;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             align-items: flex-start;
-            position: relative;
+            border-radius: (8/16rem);
+            height: (320/16rem);
             /* cuts off corners on img tag */
             overflow: hidden;
+            /* 24px - 40px top & bottom */
+            /* 20px - 40px left & right */
+            padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.25rem, 3vw, 2.5rem);
         }
 
         .cs-header {
+            display: block;
+            margin-bottom: (8/16rem);
             /* 16px - 20px */
             font-size: clamp(1rem, 3vw, 1.25rem);
-            font-weight: 700;
             line-height: 1.2em;
-            margin-bottom: (8/16rem);
+            font-weight: 700;
             color: var(--bodyTextColorWhite);
-            display: block;
         }
 
         .cs-link {
+            position: relative;
+            display: block;
+            margin-bottom: (20/16rem);
+            text-decoration: none;
             /* 16px - 20px */
             font-size: clamp(1rem, 3vw, 1.25rem);
             line-height: 1.2em;
-            text-decoration: none;
-            margin-bottom: (20/16rem);
             color: var(--bodyTextColorWhite);
-            display: block;
-            position: relative;
 
             &:before {
-                /* Animated underline */
-                content: "";
-                width: 0%;
-                height: 2px;
-                /* current color of the parent */
-                background: currentColor;
-                opacity: 1;
-                display: block;
                 position: absolute;
                 bottom: calc(-2 / 16 * 1rem);
                 left: 0;
+                /* Animated underline */
+                content: "";
+                opacity: 1;
+                display: block;
+                /* current color of the parent */
+                background: currentColor;
+                height: 2px;
+                width: 0%;
                 transition: width 0.3s;
             }
 
@@ -169,40 +169,36 @@
         }
 
         .cs-bg-picture {
-            width: 100%;
-            height: 100%;
-            display: block;
+            z-index: -1;
             position: absolute;
             top: 0;
             left: 0;
-            z-index: -1;
+            display: block;
+            height: 100%;
+            width: 100%;
             transition: transform 0.6s;
 
-            &:before {
-                /* background color overlay */
-                content: "";
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(
-                    180deg,
-                    rgba(0, 0, 0, 0) 0%,
-                    rgba(0, 0, 0, 0.8) 100%
-                );
-                display: block;
+            img {
                 position: absolute;
                 top: 0;
                 left: 0;
-                z-index: 1;
-            }
-
-            img {
-                width: 100%;
                 height: 100%;
+                width: 100%;
                 /* Makes img tag act as a background image */
                 object-fit: cover;
+            }
+
+            &:before {
+                z-index: 1;
                 position: absolute;
                 top: 0;
                 left: 0;
+                /* background color overlay */
+                content: "";
+                display: block;
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+                height: 100%;
+                width: 100%;
             }
         }
     }
@@ -213,9 +209,9 @@
     #cs-contact {
         #cs-form {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             align-items: flex-start;
-            flex-wrap: wrap;
 
             label {
                 width: 48%;
@@ -232,10 +228,10 @@
 @media only screen and (min-width: 64em) {
     #cs-contact {
         .cs-container {
-            max-width: (1280/16rem);
             display: flex;
             justify-content: flex-end;
             align-items: flex-start;
+            max-width: (1280/16rem);
             gap: (80/16rem);
         }
 
@@ -247,10 +243,10 @@
         }
 
         .cs-right-section {
-            width: 40%;
-            max-width: (542/16rem);
             /* changes to 578px at 1300px wide */
             height: (686/16rem);
+            max-width: (542/16rem);
+            width: 40%;
             /* prevents flexbox from squishing it */
             flex: none;
 
@@ -274,8 +270,8 @@
         #cs-form {
             column-gap: (0/16rem);
             label {
-                width: 48%;
                 max-width: (305/16rem);
+                width: 48%;
             }
 
             .cs-label-message {
@@ -302,8 +298,8 @@
                 label,
                 input,
                 textarea {
-                    color: var(--bodyTextColorWhite);
                     background-color: transparent;
+                    color: var(--bodyTextColorWhite);
 
                     &::placeholder {
                         /* lighten up the color of the text by 40%*/

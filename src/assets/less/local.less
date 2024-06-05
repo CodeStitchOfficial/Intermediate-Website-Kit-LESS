@@ -10,79 +10,79 @@
         padding: var(--sectionPadding);
 
         .cs-container {
-            width: 100%;
-            max-width: (1280/16rem);
-            margin: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            margin: auto;
+            max-width: (1280/16rem);
+            width: 100%;
             row-gap: (40/16rem);
         }
 
         .cs-left {
-            /* scaling the font size with the view width */
-            font-size: ~"min(2.31vw, 0.7em)";
+            position: relative;
+            height: (636/16em);
             /* using ems so we can use font size to scale the whole section */
             width: (631/16em);
-            height: (636/16em);
-            position: relative;
+            /* scaling the font size with the view width */
+            font-size: ~"min(2.31vw, 0.7em)";
         }
 
         .cs-picture {
-            border-radius: (24/16em);
-            display: block;
             position: absolute;
+            display: block;
+            border-radius: (24/16em);
             /* clips img tag corners */
             overflow: hidden;
             img {
-                width: 100%;
-                height: 100%;
-                /* makes image act like a background image */
-                object-fit: cover;
                 position: absolute;
                 top: 0;
                 left: 0;
+                height: 100%;
+                width: 100%;
+                /* makes image act like a background image */
+                object-fit: cover;
             }
         }
 
         .cs-picture1 {
-            width: (522/16em);
-            height: (581/16em);
             top: 0;
             left: 0;
+            height: (581/16em);
+            width: (522/16em);
         }
 
         .cs-picture2 {
-            width: (414/16em);
-            height: (400/16em);
-            background-color: #fff;
-            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 40px;
+            bottom: 0;
+            right: 0;
             /* 6px - 12px */
             border: clamp(0.375em, 1.5vw, 0.75em) solid #fff;
-            right: 0;
-            bottom: 0;
+            background-color: #fff;
+            height: (400/16em);
+            width: (414/16em);
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 40px;
         }
 
         .cs-right {
-            max-width: (542/16rem);
             margin: auto;
+            max-width: (542/16rem);
         }
 
         .cs-topper {
-            text-align: left;
             margin-bottom: (4/16rem);
+            text-align: left;
         }
 
         .cs-title {
-            text-align: left;
             max-width: (800/16rem);
+            text-align: left;
         }
 
         .cs-text {
-            text-align: left;
-            max-width: (750/16rem);
             margin-bottom: (16/16rem);
+            max-width: (750/16rem);
+            text-align: left;
 
             &:last-of-type {
                 margin-bottom: (32/16rem);
@@ -90,46 +90,46 @@
         }
 
         .cs-flex-group {
+            position: relative;
+            border-radius: (16/16rem);
+            background-color: #f7f7f7;
             /* 16px - 32px */
             padding: clamp(1rem, 3vw, 2rem);
-            background-color: #f7f7f7;
-            border-radius: (16/16rem);
-            position: relative;
         }
 
         .cs-flex-p {
+            margin: 0 0 (16/16rem);
             /* 14px - 16px */
             font-size: clamp(0.875rem, 1.5vw, 1rem);
             line-height: 1.5em;
-            margin: 0 0 (16/16rem);
             color: #353535;
         }
 
         .cs-name {
-            font-size: (16/16rem);
-            font-weight: bold;
-            line-height: 1.2em;
-            text-transform: uppercase;
-            margin: 0 0 (4/16rem);
-            color: var(--headerColor);
             display: block;
+            margin: 0 0 (4/16rem);
+            text-transform: uppercase;
+            font-size: (16/16rem);
+            line-height: 1.2em;
+            font-weight: bold;
+            color: var(--headerColor);
         }
 
         .cs-job {
+            display: block;
             font-size: (14/16rem);
             line-height: 1.5em;
             color: #353535;
-            display: block;
         }
 
         .cs-quote-icon {
-            /* 60px - 136px */
-            width: clamp(3.75rem, 10vw, 8.5rem);
-            height: auto;
             position: absolute;
+            bottom: (0/16rem);
             /* 16px - 32px */
             right: clamp(1rem, 4vw, 2rem);
-            bottom: (0/16rem);
+            height: auto;
+            /* 60px - 136px */
+            width: clamp(3.75rem, 10vw, 8.5rem);
         }
 
         .cs-button-solid {
@@ -170,9 +170,9 @@
             }
 
             .cs-picture2 {
-                background-color: var(--dark);
                 /* 6px - 12px */
                 border: clamp(0.375em, 1.5vw, 0.75em) solid var(--dark);
+                background-color: var(--dark);
             }
 
             .cs-topper {
@@ -192,8 +192,8 @@
             }
 
             .cs-job {
-                color: var(--bodyTextColorWhite);
                 opacity: 0.8;
+                color: var(--bodyTextColorWhite);
             }
 
             .cs-quote-icon {
@@ -213,125 +213,125 @@
         padding: var(--sectionPadding);
 
         .cs-container {
-            width: 100%;
-            max-width: (1280/16rem);
-            margin: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            margin: auto;
+            max-width: (1280/16rem);
+            width: 100%;
             row-gap: (40/16rem);
         }
 
         .cs-left {
-            /* scaling the font size with the view width */
-            font-size: ~"min(2.31vw, 0.7em)";
+            position: relative;
+            height: (636/16em);
             /* using ems so we can use font size to scale the whole section */
             width: (631/16em);
-            height: (636/16em);
-            position: relative;
+            /* scaling the font size with the view width */
+            font-size: ~"min(2.31vw, 0.7em)";
         }
 
         .cs-picture {
-            border-radius: (24/16em);
-            display: block;
             position: absolute;
+            display: block;
+            border-radius: (24/16em);
             /* clips img tag corners */
             overflow: hidden;
             img {
-                width: 100%;
-                height: 100%;
-                /* makes image act like a background image */
-                object-fit: cover;
                 position: absolute;
                 top: 0;
                 left: 0;
+                height: 100%;
+                width: 100%;
+                /* makes image act like a background image */
+                object-fit: cover;
             }
         }
 
         .cs-picture1 {
-            width: (522/16em);
-            height: (581/16em);
             top: 0;
             right: 0;
+            height: (581/16em);
+            width: (522/16em);
         }
 
         .cs-picture2 {
-            width: (414/16em);
-            height: (400/16em);
-            background-color: #fff;
-            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 40px;
-            /* 6px - 12px */
-            border: clamp(0.375em, 1.5vw, 0.75em) solid #fff;
             bottom: 0;
             left: 0;
+            /* 6px - 12px */
+            border: clamp(0.375em, 1.5vw, 0.75em) solid #fff;
+            background-color: #fff;
+            height: (400/16em);
+            width: (414/16em);
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 40px;
         }
 
         .cs-right {
-            max-width: (542/16rem);
             margin: auto;
+            max-width: (542/16rem);
         }
 
         .cs-topper {
-            text-align: left;
             margin-bottom: (4/16rem);
+            text-align: left;
         }
 
         .cs-title {
-            text-align: left;
             max-width: (800/16rem);
+            text-align: left;
         }
 
         .cs-text {
-            text-align: left;
-            max-width: (750/16rem);
             margin-bottom: (16/16rem);
+            max-width: (750/16rem);
+            text-align: left;
             &:last-of-type {
                 margin-bottom: (32/16rem);
             }
         }
 
         .cs-flex-group {
+            position: relative;
+            border-radius: (16/16rem);
+            background-color: #f7f7f7;
             /* 16px - 32px */
             padding: clamp(1rem, 3vw, 2rem);
-            background-color: #f7f7f7;
-            border-radius: (16/16rem);
-            position: relative;
         }
 
         .cs-flex-p {
+            margin: 0 0 (16/16rem);
             /* 14px - 16px */
             font-size: clamp(0.875rem, 1.5vw, 1rem);
             line-height: 1.5em;
-            margin: 0 0 (16/16rem);
             color: #353535;
         }
 
         .cs-name {
-            font-size: (16/16rem);
-            font-weight: bold;
-            line-height: 1.2em;
-            text-transform: uppercase;
-            margin: 0 0 (4/16rem);
-            color: var(--headerColor);
             display: block;
+            margin: 0 0 (4/16rem);
+            text-transform: uppercase;
+            font-size: (16/16rem);
+            line-height: 1.2em;
+            font-weight: bold;
+            color: var(--headerColor);
         }
 
         .cs-job {
+            display: block;
             font-size: (14/16rem);
             line-height: 1.5em;
             color: #353535;
-            display: block;
         }
 
         .cs-quote-icon {
-            /* 60px - 136px */
-            width: clamp(3.75rem, 10vw, 8.5rem);
-            height: auto;
             position: absolute;
+            bottom: (0/16rem);
             /* 16px - 32px */
             right: clamp(1rem, 4vw, 2rem);
-            bottom: (0/16rem);
+            height: auto;
+            /* 60px - 136px */
+            width: clamp(3.75rem, 10vw, 8.5rem);
         }
     }
 }
@@ -346,9 +346,9 @@
         }
 
         .cs-left {
-            font-size: ~"min(1.2vw, 1em)";
             /* sends it to the right */
             order: 2;
+            font-size: ~"min(1.2vw, 1em)";
             flex: none;
         }
 
@@ -370,9 +370,9 @@
             }
 
             .cs-picture2 {
-                background-color: var(--dark);
                 /* 6px - 12px */
                 border: clamp(0.375em, 1.5vw, 0.75em) solid var(--dark);
+                background-color: var(--dark);
             }
 
             .cs-topper {
@@ -392,8 +392,8 @@
             }
 
             .cs-job {
-                color: var(--bodyTextColorWhite);
                 opacity: 0.8;
+                color: var(--bodyTextColorWhite);
             }
 
             .cs-quote-icon {
@@ -410,39 +410,39 @@
 /* Mobile - 360px - Contains hover animation */
 @media only screen and (min-width: 0em) {
     #gallery {
-        /* Centers button */
-        text-align: center;
-        padding: var(--sectionPadding);
         position: relative;
         /* Prevents overflow from the image going off screen */
         overflow: hidden;
+        padding: var(--sectionPadding);
+        /* Centers button */
+        text-align: center;
         .cs-container {
-            width: 100%;
-            max-width: (1322/16em);
             margin: auto;
+            max-width: (1322/16em);
+            width: 100%;
         }
 
         .cs-topper {
-            text-align: center;
             margin-bottom: (16/16rem);
+            text-align: center;
         }
 
         .cs-title {
-            text-align: center;
-            max-width: (621/16rem);
             margin-bottom: (40/16rem);
+            max-width: (621/16rem);
+            text-align: center;
         }
 
         .cs-image-group {
-            /* used rem so it doesn't scale with the font size of on parent */
-            font-size: ~"min(1.1vw, 1em)";
-            width: 100%;
-            max-width: (1322/16em);
-            margin: 0 auto (60/16rem);
-            padding: 0;
             display: flex;
             justify-content: center;
             align-items: flex-start;
+            margin: 0 auto (60/16rem);
+            max-width: (1322/16em);
+            width: 100%;
+            padding: 0;
+            /* used rem so it doesn't scale with the font size of on parent */
+            font-size: ~"min(1.1vw, 1em)";
             gap: (30/16em);
         }
 
@@ -455,66 +455,66 @@
         }
 
         .cs-picture {
-            display: block;
             position: relative;
+            display: block;
             img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
                 position: absolute;
                 top: 0;
                 left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
             }
         }
 
         .cs-row-1 {
             .cs-picture1 {
-                width: (420/16em);
                 height: (567/16em);
+                width: (420/16em);
             }
 
             .cs-picture2 {
-                width: (420/16em);
                 height: (629/16em);
+                width: (420/16em);
             }
 
             .cs-picture3 {
-                width: (420/16em);
                 height: (512/16em);
+                width: (420/16em);
             }
         }
 
         .cs-row-2 {
             .cs-picture1 {
-                width: (420/16em);
                 height: (492/16em);
+                width: (420/16em);
             }
 
             .cs-picture2 {
-                width: (420/16em);
                 height: (517/16em);
+                width: (420/16em);
             }
 
             .cs-picture3 {
-                width: (420/16em);
                 height: (629/16em);
+                width: (420/16em);
             }
         }
 
         .cs-row-3 {
             .cs-picture1 {
-                width: (420/16em);
                 height: (625/16em);
+                width: (420/16em);
             }
 
             .cs-picture2 {
-                width: (420/16em);
                 height: (452/16em);
+                width: (420/16em);
             }
 
             .cs-picture3 {
-                width: (420/16em);
                 height: (629/16em);
+                width: (420/16em);
             }
         }
     }
@@ -538,31 +538,31 @@
 /* Mobile - 360px */
 @media only screen and (min-width: 0em) {
     #reviews {
+        padding: var(--sectionPadding);
         /* Centers the button */
         text-align: center;
-        padding: var(--sectionPadding);
 
         .cs-container {
-            width: 100%;
-            max-width: (1104/16rem);
             margin: auto;
+            max-width: (1104/16rem);
+            width: 100%;
         }
 
         .cs-topper {
-            text-align: center;
             margin-bottom: (16/16rem);
+            text-align: center;
         }
 
         .cs-title {
-            text-align: center;
             max-width: (700/16rem);
+            text-align: center;
         }
 
         .cs-text {
-            text-align: center;
-            max-width: (650/16rem);
             /* 88px - 104px */
             margin-bottom: clamp(5.5em, 10.2vw, 6.5em);
+            max-width: (650/16rem);
+            text-align: center;
         }
 
         .cs-card-group {
@@ -572,25 +572,25 @@
         }
 
         .cs-item {
-            text-align: left;
-            list-style: none;
-            width: 100%;
-            max-width: (542/16rem);
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: (4/16rem);
             margin: 0 auto (64/16rem);
+            background: #fff;
+            max-width: (542/16rem);
+            width: 100%;
             /* Prevents padding from affecting height & width */
             box-sizing: border-box;
             /* Padding L & R - 16px - 32px */
             padding: (60/16rem) clamp(1rem, 3.2vw, 2rem) 0;
             /* 32px - 40px */
             padding-bottom: clamp(2rem, 5.4vw, 2.5rem);
-            background: #fff;
+            list-style: none;
+            text-align: left;
             box-shadow: 0px 20px 39px 0px rgba(0, 0, 0, 0.05);
-            border-radius: (4/16rem);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            position: relative;
 
             &:last-of-type {
                 margin-bottom: 0;
@@ -598,41 +598,41 @@
         }
 
         .cs-item-img {
-            width: (80/16rem);
-            height: (80/16rem);
             position: absolute;
             top: calc(-40 / 16 * 1rem);
+            height: (80/16rem);
+            width: (80/16rem);
         }
 
         .cs-item-p {
-            font-size: (16/16rem);
-            line-height: 1.5em;
+            border-bottom: 1px solid #e8e9ec;
             margin: 0 0 (20/16rem);
             padding-bottom: (20/16rem);
+            font-size: (16/16rem);
+            line-height: 1.5em;
             color: var(--bodyTextColor);
-            border-bottom: 1px solid #e8e9ec;
         }
 
         .cs-reviewer {
-            font-size: (16/16rem);
-            font-weight: 700;
-            line-height: 1.5em;
-            width: 40%;
-            margin: 0 auto 0 0;
-            color: var(--headerColor);
             display: block;
+            margin: 0 auto 0 0;
+            width: 40%;
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            font-weight: 700;
+            color: var(--headerColor);
         }
 
         .cs-desc {
+            display: block;
             font-size: (14/16rem);
             font-weight: 400;
             color: var(#353535);
-            display: block;
         }
 
         .cs-item-stars {
-            width: (96/16rem);
             height: (16/16rem);
+            width: (96/16rem);
         }
     }
 }
