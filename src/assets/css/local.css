@@ -3,7 +3,7 @@
 <---       Side By Side         -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   #sbs {
     padding: var(--sectionPadding);
   }
@@ -120,7 +120,7 @@
   }
 }
 /* Desktop - 1024px */
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 64rem) {
   #sbs .cs-container {
     flex-flow: row;
     justify-content: space-between;
@@ -135,7 +135,7 @@
   }
 }
 /* Dark Mode */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   body.dark-mode #sbs .cs-left:before,
   body.dark-mode #sbs .cs-left:after {
     background: var(--accent);
@@ -170,7 +170,7 @@
 <---       Side By Side         -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   #sbs-r {
     padding: var(--sectionPadding);
   }
@@ -284,7 +284,7 @@
   }
 }
 /* Desktop - 1024px */
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 64rem) {
   #sbs-r .cs-container {
     flex-flow: row;
     justify-content: space-between;
@@ -301,7 +301,7 @@
   }
 }
 /* Dark Mode */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   body.dark-mode #sbs-r .cs-left:before,
   body.dark-mode #sbs-r .cs-left:after {
     background: var(--accent);
@@ -336,7 +336,7 @@
 <---          Gallery           -->
 <--- -------------------------- -*/
 /* Mobile - 360px - Contains hover animation */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   #gallery {
     position: relative;
     /* Prevents overflow from the image going off screen */
@@ -428,7 +428,7 @@
   }
 }
 /* Dark mode */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   body.dark-mode #gallery .cs-title {
     color: var(--bodyTextColorWhite);
   }
@@ -437,7 +437,7 @@
 <---          Reviews           -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   #reviews {
     padding: var(--sectionPadding);
     /* Centers the button */
@@ -526,7 +526,7 @@
   }
 }
 /* Tablet - 768px */
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: 48rem) {
   #reviews .cs-card-group {
     display: flex;
     justify-content: space-between;
@@ -539,7 +539,7 @@
   }
 }
 /* Dark Mode */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   body.dark-mode #reviews .cs-title,
   body.dark-mode #reviews .cs-text,
   body.dark-mode #reviews .cs-item-p,

@@ -3,7 +3,7 @@
 <---        Core Styles         -->
 <--- -------------------------- -*/
 /* CodeStitch Root and Helpers */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   :root {
     --primary: #ffba19;
     --primaryLight: #ffd675;
@@ -88,7 +88,7 @@
   }
 }
 /* Fonts and general styles */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   body,
   html {
     margin: 0;
@@ -799,7 +799,7 @@
 <---   Interior Page Header     -->
 <--- -------------------------- -*/
 /* Mobile */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   #int-hero {
     z-index: 1;
     position: relative;
@@ -860,7 +860,7 @@
   }
 }
 /* Tablet */
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: 48rem) {
   #int-hero {
     font-size: 100%;
   }
@@ -869,7 +869,7 @@
   }
 }
 /* Small Desktop */
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 64rem) {
   #int-hero {
     background-attachment: fixed;
     min-height: 18.75rem;
@@ -883,7 +883,7 @@
 <---    Final Call To Action    -->
 <--- -------------------------- -*/
 /* Mobile */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   #cta {
     position: relative;
     padding: 3.125rem 0;
@@ -939,7 +939,7 @@
   }
 }
 /* Small Desktop */
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 64rem) {
   #cta {
     padding: 10.5rem 0;
   }
@@ -992,7 +992,7 @@
   }
 }
 /* Dark Mode */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   body.dark-mode #cta:after {
     display: none;
   }
@@ -1001,7 +1001,7 @@
 <---           Footer           -->
 <--- -------------------------- -*/
 /* Mobile */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   #footer {
     background: #1c1c1c;
     padding: 5.25rem 0 1.25rem;
@@ -1133,7 +1133,7 @@
   }
 }
 /* Small Desktop */
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 64rem) {
   #footer {
     font-size: min(1.2vw, 1em);
   }
@@ -1203,7 +1203,7 @@
   }
 }
 /* Dark Mode */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   body.dark-mode #footer {
     background: #061623;
   }

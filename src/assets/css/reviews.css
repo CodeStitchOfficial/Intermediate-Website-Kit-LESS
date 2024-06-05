@@ -3,7 +3,7 @@
 <---           Reviews          -->
 <--- -------------------------- -*/
 /* Mobile */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   #reviews {
     margin: auto;
     padding-top: 7.5rem;
@@ -74,7 +74,7 @@
   }
 }
 /* Tablet */
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: 48rem) {
   #reviews {
     padding-top: 9.375rem;
     padding-bottom: 3.125rem;
@@ -96,7 +96,7 @@
   }
 }
 /* Dark Mode */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   body.dark-mode #reviews .review {
     background: var(--medium);
   }

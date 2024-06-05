@@ -3,7 +3,7 @@
 <---        Core Styles         -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   .blog-container {
     margin: auto;
     max-width: 70em;
@@ -55,7 +55,7 @@
 <---           Header           -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   #header {
     z-index: 1;
     position: relative;
@@ -107,7 +107,7 @@
 <---   Interior Page Header     -->
 <--- -------------------------- -*/
 /* Mobile */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   #int-hero {
     z-index: 1;
     position: relative;
@@ -168,7 +168,7 @@
   }
 }
 /* Tablet */
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: 48rem) {
   #int-hero {
     font-size: 100%;
   }
@@ -177,7 +177,7 @@
   }
 }
 /* Small Desktop */
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 64rem) {
   #int-hero {
     background-attachment: fixed;
     min-height: 18.75rem;
@@ -191,7 +191,7 @@
 <---        Main Content        -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   .blog-container {
     padding: clamp(60px, 7vw, 100px) 0;
   }
@@ -212,7 +212,7 @@
   }
 }
 /* Tablet - 1024px */
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 64rem) {
   .main-content-wrapper {
     flex-direction: row;
     align-items: flex-start;
@@ -223,7 +223,7 @@
 <---    Recent Blog Articles    -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   .recent-articles {
     max-width: 49.6875em;
     width: 100%;
@@ -342,13 +342,13 @@
   }
 }
 /* Mobile - 1024px */
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 64rem) {
   .recent-articles .blog-h1 {
     max-width: 31.25rem;
   }
 }
 /* Dark Mode */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   body.dark-mode .recent-articles .blog-h1,
   body.dark-mode .recent-articles .blog-desc,
   body.dark-mode .recent-articles .blog-author,
@@ -389,7 +389,7 @@
 <---          Sidebar           -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   .blog-sidebar {
     display: flex;
     flex-direction: column;
@@ -481,7 +481,7 @@
   }
 }
 /* Tablet - 1024px */
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 64rem) {
   .blog-sidebar {
     max-width: 22.5em;
   }
@@ -490,7 +490,7 @@
 <---        Blog Articles       -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   .blog-article {
     display: block;
     max-width: 49.6875em;
@@ -628,7 +628,7 @@
 <---           Footer           -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   #cs-footer {
     background-color: #1a1a1a;
     /* 60px - 100px top and bottom */
@@ -765,7 +765,7 @@
   }
 }
 /* Tablet - 768px */
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: 48rem) {
   #cs-footer .cs-logo-group {
     display: flex;
     justify-content: space-between;

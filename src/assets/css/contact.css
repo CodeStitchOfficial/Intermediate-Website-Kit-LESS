@@ -3,7 +3,7 @@
 <---          Contact           -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   :root {
     /* 13px - 16px */
     --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
@@ -193,7 +193,7 @@
   }
 }
 /* Small Desktop - 1024px */
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 64rem) {
   #cs-contact .cs-container {
     display: flex;
     justify-content: flex-end;
@@ -240,7 +240,7 @@
   }
 }
 /* Dark Mode */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   body.dark-mode #cs-contact .cs-text,
   body.dark-mode #cs-contact .cs-title {
     color: var(--bodyTextColorWhite);

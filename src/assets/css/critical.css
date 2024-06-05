@@ -3,7 +3,7 @@
 <---           Hero             -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   #hero {
     z-index: 1;
     position: relative;
@@ -158,7 +158,7 @@
   }
 }
 /* Tablet - 768px */
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: 48rem) {
   #hero {
     /* 32px - 40px */
     padding: 0 clamp(2em, 5vw, 2.5em);
@@ -198,7 +198,7 @@
   }
 }
 /* Dark Mode */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   body.dark-mode #hero .cs-background:before {
     opacity: 0.8;
   }
@@ -207,7 +207,7 @@
 <---          Services          -->
 <--- -------------------------- -*/
 /* Mobile */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   .services {
     z-index: 100;
     position: relative;
@@ -286,7 +286,7 @@
   }
 }
 /* Dark mode */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
   body.dark-mode #services {
     background: var(--medium);
   }

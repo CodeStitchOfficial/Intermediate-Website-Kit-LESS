@@ -5,9 +5,10 @@ const pluginSitemap = require("@quasibit/eleventy-plugin-sitemap");
 
 const configCssExtension = require("./src/config/cssExtension");
 const configSitemap = require("./src/config/sitemap");
-const configServer = require("./src/config/server");
 
 const filterPostDate = require("./src/config/postDate");
+
+const isProduction = process.env.ELEVENTY_ENV === "PROD";
 
 module.exports = function (eleventyConfig) {
     // EXTENSIONS - Recognising non-default languages as templates
@@ -27,14 +28,11 @@ module.exports = function (eleventyConfig) {
 
     // When in production ("npm run build" is ran), minify all HTML, CSS, JSON, XML, XSL and webmanifest files.
     // https://github.com/benjaminrancourt/eleventy-plugin-files-minifier
-    if (configServer.isProduction) {
+    if (isProduction) {
         eleventyConfig.addPlugin(pluginMinifier);
     }
     // END PLUGINS
 
-    // SERVER - Set how the eleventy dev server is run, using the options from https://www.11ty.dev/docs/dev-server/
-    eleventyConfig.setServerOptions(configServer);
-    // END SERVER
 
     // PASSTHROUGHS - "Pass through" source files to /public, without being processed by eleventy
     // Individually specify what asset folders are passed through. LESS is processed by it's compiler into ./src and passed through as a template for minification
