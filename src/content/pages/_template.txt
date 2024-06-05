@@ -7,6 +7,8 @@ eleventyNavigation:
     key: Name to appear in navigation
     order: 1000
     parent: Optional - Put another page's "key" here to create a dropdown
+    hideOnMobile: Optional - set to "true" to hide on devices from, and below, 1023px
+    hideOnDesktop: Optional - set to "true" to hide on devices above, and including, 1024px
 ---
 
 {% extends "layouts/base.html" %}

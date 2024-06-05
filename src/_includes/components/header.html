@@ -30,8 +30,17 @@
                         {# Define a hasChild variable to make it easier to test what navigation items are have child dropdown pages #}
                         {% set hasChild = entry.children.length %}
 
+                        {# Check the frontmatter for hideOnMobile/hideOnDesktop. Form a list of classes to be joined when the item is rendered #}
+                        {% set hideClasses = [] %}
+                        {% if entry.hideOnMobile %}
+                            {% set hideClasses = (hideClasses.push("cs-hide-on-mobile"), hideClasses) %}
+                        {% endif %}
+                        {% if entry.hideOnDesktop %}
+                            {% set hideClasses = (hideClasses.push("cs-hide-on-desktop"), hideClasses) %}
+                        {% endif %}
+
                         {# If this page is a dropdown, give it the appropriate classes, icons and accessibility attributes #}
-                        <li class="cs-li {% if hasChild %} cs-dropdown {% endif %}" {% if hasChild %} tabindex="0"{% endif %}>
+                        <li class="cs-li {% if hasChild %} cs-dropdown {% endif %} {{ hideClasses | join(" ") }}" {% if hasChild %} tabindex="0"{% endif %}>
 
                             {# If the page has child dropdown pages, render it as a <span> tag with the appropriate dropdown HTML #}
                             {% if hasChild %}
