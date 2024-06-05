@@ -624,7 +624,11 @@
                 position: relative;
                 transition: opacity 0.3s;
             }
-            &.cs-active {
+
+            &.cs-active,
+            &:hover,
+            &:focus,
+            &:focus-within {
                 .cs-drop-ul {
                     visibility: visible;
                     opacity: 1;
@@ -689,7 +693,10 @@
     #cs-navigation {
         .cs-dropdown {
             position: relative;
-            &:hover {
+
+            &:hover,
+            &:focus,
+            &:focus-within {
                 cursor: pointer;
                 .cs-drop-ul {
                     visibility: visible;

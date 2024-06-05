@@ -40,7 +40,7 @@
                         {% endif %}
 
                         {# If this page is a dropdown, give it the appropriate classes, icons and accessibility attributes #}
-                        <li class="cs-li {% if hasChild %} cs-dropdown {% endif %} {{ hideClasses | join(" ") }}" {% if hasChild %} tabindex="0"{% endif %}>
+                        <li class="cs-li {% if hasChild %} cs-dropdown {% endif %} {{ hideClasses | join(" ") }}" {% if hasChild %} tabindex="0" aria-expanded="false" {% endif %}>
 
                             {# If the page has child dropdown pages, render it as a <span> tag with the appropriate dropdown HTML #}
                             {% if hasChild %}
