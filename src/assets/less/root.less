@@ -5,7 +5,7 @@
 <--- -------------------------- -*/
 
 /* CodeStitch Root and Helpers */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
     // Website colors
     :root {
         --primary: #ffba19;
@@ -28,57 +28,57 @@
 
     // Text styles - can be replaced using CodeStitch's "Content Flair" Stitches
     .cs-topper {
+        display: block;
+        margin-bottom: 0.25rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
         font-size: var(--topperFontSize);
         line-height: 1.2em;
-        text-transform: uppercase;
-        text-align: inherit;
-        letter-spacing: 0.1em;
         font-weight: 700;
         color: var(--primary);
-        margin-bottom: 0.25rem;
-        display: block;
+        text-align: inherit;
     }
 
     .cs-title {
-        font-size: var(--headerFontSize);
-        font-weight: 900;
-        line-height: 1.2em;
-        text-align: inherit;
-        max-width: 43.75rem;
-        margin: 0 0 1rem 0;
-        color: var(--headerColor);
         position: relative;
+        margin: 0 0 1rem 0;
+        max-width: 43.75rem;
+        font-size: var(--headerFontSize);
+        line-height: 1.2em;
+        font-weight: 900;
+        color: var(--headerColor);
+        text-align: inherit;
     }
 
     .cs-text {
+        margin: 0;
+        max-width: 40.625rem;
+        width: 100%;
         font-size: var(--bodyFontSize);
         line-height: 1.5em;
-        text-align: inherit;
-        width: 100%;
-        max-width: 40.625rem;
-        margin: 0;
         color: var(--bodyTextColor);
+        text-align: inherit;
     }
 
     // Button - can be replaced using CodeStitch's "Button" Stitches
     .cs-button-solid {
-        font-size: (16/16rem);
-        font-weight: bold;
-        line-height: (50/16em);
-        text-align: center;
-        text-transform: uppercase;
-        text-decoration: none;
+        z-index: 1;
+        position: relative;
+        display: inline-block;
+        background-color: var(--primary);
         width: auto;
         padding: 0 (30/16rem);
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: (16/16rem);
+        line-height: (50/16em);
+        font-weight: bold;
 
         // Transition Properties
         color: #000;
-        background-color: var(--primary);
-        display: inline-block;
-        position: relative;
-        z-index: 1;
         transition: color 0.3s;
         transition-delay: 0.1s;
+        text-align: center;
 
         &:hover {
             color: #fff;
@@ -88,70 +88,48 @@
         }
 
         &:before {
-            content: "";
-
-            //Transition properties
-            width: 0;
-            height: 100%;
-            background-color: #000;
-            opacity: 1;
-            display: block;
+            z-index: -1;
             position: absolute;
             top: 0;
             left: 0;
-            z-index: -1;
+            content: "";
+            opacity: 1;
+            display: block;
+            background-color: #000;
+            height: 100%;
+
+            //Transition properties
+            width: 0;
             transition: width 0.3s;
         }
+    }
+
+    .cs-hide-on-mobile {
+        display: none;
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    .cs-hide-on-mobile {
+        display: block;
+    }
+
+    .cs-hide-on-desktop {
+        display: none;
     }
 }
 
 /* Fonts and general styles */
-@media only screen and (min-width: 0em) {
-    // Grab your fonts to locally host from https://google-webfonts-helper.herokuapp.com/fonts
-
-    /* roboto-regular - latin */
-    @font-face {
-        font-style: normal;
-        font-family: "Roboto";
-        font-weight: 400;
-        font-display: swap;
-        src: local(""),
-            url("/assets/fonts/roboto-v29-latin-regular.woff2") format("woff2"),
-            /* Chrome 26+, Opera 23+, Firefox 39+ */
-                url("/assets/fonts/roboto-v29-latin-regular.woff")
-                format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    }
-    /* roboto-700 - latin */
-    @font-face {
-        font-style: normal;
-        font-family: "Roboto";
-        font-weight: 700;
-        font-display: swap;
-        src: local(""),
-            url("/assets/fonts/roboto-v29-latin-700.woff2") format("woff2"),
-            /* Chrome 26+, Opera 23+, Firefox 39+ */
-                url("/assets/fonts/roboto-v29-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    }
-    /* roboto-900 - latin */
-    @font-face {
-        font-style: normal;
-        font-family: "Roboto";
-        font-weight: 900;
-        font-display: swap;
-        src: local(""),
-            url("/assets/fonts/roboto-v29-latin-900.woff2") format("woff2"),
-            /* Chrome 26+, Opera 23+, Firefox 39+ */
-                url("/assets/fonts/roboto-v29-latin-900.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    }
-
+@media only screen and (min-width: 0rem) {
     body,
     html {
+        margin: 0;
+        overflow-x: hidden;
+        padding: 0;
         font-family: "Roboto", Arial, sans-serif;
         font-size: 100%;
-        margin: 0;
-        padding: 0;
         color: var(--bodyTextColor);
-        overflow-x: hidden;
     }
 
     *,
@@ -167,9 +145,9 @@
     }
 
     .container {
-        width: 92%;
-        margin: auto;
         position: relative;
+        margin: auto;
+        width: 92%;
     }
 
     h1,
@@ -185,9 +163,9 @@
     p,
     li,
     a {
+        margin: 0;
         font-size: (16/16rem);
         line-height: 1.5em;
-        margin: 0;
     }
 
     p,
@@ -204,11 +182,40 @@
 
     // Hidden Screen reader skip nav button
     .skip {
-        opacity: 0;
+        z-index: -1111111;
         position: absolute;
         top: 0;
         left: 0;
-        z-index: -1111111;
+        opacity: 0;
+    }
+    // Grab your fonts to locally host from https://google-webfonts-helper.herokuapp.com/fonts
+
+    /* roboto-regular - latin */
+    @font-face {
+        font-style: normal;
+        font-family: "Roboto";
+        font-weight: 400;
+        font-display: swap;
+        src: local(""), url("/assets/fonts/roboto-v29-latin-regular.woff2") format("woff2"),
+            /* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/roboto-v29-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+    /* roboto-700 - latin */
+    @font-face {
+        font-style: normal;
+        font-family: "Roboto";
+        font-weight: 700;
+        font-display: swap;
+        src: local(""), url("/assets/fonts/roboto-v29-latin-700.woff2") format("woff2"),
+            /* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/roboto-v29-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+    /* roboto-900 - latin */
+    @font-face {
+        font-style: normal;
+        font-family: "Roboto";
+        font-weight: 900;
+        font-display: swap;
+        src: local(""), url("/assets/fonts/roboto-v29-latin-900.woff2") format("woff2"),
+            /* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/roboto-v29-latin-900.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
     }
 }
 
@@ -251,27 +258,27 @@
     }
 
     #dark-mode-toggle {
-        width: (48/16rem);
-        height: (48/16rem);
-        padding: 0;
-        background: transparent;
-        border: none;
-        display: block;
+        z-index: 1000;
         position: absolute;
         top: (10/16rem);
         right: (70/16rem);
-        z-index: 1000;
+        display: block;
+        border: none;
+        background: transparent;
+        height: (48/16rem);
+        width: (48/16rem);
         overflow: hidden;
+        padding: 0;
 
         img,
         svg {
-            width: (20/16rem);
-            height: (20/16rem);
             //center image inside button
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            height: (20/16rem);
+            width: (20/16rem);
             pointer-events: none;
         }
 
@@ -284,8 +291,8 @@
         }
 
         .cs-sun {
-            opacity: 0;
             z-index: 1;
+            opacity: 0;
             // Transition property
             transform: translate(-50%, 100%);
             transition: transform 0.3s, opacity 0.3s;
@@ -296,11 +303,11 @@
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
     #dark-mode-toggle {
-        margin: 0;
         position: relative;
         top: auto;
         right: auto;
         transform: none;
+        margin: 0;
 
         &:hover {
             cursor: pointer;
@@ -321,75 +328,40 @@
     }
 
     #cs-navigation {
-        /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
-        font-family: "Roboto", "Arial", sans-serif;
+        z-index: 10000;
+        position: fixed;
+        background-color: #fff;
         width: 100%;
         /* prevents padding from affecting height and width */
         box-sizing: border-box;
         padding: (12/16rem) (16/16rem);
-        background-color: #fff;
+        /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
+        font-family: "Roboto", "Arial", sans-serif;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        position: fixed;
-        z-index: 10000;
-
-        &:before {
-            /* black blurred overlay */
-            content: "";
-            width: 0%;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.6);
-            opacity: 0;
-            display: block;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            z-index: -11;
-            transition: width 0.5s, opacity 0.3s;
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-        }
-
-        &.cs-active {
-            &:before {
-                width: 100%;
-                opacity: 1;
-            }
-
-            .cs-ul-wrapper {
-                opacity: 1;
-                transform: scaleX(1);
-                transition-delay: 0.2s;
-            }
-
-            .cs-li {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
 
         .cs-container {
-            width: 100%;
             display: flex;
             justify-content: flex-end;
             align-items: center;
+            width: 100%;
         }
 
         .cs-logo {
-            width: 40%;
-            max-width: (146/16rem);
-            height: 100%;
-            margin: 0 auto 0 0;
-            /* prevents padding from affecting height and width */
-            box-sizing: border-box;
-            padding: 0;
+            z-index: 10;
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 10;
+            margin: 0 auto 0 0;
+            height: 100%;
+            max-width: (146/16rem);
+            width: 40%;
+            /* prevents padding from affecting height and width */
+            box-sizing: border-box;
+            padding: 0;
 
             img {
-                width: 100%;
                 height: 100%;
+                width: 100%;
                 /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
                 object-fit: contain;
                 /* places the image to the left edge of the parent */
@@ -398,16 +370,16 @@
         }
 
         .cs-toggle {
-            /* 44px - 48px */
-            width: clamp(2.75rem, 6vw, 3rem);
-            height: clamp(2.75rem, 6vw, 3rem);
-            margin: 0 0 0 auto;
-            background-color: transparent;
-            border: none;
-            border-radius: (4/16rem);
             display: flex;
             justify-content: center;
             align-items: center;
+            border: none;
+            border-radius: (4/16rem);
+            margin: 0 0 0 auto;
+            background-color: transparent;
+            height: clamp(2.75rem, 6vw, 3rem);
+            /* 44px - 48px */
+            width: clamp(2.75rem, 6vw, 3rem);
         }
 
         .cs-active {
@@ -423,27 +395,27 @@
             }
 
             .cs-line3 {
-                opacity: 0;
                 bottom: 100%;
+                opacity: 0;
             }
         }
 
         .cs-box {
-            /* 24px - 28px */
-            width: clamp(1.5rem, 2vw, 1.75rem);
+            position: relative;
             /* 14px - 16px */
             height: clamp(0.875rem, 1.5vw, 1rem);
-            position: relative;
+            /* 24px - 28px */
+            width: clamp(1.5rem, 2vw, 1.75rem);
         }
 
         .cs-line {
-            width: 100%;
-            height: 2px;
-            background-color: #1a1a1a;
-            border-radius: 2px;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
+            border-radius: 2px;
+            background-color: #1a1a1a;
+            height: 2px;
+            width: 100%;
         }
 
         .cs-line1 {
@@ -472,46 +444,45 @@
         }
 
         .cs-ul-wrapper {
-            height: 100vh;
-            background-color: #fff;
-            box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
-            opacity: 0;
+            z-index: -1;
             position: absolute;
             top: 100%;
-            right: 0;
             left: auto;
-            z-index: -1;
-            overflow: hidden;
+            right: 0;
+            opacity: 0;
             transform: scaleX(0);
+            background-color: #fff;
+            height: 100vh;
+            overflow: hidden;
             transition: transform 0.4s, opacity 0.3s;
+            box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
             transform-origin: top right;
         }
 
         .cs-ul {
-            width: auto;
-            min-width: 40%;
-            height: 65vh;
-            margin: 0;
-            /* 28px - 40px */
-            padding: (48/16rem) clamp(1.75rem, 3vw, 2.5rem) (32/16rem)
-                (70/16rem);
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-end;
-            gap: (20/16rem);
+            margin: 0;
+            height: 65vh;
+            min-width: 40%;
+            width: auto;
             overflow: scroll;
+            /* 28px - 40px */
+            padding: (48/16rem) clamp(1.75rem, 3vw, 2.5rem) (32/16rem) (70/16rem);
+            gap: (20/16rem);
         }
 
         .cs-li {
-            text-align: right;
-            list-style: none;
-            width: 100%;
-            margin-right: 0;
             opacity: 0;
             /* transition from these values */
             transform: translateX(calc(-40 / 16 * 1rem));
+            margin-right: 0;
+            width: 100%;
+            list-style: none;
             transition: transform 0.6s, opacity 0.9s;
+            text-align: right;
 
             &:nth-of-type(1) {
                 transition-delay: 0.05s;
@@ -543,26 +514,26 @@
         }
 
         .cs-li-link {
+            position: relative;
+            display: inline-block;
+            margin: 0;
+            text-decoration: none;
             /* 16px - 24px */
             font-size: clamp(1rem, 2.5vw, 1.5rem);
             line-height: 1.2em;
-            text-decoration: none;
-            margin: 0;
             color: var(--headerColor);
-            display: inline-block;
-            position: relative;
 
             &:before {
-                /* active state underline */
-                content: "";
-                width: 100%;
-                height: 1px;
-                background: currentColor;
-                opacity: 1;
-                display: none;
                 position: absolute;
                 bottom: calc(-2 / 16 * 1rem);
                 left: 0;
+                /* active state underline */
+                content: "";
+                opacity: 1;
+                display: none;
+                background: currentColor;
+                height: 1px;
+                width: 100%;
             }
 
             &.cs-active {
@@ -574,6 +545,40 @@
 
         .cs-button-solid {
             display: none;
+        }
+
+        &:before {
+            z-index: -11;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            /* black blurred overlay */
+            content: "";
+            opacity: 0;
+            display: block;
+            background: rgba(0, 0, 0, 0.6);
+            height: 100vh;
+            width: 0%;
+            transition: width 0.5s, opacity 0.3s;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+
+        &.cs-active {
+            .cs-ul-wrapper {
+                opacity: 1;
+                transform: scaleX(1);
+                transition-delay: 0.2s;
+            }
+
+            .cs-li {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            &:before {
+                opacity: 1;
+                width: 100%;
+            }
         }
     }
 }
@@ -612,62 +617,65 @@
 @media only screen and (max-width: 63.9375rem) {
     #cs-navigation {
         .cs-dropdown {
-            color: var(--bodyTextColorWhite);
             position: relative;
-            &.cs-active {
+            color: var(--bodyTextColorWhite);
+
+            .cs-li-link {
+                position: relative;
+                transition: opacity 0.3s;
+            }
+
+            &.cs-active,
+            &:hover,
+            &:focus,
+            &:focus-within {
                 .cs-drop-ul {
-                    height: auto;
-                    margin: (12/16rem) 0 0 0;
-                    padding: (24/16rem);
-                    opacity: 1;
                     visibility: visible;
+                    opacity: 1;
                     transform: scale(1);
+                    margin: (12/16rem) 0 0 0;
+                    height: auto;
+                    padding: (24/16rem);
                 }
 
                 .cs-drop-link {
                     opacity: 1;
                 }
             }
-
-            .cs-li-link {
-                position: relative;
-                transition: opacity 0.3s;
-            }
         }
 
         .cs-drop-icon {
-            width: (15/16rem);
-            height: auto;
             position: absolute;
             top: 50%;
             right: calc(-20 / 16 * 1rem);
             transform: translateY(-50%);
+            height: auto;
+            width: (15/16rem);
         }
 
         .cs-drop-ul {
-            width: 100%;
-            height: 0;
-            margin: 0;
-            box-sizing: border-box;
-            padding: 0 (24/16rem) 0 (24/16rem);
-            background-color: var(--primary);
-            opacity: 0;
-            display: flex;
             visibility: hidden;
+            opacity: 0;
+            transform: scale(0);
+            display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-end;
-            gap: (12/16rem);
+            margin: 0;
+            background-color: var(--primary);
+            height: 0;
+            width: 100%;
+            box-sizing: border-box;
             overflow: hidden;
-            transform: scale(0);
-            transition: padding 0.3s, margin 0.3s, height 0.3s, opacity 0.3s,
-                transform 0.3s, visibility 0.3s;
+            padding: 0 (24/16rem) 0 (24/16rem);
+            transition: padding 0.3s, margin 0.3s, height 0.3s, opacity 0.3s, transform 0.3s, visibility 0.3s;
+            gap: (12/16rem);
             transform-origin: top right;
         }
 
         .cs-drop-li {
-            text-align: inherit;
             list-style: none;
+            text-align: inherit;
         }
 
         .cs-li-link {
@@ -685,11 +693,14 @@
     #cs-navigation {
         .cs-dropdown {
             position: relative;
-            &:hover {
+
+            &:hover,
+            &:focus,
+            &:focus-within {
                 cursor: pointer;
                 .cs-drop-ul {
-                    opacity: 1;
                     visibility: visible;
+                    opacity: 1;
                     transform: scaleY(1);
                 }
 
@@ -701,41 +712,41 @@
         }
 
         .cs-drop-icon {
-            width: (15/16rem);
-            height: auto;
             display: inline-block;
+            height: auto;
+            width: (15/16rem);
         }
 
         .cs-drop-ul {
-            min-width: (200/16rem);
-            margin: 0;
-            padding: 0;
-            background-color: #fff;
-            box-shadow: rgba(149, 157, 165, 0.2) 0px 10px 16px;
-            opacity: 0;
-            border-bottom: 5px solid var(--primary);
-            visibility: hidden;
+            z-index: -100;
             /* if you have 8 or more links in your dropdown nav, uncomment the columns property to make the list into 2 even columns. Change it to 3 or 4 if you need extra columns. Then remove the transition delays on the cs-drop-li so they don't have weird scattered animations */
             // columns: 2;
             position: absolute;
             top: 100%;
-            z-index: -100;
-            overflow: hidden;
+            visibility: hidden;
+            opacity: 0;
             transform: scaleY(0);
+            border-bottom: 5px solid var(--primary);
+            margin: 0;
+            background-color: #fff;
+            min-width: (200/16rem);
+            overflow: hidden;
+            padding: 0;
             transition: transform 0.3s, visibility 0.3s, opacity 0.3s;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 10px 16px;
             transform-origin: top;
         }
 
         .cs-drop-li {
-            font-size: (16/16rem);
-            text-decoration: none;
-            list-style: none;
-            width: 100%;
-            height: auto;
-            color: var(--bodyTextColor);
             opacity: 0;
-            display: block;
             transform: translateY(calc(-10 / 16 * 1rem));
+            display: block;
+            height: auto;
+            width: 100%;
+            list-style: none;
+            text-decoration: none;
+            font-size: (16/16rem);
+            color: var(--bodyTextColor);
             transition: opacity 0.6s, transform 0.6s;
 
             &:nth-of-type(1) {
@@ -781,16 +792,16 @@
 
         .cs-li-link {
             &.cs-drop-link {
-                font-size: (16/16rem);
-                line-height: 1.5em;
-                text-decoration: none;
-                white-space: nowrap;
+                display: block;
                 width: 100%;
                 /* prevents padding from affecting height and width */
                 box-sizing: border-box;
                 padding: (12/16rem);
+                white-space: nowrap;
+                text-decoration: none;
+                font-size: (16/16rem);
+                line-height: 1.5em;
                 color: var(--bodyTextColor);
-                display: block;
                 transition: color 0.3s, background-color 0.3s;
 
                 &:hover {
@@ -836,24 +847,24 @@
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
     #cs-navigation {
-        /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
-        font-family: "Roboto", "Arial", sans-serif;
+        z-index: 10000;
+        position: fixed;
+        background-color: #fff;
         width: 100%;
         /* prevents padding from affecting height and width */
         box-sizing: border-box;
         padding: 0 (16/16rem);
-        background-color: #fff;
+        /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
+        font-family: "Roboto", "Arial", sans-serif;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        position: fixed;
-        z-index: 10000;
 
         .cs-container {
-            width: 100%;
-            max-width: (1280/16rem);
-            margin: auto;
             display: flex;
             justify-content: flex-end;
             align-items: center;
+            margin: auto;
+            max-width: (1280/16rem);
+            width: 100%;
             gap: (24/16rem);
         }
 
@@ -862,76 +873,76 @@
         }
 
         .cs-logo {
-            width: 18.4%;
-            max-width: (350/16rem);
-            height: (65/16rem);
-            /* margin-right auto pushes everything away from it to the right */
-            margin: 0 auto 0 0;
-            padding: 0;
+            z-index: 100;
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 100;
+            /* margin-right auto pushes everything away from it to the right */
+            margin: 0 auto 0 0;
+            height: (65/16rem);
+            max-width: (350/16rem);
+            width: 18.4%;
+            padding: 0;
 
             img {
-                width: 100%;
                 height: 100%;
+                width: 100%;
                 /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
                 object-fit: contain;
             }
         }
 
         .cs-ul {
-            width: 100%;
-            margin: 0;
-            padding: 0;
             display: flex;
             justify-content: flex-start;
             align-items: center;
+            margin: 0;
+            width: 100%;
+            padding: 0;
             /* 20px - 36px */
             gap: clamp(1.25rem, 2.6vw, 2.25rem);
         }
 
         .cs-li {
-            list-style: none;
             padding: (32/16rem) 0;
+            list-style: none;
             /* prevent flexbox from squishing it */
             flex: none;
         }
 
         .cs-li-link {
+            position: relative;
+            display: block;
+            margin: 0;
+            text-decoration: none;
             /* 14px - 16px */
             font-size: clamp(0.875rem, 1vw, 1rem);
             line-height: 1.5em;
-            text-decoration: none;
-            margin: 0;
             color: var(--bodyTextColor);
-            display: block;
-            position: relative;
             &:hover {
                 &:before {
                     width: 100%;
                 }
             }
 
+            &:before {
+                position: absolute;
+                bottom: (0/16rem);
+                left: 0;
+                /* active state underline */
+                content: "";
+                opacity: 1;
+                display: block;
+                background: var(--primary);
+                height: 2px;
+                width: 0%;
+                transition: width 0.3s;
+            }
+
             &.cs-active {
                 &:before {
                     width: 100%;
                 }
-            }
-
-            &:before {
-                /* active state underline */
-                content: "";
-                width: 0%;
-                height: 2px;
-                background: var(--primary);
-                opacity: 1;
-                display: block;
-                position: absolute;
-                bottom: (0/16rem);
-                left: 0;
-                transition: width 0.3s;
             }
         }
     }
@@ -966,74 +977,74 @@
 <--- -------------------------- -*/
 
 /* Mobile */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
     #int-hero {
-        min-height: 30vh;
-        padding-top: (50/16rem);
+        z-index: 1;
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        position: relative;
-        z-index: 1;
-
-        &:before {
-            content: "";
-            width: 100%;
-            height: 100%;
-            background: #000;
-            opacity: 0.7;
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
+        min-height: 30vh;
+        padding-top: (50/16rem);
 
         picture {
-            width: 100%;
-            height: 100%;
+            z-index: -2;
             position: absolute;
             top: 0;
             left: 0;
-            z-index: -2;
+            height: 100%;
+            width: 100%;
 
             img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
                 position: absolute;
                 top: 0;
                 left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
             }
         }
 
         h1 {
-            font-size: (64/30rem);
-            text-align: center;
-            width: 96%;
-            max-width: (500/16rem);
+            position: relative;
             margin: 0 auto;
             margin-top: (70/16rem);
             margin-bottom: (30/16rem);
+            max-width: (500/16rem);
+            width: 96%;
+            font-size: (64/30rem);
             color: #fff;
-            position: relative;
+            text-align: center;
         }
 
         p {
-            text-align: center;
-            width: 96%;
-            max-width: (400/16rem);
+            display: block;
             margin: auto;
             margin-bottom: (30/16rem);
+            max-width: (400/16rem);
+            width: 96%;
             color: #fff;
+            text-align: center;
+        }
+
+        &:before {
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "";
+            opacity: 0.7;
             display: block;
+            background: #000;
+            height: 100%;
+            width: 100%;
         }
     }
 }
 
 /* Tablet */
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: 48rem) {
     #int-hero {
         font-size: 100%;
 
@@ -1044,13 +1055,13 @@
 }
 
 /* Small Desktop */
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 64rem) {
     #int-hero {
-        font-size: inherit;
-        height: auto;
-        min-height: (300/16rem);
-        padding-top: (180/16rem);
         background-attachment: fixed;
+        min-height: (300/16rem);
+        height: auto;
+        padding-top: (180/16rem);
+        font-size: inherit;
         padding-block-end: (100/16rem);
     }
 }
@@ -1060,70 +1071,70 @@
 <--- -------------------------- -*/
 
 /* Mobile */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
     #cta {
-        padding: (50/16rem) 0;
         position: relative;
-
-        &:before {
-            content: "";
-            width: 100%;
-            height: 100%;
-            background: #000;
-            opacity: 0.7;
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
+        padding: (50/16rem) 0;
 
         .container {
             text-align: center;
         }
 
         picture {
-            width: 100%;
-            height: 100%;
+            z-index: -2;
             position: absolute;
             top: 0;
             left: 0;
-            z-index: -2;
+            height: 100%;
+            width: 100%;
 
             img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
                 position: absolute;
                 top: 0;
                 left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
             }
         }
 
         .title {
-            font-size: ~"min(9vw, 3rem)";
-            font-weight: 900;
-            line-height: (58/48em);
-            text-align: center;
-            margin-bottom: (36/16rem);
-            color: #fff;
             position: relative;
+            margin-bottom: (36/16rem);
+            font-size: ~"min(9vw, 3rem)";
+            line-height: (58/48em);
+            font-weight: 900;
+            color: #fff;
+            text-align: center;
         }
 
         p {
-            text-align: center;
-            width: 96%;
-            max-width: (598/16rem);
+            opacity: 1;
             margin: auto;
             margin-bottom: (36/16rem);
+            max-width: (598/16rem);
+            width: 96%;
             color: #fff;
-            opacity: 1;
+            text-align: center;
+        }
+
+        &:before {
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "";
+            opacity: 0.7;
+            display: block;
+            background: #000;
+            height: 100%;
+            width: 100%;
         }
     }
 }
 
 /* Small Desktop */
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 64rem) {
     #cta {
         padding: (168/16rem) 0;
     }
@@ -1132,55 +1143,55 @@
 /* Large Desktop */
 @media only screen and (min-width: 1300px) {
     #cta {
-        margin-top: (100/16rem);
         position: relative;
+        margin-top: (100/16rem);
+        .container {
+            margin: auto;
+            width: 90.0625%;
+        }
+
+        picture {
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90.0625%;
+
+            &:before {
+                z-index: 1;
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: "";
+                opacity: 0.7;
+                display: block;
+                background: #000;
+                height: 100%;
+                width: 100%;
+            }
+        }
         &:before {
             display: none;
         }
         &:after {
+            z-index: -3;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
             content: "";
-            width: (2000/16rem);
-            height: (1108/16rem);
+            opacity: 1;
+            transform: translateX(-50%);
+            display: block;
             background: url("/assets/svgs/cta-squares.svg");
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
-            opacity: 1;
-            display: block;
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            z-index: -3;
-            transform: translateX(-50%);
-        }
-        .container {
-            width: 90.0625%;
-            margin: auto;
-        }
-
-        picture {
-            width: 90.0625%;
-            left: 50%;
-            transform: translateX(-50%);
-
-            &:before {
-                content: "";
-                width: 100%;
-                height: 100%;
-                background: #000;
-                opacity: 0.7;
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: 1;
-            }
+            height: (1108/16rem);
+            width: (2000/16rem);
         }
     }
 }
 
 /* Dark Mode */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
     body.dark-mode {
         #cta {
             &:after {
@@ -1195,83 +1206,68 @@
 <--- -------------------------- -*/
 
 /* Mobile */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
     #footer {
-        font-size: ~"min(4vw, 1.2em)";
-        padding: (84/16rem) 0 (20/16rem);
         background: #1c1c1c;
+        padding: (84/16rem) 0 (20/16rem);
+        font-size: ~"min(4vw, 1.2em)";
 
         .left-section {
-            text-align: center;
             margin: auto;
             margin-bottom: (50/16rem);
+            text-align: center;
             .logo {
-                text-align: center;
-                width: auto;
-                height: (32/16em);
+                display: inline-block;
                 margin: auto;
                 margin-bottom: (30/16em);
-                display: inline-block;
+                height: (32/16em);
+                width: auto;
+                text-align: center;
 
                 img {
-                    width: auto;
-                    height: 100%;
                     display: block;
+                    height: 100%;
+                    width: auto;
                 }
             }
 
             p {
+                opacity: 0.9;
+                margin: auto;
+                width: 100%;
                 font-size: (14/16rem);
                 line-height: (27/14rem);
-                text-align: center;
-                width: 100%;
-                width: (307/14rem);
-                margin: auto;
                 color: #fff;
-                opacity: 0.9;
+                text-align: center;
             }
         }
 
         .right-section {
-            width: 96%;
-            max-width: (407/16rem);
             margin: auto;
+            max-width: (407/16rem);
+            width: 96%;
             .lists {
-                width: 96%;
-                max-width: (307/16rem);
-                margin: auto;
                 display: flex;
-                justify-content: space-between;
                 flex-wrap: wrap;
+                justify-content: space-between;
+                margin: auto;
+                max-width: (307/16rem);
+                width: 96%;
                 ul {
                     margin-top: 0;
                     margin-bottom: 0;
                     padding: 0;
 
-                    &:nth-of-type(3) {
-                        margin-top: (50/16rem);
-                        li {
-                            margin-bottom: (16/16rem);
-                            display: flex;
-                            justify-content: flex-start;
-                            align-items: center;
-
-                            &:last-of-type {
-                                margin-bottom: 0;
-                            }
-                        }
-                    }
-
                     li {
-                        font-size: (18/16rem);
-                        list-style: none;
-                        margin-bottom: (12/16rem);
-                        color: #fff;
                         opacity: 0.9;
+                        margin-bottom: (12/16rem);
+                        list-style: none;
+                        font-size: (18/16rem);
+                        color: #fff;
 
                         a {
-                            line-height: (21/18em);
                             text-decoration: none;
+                            line-height: (21/18em);
                             color: #fff;
                             transition: color 0.3s;
                             &:hover {
@@ -1280,24 +1276,38 @@
                         }
                     }
                     h2 {
-                        font-size: (18/16rem);
-                        font-weight: bold;
-                        line-height: (21/18em);
-                        text-transform: uppercase;
-                        margin-bottom: (37/16rem);
-                        color: #fff;
                         position: relative;
+                        margin-bottom: (37/16rem);
+                        text-transform: uppercase;
+                        font-size: (18/16rem);
+                        line-height: (21/18em);
+                        font-weight: bold;
+                        color: #fff;
 
                         &:before {
-                            content: "";
-                            width: (97/16rem);
-                            height: (2/16rem);
-                            background: var(--primary);
-                            opacity: 1;
-                            display: block;
                             position: absolute;
                             bottom: calc(-16 / 16 * 1rem);
                             left: 0;
+                            content: "";
+                            opacity: 1;
+                            display: block;
+                            background: var(--primary);
+                            height: (2/16rem);
+                            width: (97/16rem);
+                        }
+                    }
+
+                    &:nth-of-type(3) {
+                        margin-top: (50/16rem);
+                        li {
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            margin-bottom: (16/16rem);
+
+                            &:last-of-type {
+                                margin-bottom: 0;
+                            }
                         }
                     }
                 }
@@ -1309,25 +1319,25 @@
             }
 
             .cs-button-solid {
-                width: (250/16rem);
-                height: (53/16rem);
                 margin: 0;
+                height: (53/16rem);
+                width: (250/16rem);
                 padding-top: (3/16rem);
             }
         }
 
         .credit {
-            font-size: (16/16rem);
-            line-height: (36/16rem);
-            text-align: center;
-            width: 96%;
             margin: auto;
             margin-top: (100/16rem);
+            width: 96%;
+            font-size: (16/16rem);
+            line-height: (36/16rem);
             color: #fff;
+            text-align: center;
 
             a {
-                font-size: (16/16rem);
                 text-decoration: none;
+                font-size: (16/16rem);
                 color: var(--primary);
 
                 &:hover {
@@ -1336,78 +1346,70 @@
             }
 
             .copyright {
-                font-size: (16/16rem);
                 display: block;
+                font-size: (16/16rem);
             }
         }
     }
 }
 
 /* Small Desktop */
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 64rem) {
     #footer {
         font-size: ~"min(1.2vw, 1em)";
         .container {
-            width: 96%;
-            max-width: (1320/16rem);
-            margin: auto;
-            padding: 0;
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
             flex-wrap: nowrap;
+            justify-content: space-between;
+            margin: auto;
+            max-width: (1320/16rem);
+            width: 96%;
+            padding: 0;
         }
 
         .left-section {
-            text-align: left;
-            width: (409/16rem);
             margin: 0;
+            width: (409/16rem);
+            text-align: left;
 
             .logo {
-                text-align: left;
-                height: (40/16rem);
                 margin-left: 0;
+                height: (40/16rem);
+                text-align: left;
             }
 
             p {
-                text-align: left;
                 margin-left: 0;
+                text-align: left;
             }
         }
 
         .right-section {
-            width: (609/16rem);
-            max-width: none;
             margin: 0;
+            max-width: none;
+            width: (609/16rem);
+
             .lists {
-                width: 96%;
-                max-width: (769/16rem);
-                max-width: initial;
                 margin: 0;
+                max-width: (769/16rem);
+                width: 96%;
 
                 ul {
-                    &:nth-of-type(3) {
-                        margin-top: 0;
-
-                        li:first-of-type {
-                            margin-bottom: 0;
-                        }
-                    }
-
                     li {
                         a {
                             position: relative;
 
                             &:before {
-                                content: "";
-                                width: 0%;
-                                height: (2/16rem);
-                                background: var(--primary);
-                                opacity: 1;
-                                display: block;
                                 position: absolute;
                                 bottom: calc(-3 / 16 * 1rem);
                                 left: 0;
+                                content: "";
+                                opacity: 1;
+                                display: block;
+                                background: var(--primary);
+                                height: (2/16rem);
+                                width: 0%;
                                 transition: width 0.3s;
                             }
 
@@ -1416,6 +1418,13 @@
                                     width: 100%;
                                 }
                             }
+                        }
+                    }
+                    &:nth-of-type(3) {
+                        margin-top: 0;
+
+                        li:first-of-type {
+                            margin-bottom: 0;
                         }
                     }
                 }
@@ -1435,7 +1444,7 @@
 }
 
 /* Dark Mode */
-@media only screen and (min-width: 0em) {
+@media only screen and (min-width: 0rem) {
     body.dark-mode {
         #footer {
             background: #061623;
