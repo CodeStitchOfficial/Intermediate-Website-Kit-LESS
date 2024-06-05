@@ -1,12 +1,3 @@
----
-preloadCSS: '/assets/css/blog.css'
-eleventyComputed:
-    title: '{{ title }}'
-    description: '{{ description }}'
-    preloadImg: '{{ image }}'
-    permalink: '/blog/{{ title | slug }}/index.html'
----
-
 {% extends "layouts/base.html" %}
 
 {% block head %}
