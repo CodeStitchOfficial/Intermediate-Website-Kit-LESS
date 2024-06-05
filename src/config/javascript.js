@@ -1,6 +1,7 @@
 const esbuild = require("esbuild");
 const fs = require("node:fs");
-const isProduction = process.env.ELEVENTY_ENV === "PROD";
+const server = require("../config/server");
+const isProduction = server.isProduction;
 
 module.exports = {
     // All .js files will be recognised as a language. The contents of these files will be processed as per the compile method

@@ -1,15 +1,18 @@
-// imports
+// Imports
 const pluginEleventyNavigation = require("@11ty/eleventy-navigation");
 const pluginMinifier = require("@sherby/eleventy-plugin-files-minifier");
 const pluginSitemap = require("@quasibit/eleventy-plugin-sitemap");
 
+// Configs
 const configCss = require("./src/config/css");
 const configJs = require("./src/config/javascript");
 const configSitemap = require("./src/config/sitemap");
+const configServer = require("./src/config/server");
 
+// Other
 const filterPostDate = require("./src/config/postDate");
+const isProduction = configServer.isProduction;
 
-const isProduction = process.env.ELEVENTY_ENV === "PROD";
 
 module.exports = function (eleventyConfig) {
     /**=====================================================================
@@ -106,6 +109,14 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
     /**=====================================================================
                                 END SHORTCODES
+    =======================================================================*/
+
+    /**=====================================================================
+                                SERVER SETTINGS
+    =======================================================================*/
+    eleventyConfig.setServerOptions(configServer);
+    /**=====================================================================
+                              END SERVER SETTINGS
     =======================================================================*/
 
     return {
