@@ -334,7 +334,7 @@
         width: 100%;
         /* prevents padding from affecting height and width */
         box-sizing: border-box;
-        padding: (12/16rem) (16/16rem);
+        padding: (12/16rem) calc(16 / 16 * 1rem);
         /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
         font-family: "Roboto", "Arial", sans-serif;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -470,7 +470,7 @@
             width: auto;
             overflow: scroll;
             /* 28px - 40px */
-            padding: (48/16rem) clamp(1.75rem, 3vw, 2.5rem) (32/16rem) (70/16rem);
+            padding: (48/16rem) clamp(1.75rem, 3vw, 2.5rem) calc(32 / 16 * 1rem) calc(70 / 16 * 1rem);
             gap: (20/16rem);
         }
 
@@ -625,8 +625,7 @@
                 transition: opacity 0.3s;
             }
 
-            &.cs-active,
-            &:hover {
+            &.cs-active {
                 .cs-drop-ul {
                     visibility: visible;
                     opacity: 1;
@@ -640,6 +639,15 @@
                     opacity: 1;
                 }
             }
+        }
+
+        .cs-dropdown-button {
+            border: none;
+            background-color: transparent;
+            font-family: inherit;
+            font-size: inherit;
+            cursor: pointer;
+            appearance: none;
         }
 
         .cs-drop-icon {
@@ -665,7 +673,7 @@
             width: 100%;
             box-sizing: border-box;
             overflow: hidden;
-            padding: 0 (24/16rem) 0 (24/16rem);
+            padding: 0 (24/16rem) 0 calc(24 / 16 * 1rem);
             transition: padding 0.3s, margin 0.3s, height 0.3s, opacity 0.3s, transform 0.3s, visibility 0.3s;
             gap: (12/16rem);
             transform-origin: top right;
@@ -695,6 +703,7 @@
             &.cs-active,
             &:hover {
                 cursor: pointer;
+
                 .cs-drop-ul {
                     visibility: visible;
                     opacity: 1;
@@ -706,6 +715,15 @@
                     transform: translateY(0);
                 }
             }
+        }
+
+        .cs-dropdown-button {
+            border: none;
+            background-color: transparent;
+            font-family: inherit;
+            font-size: inherit;
+            cursor: pointer;
+            appearance: none;
         }
 
         .cs-drop-icon {
@@ -803,6 +821,11 @@
 
                 &:hover {
                     background-color: #f7f7f7;
+                }
+
+                &:focus-visible {
+                    outline: 2px solid currentColor;
+                    outline-offset: -4px;
                 }
 
                 &:before {
@@ -1206,7 +1229,7 @@
 @media only screen and (min-width: 0rem) {
     #footer {
         background: #1c1c1c;
-        padding: (84/16rem) 0 (20/16rem);
+        padding: (84/16rem) 0 calc(20 / 16 * 1rem);
         font-size: ~"min(4vw, 1.2em)";
 
         .left-section {
