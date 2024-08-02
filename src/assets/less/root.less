@@ -8,6 +8,7 @@
 @media only screen and (min-width: 0rem) {
     // Website colors
     :root {
+        --background-color: #002ed2;
         --primary: #ffba19;
         --primaryLight: #ffd675;
         --secondary: #001f3f;
@@ -39,68 +40,63 @@
         text-align: inherit;
     }
 
-    .cs-title {
-        position: relative;
-        margin: 0 0 1rem 0;
-        max-width: 43.75rem;
-        font-size: var(--headerFontSize);
-        line-height: 1.2em;
-        font-weight: 900;
-        color: var(--headerColor);
-        text-align: inherit;
-    }
-
-    .cs-text {
-        margin: 0;
-        max-width: 40.625rem;
-        width: 100%;
-        font-size: var(--bodyFontSize);
-        line-height: 1.5em;
-        color: var(--bodyTextColor);
-        text-align: inherit;
-    }
-
-    // Button - can be replaced using CodeStitch's "Button" Stitches
-    .cs-button-solid {
-        z-index: 1;
-        position: relative;
-        display: inline-block;
-        background-color: var(--primary);
-        width: auto;
-        padding: 0 (30/16rem);
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: (16/16rem);
-        line-height: (50/16em);
-        font-weight: bold;
-
-        // Transition Properties
-        color: #000;
-        transition: color 0.3s;
-        transition-delay: 0.1s;
-        text-align: center;
-
-        &:hover {
+     .cs-title {
+            /* 39px - 61px */
+            font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
+            font-weight: 700;
+            line-height: 1.2em;
+            text-align: inherit;
+            max-width: (829/16rem);
+            margin: 0 auto (16/16rem) 0;
             color: #fff;
-            &:before {
-                width: 100%;
-            }
+            position: relative;
         }
 
-        &:before {
-            z-index: -1;
-            position: absolute;
-            top: 0;
-            left: 0;
-            content: "";
-            opacity: 1;
-            display: block;
-            background-color: #000;
-            height: 100%;
+        .cs-text {
+            /* 16px - 20px */
+            font-size: clamp(1rem, 1.95vw, 1.25rem);
+            line-height: 1.5em;
+            text-align: inherit;
+            width: 100%;
+            /* 464px - 622px */
+            max-width: clamp(29rem, 60vw, 38.785rem);
+            margin: 0 0 (40/16rem) 0;
+            color: #fff;
+        }
 
-            //Transition properties
-            width: 0;
-            transition: width 0.3s;
+        .cs-button-solid {
+            font-size: (16/16rem);
+            /* 46px - 56px */
+            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            text-decoration: none;
+            font-weight: 700;
+            margin: 0;
+            color: #fff;
+            padding: 0 (24/16rem);
+            background-color: var(--primary);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+
+            &:before {
+                content: "";
+                position: absolute;
+                display: block;
+                height: 100%;
+                width: 0%;
+                background: #000;
+                opacity: 1;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                transition: width 0.3s;
+            }
+
+            &:hover {
+                &:before {
+                    width: 100%;
+                }
+            }
         }
     }
 
@@ -127,10 +123,10 @@
         margin: 0;
         overflow-x: hidden;
         padding: 0;
-        font-family: "Roboto", Arial, sans-serif;
+        font-family: "Oswald", Arial, sans-serif;
         font-size: 100%;
         color: var(--bodyTextColor);
-    }
+    }    
 
     *,
     *:before,
@@ -190,34 +186,23 @@
     }
     // Grab your fonts to locally host from https://google-webfonts-helper.herokuapp.com/fonts
 
-    /* roboto-regular - latin */
+    /* oswald-regular - latin */
     @font-face {
+        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+        font-family: 'Oswald';
         font-style: normal;
-        font-family: "Roboto";
         font-weight: 400;
-        font-display: swap;
-        src: local(""), url("/assets/fonts/roboto-v29-latin-regular.woff2") format("woff2"),
-            /* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/roboto-v29-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    }
-    /* roboto-700 - latin */
-    @font-face {
+        src: url('../fonts/oswald-v53-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      }
+      /* oswald-700 - latin */
+      @font-face {
+        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+        font-family: 'Oswald';
         font-style: normal;
-        font-family: "Roboto";
         font-weight: 700;
-        font-display: swap;
-        src: local(""), url("/assets/fonts/roboto-v29-latin-700.woff2") format("woff2"),
-            /* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/roboto-v29-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    }
-    /* roboto-900 - latin */
-    @font-face {
-        font-style: normal;
-        font-family: "Roboto";
-        font-weight: 900;
-        font-display: swap;
-        src: local(""), url("/assets/fonts/roboto-v29-latin-900.woff2") format("woff2"),
-            /* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/roboto-v29-latin-900.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    }
-}
+        src: url('../fonts/oswald-v53-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      }
+
 
 /* Reset Margins */
 @media only screen and (min-width: 1024px) {
@@ -335,8 +320,6 @@
         /* prevents padding from affecting height and width */
         box-sizing: border-box;
         padding: (12/16rem) calc(16 / 16 * 1rem);
-        /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
-        font-family: "Roboto", "Arial", sans-serif;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
         .cs-container {
@@ -876,8 +859,7 @@
         /* prevents padding from affecting height and width */
         box-sizing: border-box;
         padding: 0 (16/16rem);
-        /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
-        font-family: "Roboto", "Arial", sans-serif;
+
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
         .cs-container {
