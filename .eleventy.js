@@ -1,6 +1,7 @@
 // Imports
 const pluginEleventyNavigation = require("@11ty/eleventy-navigation");
-const pluginMinifier = require("@sherby/eleventy-plugin-files-minifier");
+const eleventyPluginSharpImages = require("@codestitchofficial/eleventy-plugin-sharp-images");
+const pluginMinifier = require("@codestitchofficial/eleventy-plugin-minify");
 const pluginSitemap = require("@quasibit/eleventy-plugin-sitemap");
 
 // Configs
@@ -43,6 +44,10 @@ module.exports = function (eleventyConfig) {
     =======================================================================*/
     /** https://www.11ty.dev/docs/plugins/ */
 
+    eleventyConfig.addPlugin(eleventyPluginSharpImages, {
+        urlPath: "/assets/images",
+        outputDir: "public/assets/images",
+    });
     /**
      *  ELEVENTY NAVIGATION
      *  Sets up the eleventy navigation plugin for a scalable navigation as used in _includes/components/header.html
