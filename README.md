@@ -22,33 +22,33 @@
 
 ## Table of Contents
 
--   <a href="#overview">Overview</a>
--   <a href="#prerequisites">Prerequisites</a>
-    -   <a href="#must-knows">Must Knows</a>
-    -   <a href="#good-to-knows">Good-to-knows</a>
--   <a href="#quick-start-guide">Quick Start Guide</a>
--   <a href="#explanation-of-file-structure">Explanation of File Structure</a>
-    -   <a href="#root-files">Root Files</a>
-        -   <a href="#eleventyjs">.eleventy.js</a>
-        -   <a href="#netlifytoml">netlify.toml</a>
-        -   <a href="#packagejson-and-package-lockjson">package.json and package-lock.json</a>
-    -   <a href="#nodemodules">node_modules/</a>
-    -   <a href="#public">public/</a>
-    -   <a href="#src">src/</a>
-        -   <a href="#_data">\_data/</a>
-        -   <a href="#_includes">\_includes</a>
-            -   <a href="#nav-auto">Navigations \- Rendering Automatically</a>
-            -   <a href="#nav-manual">Navigations \- Rendering Manually</a>
-    -   <a href="#admin">admin/</a>
-    -   <a href="#assets">assets/</a>
-    -   <a href="#config">config/</a>
-    -   <a href="#content">content/</a>
-    -   <a href="#root-src-files">Root src/ Files</a>
-        -   <a href="#redirects">\_redirects</a>
-        -   <a href="#indexhtml">index.html</a>
-        -   <a href="#robotshtml">robots.html</a>
-        -   <a href="#sitemaphtml">sitemap.html</a>
--   <a href="#deployment">Deployment</a>
+- <a href="#overview">Overview</a>
+- <a href="#prerequisites">Prerequisites</a>
+  - <a href="#must-knows">Must Knows</a>
+  - <a href="#good-to-knows">Good-to-knows</a>
+- <a href="#quick-start-guide">Quick Start Guide</a>
+- <a href="#explanation-of-file-structure">Explanation of File Structure</a>
+  - <a href="#root-files">Root Files</a>
+    - <a href="#eleventyjs">.eleventy.js</a>
+    - <a href="#netlifytoml">netlify.toml</a>
+    - <a href="#packagejson-and-package-lockjson">package.json and package-lock.json</a>
+  - <a href="#nodemodules">node_modules/</a>
+  - <a href="#public">public/</a>
+  - <a href="#src">src/</a>
+    - <a href="#_data">\_data/</a>
+    - <a href="#_includes">\_includes</a>
+      - <a href="#nav-auto">Navigations \- Rendering Automatically</a>
+      - <a href="#nav-manual">Navigations \- Rendering Manually</a>
+  - <a href="#admin">admin/</a>
+  - <a href="#assets">assets/</a>
+  - <a href="#config">config/</a>
+  - <a href="#content">content/</a>
+  - <a href="#root-src-files">Root src/ Files</a>
+    - <a href="#redirects">\_redirects</a>
+    - <a href="#indexhtml">index.html</a>
+    - <a href="#robotshtml">robots.html</a>
+    - <a href="#sitemaphtml">sitemap.html</a>
+- <a href="#deployment">Deployment</a>
 
 <a name="overview"></a>
 
@@ -68,10 +68,10 @@ An example website is also provided, with easy substitution of website sections 
 
 _Knowledge requirements before using the kit_
 
--   HTML/CSS
--   Beginner-level JS
--   Familiarity with working in a NodeJS-powered project (handling dependencies with npm, source vs built files, etc)
--   Familiarity with templating languages (this kit uses Nunjucks)
+- HTML/CSS
+- Beginner-level JS
+- Familiarity with working in a NodeJS-powered project (handling dependencies with npm, source vs built files, etc)
+- Familiarity with templating languages (this kit uses Nunjucks)
 
 <a name="good-to-knows"></a>
 
@@ -79,14 +79,14 @@ _Knowledge requirements before using the kit_
 
 _Not required for light-medium kit usage, but helpful if you want to customise the kit beyond base functionality_
 
--   Nunjucks ([Docs found here](https://mozilla.github.io/nunjucks/))
-    -   If you've never used Nunjucks before, [this excellent article by Hyunbin](https://hyunbinseo.medium.com/nunjucks-settings-for-vs-code-a0da0dc66b95) explains how to set up VSCode to best support Nunjucks, including formatting, syntax highlighting and Emmet.
--   Eleventy ([Docs found here](https://www.11ty.dev/docs/)). Key topics include:
-    -   [The Data Cascade](https://www.11ty.dev/docs/data-cascade/)
-    -   [Layouts](https://www.11ty.dev/docs/layouts/)
-    -   [Permalinks](https://www.11ty.dev/docs/permalinks/)
-    -   [Passthroughs](https://www.11ty.dev/docs/copy/)
--   Decap CMS ([Docs found here](https://decapcms.org/docs/intro/))
+- Nunjucks ([Docs found here](https://mozilla.github.io/nunjucks/))
+  - If you've never used Nunjucks before, [this excellent article by Hyunbin](https://hyunbinseo.medium.com/nunjucks-settings-for-vs-code-a0da0dc66b95) explains how to set up VSCode to best support Nunjucks, including formatting, syntax highlighting and Emmet.
+- Eleventy ([Docs found here](https://www.11ty.dev/docs/)). Key topics include:
+  - [The Data Cascade](https://www.11ty.dev/docs/data-cascade/)
+  - [Layouts](https://www.11ty.dev/docs/layouts/)
+  - [Permalinks](https://www.11ty.dev/docs/permalinks/)
+  - [Passthroughs](https://www.11ty.dev/docs/copy/)
+- Decap CMS ([Docs found here](https://decapcms.org/docs/intro/))
 
 <a name="quick-start-guide"></a>
 
@@ -152,14 +152,14 @@ The heart of the kit, the `.eleventy.js` file configures the Eleventy static sit
 
 The `.eleventy.js` file is well-documented, with all necessary extra documentation provided for extra reading if desired. A full list of functionalities added via `.eleventy.js` is given below:
 
--   Sets up CSS and JS as template languages, allowing modification at build time by Eleventy. JS is bundled and minified by esbuild.
--   Adds the following plugins:
-    -   [Eleventy Navigation](https://github.com/11ty/eleventy-navigation) - Allows the option to define navigation data within the template front matter.
-    -   [Eleventy Sitemap](https://www.npmjs.com/package/@quasibit/eleventy-plugin-sitemap) - Automatically generates a sitemap from all files in `./src/content`.
-    -   [Eleventy Minification](https://github.com/benjaminrancourt/eleventy-plugin-files-minifier) - Minifies HTML and CSS (only run in production - when `npm run build` is executed).
--   Passes through all assets (in `./src/assets`) without modification by Eleventy.
--   Adds date formatting filters and a year shortcode.
--   Sets some basic server options.
+- Sets up CSS and JS as template languages, allowing modification at build time by Eleventy. JS is bundled and minified by esbuild.
+- Adds the following plugins:
+  - [Eleventy Navigation](https://github.com/11ty/eleventy-navigation) - Allows the option to define navigation data within the template front matter.
+  - [Eleventy Sitemap](https://www.npmjs.com/package/@quasibit/eleventy-plugin-sitemap) - Automatically generates a sitemap from all files in `./src/content`.
+  - [Eleventy Minification](https://github.com/benjaminrancourt/eleventy-plugin-files-minifier) - Minifies HTML and CSS (only run in production - when `npm run build` is executed).
+- Passes through all assets (in `./src/assets`) without modification by Eleventy.
+- Adds date formatting filters and a year shortcode.
+- Sets some basic server options.
 
 <a name="netlifytoml"></a>
 
@@ -257,9 +257,31 @@ Note the if-check in the `class` attribute of the anchor element. Here, we're ch
 
 The `admin/` directory sets up [Decap CMS](https://decapcms.org/) to be used within the project. It's configured as a blog that a client can access by navigating to the `/admin/` path on the deployed site, where they can create, update, and delete blog posts whenever they want. This modifies the markdown files in the source code, which will trigger a rebuild in Netlify, incorporating the new blog data. After about one minute, the client can see the new blog post on the website.
 
-Decap CMS has been chosen due to its open-source nature, good UX/DX, and stability. Very little training is required on the client's end to get it to work - the interface is clean and operates without trouble. It works through an `index.html` file in the `admin/`. This `index.html` file is processed as an Eleventy template, added to `/public/admin`, and the CMS is loaded when navigating to the `/admin` path. This kit uses DecapBridge for authentication as the Netlify Identity feature has been deprecated. Visit [Decapbridge Discord]((https://discord.com/channels/1257728522361901219/1257728681380417600)) and their [open-sources repos](https://github.com/decapbridge) for more information and support.
+Decap CMS has been chosen due to its open-source nature, good UX/DX, and stability. Very little training is required on the client's end to get it to work - the interface is clean and operates without trouble. It works through an `index.html` file in the `admin/`. This `index.html` file is processed as an Eleventy template, added to `/public/admin`, and the CMS is loaded when navigating to the `/admin` path. This kit uses DecapBridge for authentication as the Netlify Identity feature has been deprecated. Visit [Decapbridge Discord](<(https://discord.com/channels/1257728522361901219/1257728681380417600)>) and their [open-sources repos](https://github.com/decapbridge) for more information and support.
 
 The CMS is configured through a `config.yml` file, as per the Decap documentation. If you wish to use the blog as-is, you shouldn't need to make any changes here. If you want to extend the kit and modify the CMS for your own needs, we recommend referring to the Decap documentation for guidance on how to do so.
+
+Styling the Decap preview pane
+This template includes custom styles for the Decap CMS preview pane, so that blog posts in the admin dashboard look similar to the live site.
+
+1. How it works:
+
+The preview styles are defined in /admin/decap-preview-styles.css.
+The CMS preview script in /admin/index.html:
+
+- pulls the props from the collection
+- creates the DOM elements
+- registers these elements and styles for the preview panel to use
+
+2. How to update or customize:
+
+Edit /admin/decap-preview-styles.css and the preview pane script in /admin/index.html to match your site's branding or layout changes.
+Use Decap's documentation on [customizing the preview pane](https://decapcms.org/docs/customization/)
+
+3.Notes
+
+- The style sheet must be a CSS file
+- The style sheet does not support nested CSS.
 
 <a name="assets"></a>
 
@@ -267,13 +289,13 @@ The CMS is configured through a `config.yml` file, as per the Decap documentatio
 
 All other non-content files are stored in `assets/`, which is set up in `.eleventy.js` to be passed through to `public/`. A brief overview of each of the folders within `assets/`, and any relevant notes, is provided below:
 
--   `css/` - SASS/LESS files from the `less/` or `sass/` directories are built into `css/`. From here, the CSS is processed as an Eleventy template, where we minify the code (production only), and pass it through to `public/`. **Do not** make CSS changes here - instead, use the SASS or LESS asset directory (depending on which kit you're using).
--   `favicons/` - Any favicon files can be stored here. We recommend using [this tool](https://realfavicongenerator.net/) to generate favicons for all devices.
--   `fonts/` - If you have any non-standard fonts you wish to locally host, you can put the files here. You can use [this tool](https://gwfh.mranftl.com/fonts) to download font files to be stored in `fonts/`, as well as generate the code to be put in your `root.scss` or `root.less` file.
--   `images/` - Any images can go here. No processing will occur.
--   `js/` - Put any JavaScript in this directory. It will be processed, bundled, and minified by esbuild.
--   `sass/` or `less/` - Depending on whether you're using the SASS or LESS version of the kit, you'll find your preprocessor files in one of these directories. Make your changes to styling here, not in `assets/css`
--   `svgs/` - A separate directory for SVGs. This makes it easier to bulk-compress SVGs separate from `images/` if you're using a tool like [compressor.io](https://compressor.io/).
+- `css/` - SASS/LESS files from the `less/` or `sass/` directories are built into `css/`. From here, the CSS is processed as an Eleventy template, where we minify the code (production only), and pass it through to `public/`. **Do not** make CSS changes here - instead, use the SASS or LESS asset directory (depending on which kit you're using).
+- `favicons/` - Any favicon files can be stored here. We recommend using [this tool](https://realfavicongenerator.net/) to generate favicons for all devices.
+- `fonts/` - If you have any non-standard fonts you wish to locally host, you can put the files here. You can use [this tool](https://gwfh.mranftl.com/fonts) to download font files to be stored in `fonts/`, as well as generate the code to be put in your `root.scss` or `root.less` file.
+- `images/` - Any images can go here. No processing will occur.
+- `js/` - Put any JavaScript in this directory. It will be processed, bundled, and minified by esbuild.
+- `sass/` or `less/` - Depending on whether you're using the SASS or LESS version of the kit, you'll find your preprocessor files in one of these directories. Make your changes to styling here, not in `assets/css`
+- `svgs/` - A separate directory for SVGs. This makes it easier to bulk-compress SVGs separate from `images/` if you're using a tool like [compressor.io](https://compressor.io/).
 
 <a name="config"></a>
 
@@ -444,5 +466,6 @@ logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 # Add site links in DecapCMS (optional)
 site_url: https://testing-decapbridge.netlify.app
 ```
+
 2. Push changes to the repo and test the authentication system. As the admin of the site, your login credentials to access the Decap dashboard are the same as your decapbridge.com credentials.
 3. Invite your client from your decapbridge dashboard. This will create a decapbridge collaborator account for them. From there, they will be able to access their Decap dashboard, reset their password etc.
