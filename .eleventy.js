@@ -6,14 +6,12 @@ const pluginSitemap = require("@quasibit/eleventy-plugin-sitemap");
 
 // Configs
 const configCss = require("./src/config/css");
-const configJs = require("./src/config/javascript");
+const javascript = require("./src/config/javascript");
 const configSitemap = require("./src/config/sitemap");
-const configServer = require("./src/config/server");
 
 // Other
 const filterPostDate = require("./src/config/postDate");
-const isProduction = configServer.isProduction;
-
+const isProduction = process.env.ELEVENTY_ENV === "PROD";
 
 module.exports = function (eleventyConfig) {
     /**=====================================================================
@@ -32,12 +30,10 @@ module.exports = function (eleventyConfig) {
      *  JS EXTENSION
      *  Sets up JS files as an eleventy template language, which are compiled by esbuild. Allows bundling and minification of JS
      */
-    eleventyConfig.addTemplateFormats("js");
-    eleventyConfig.addExtension("js", configJs);
+    eleventyConfig.on("eleventy.after", javascript);
     /**=====================================================================
                                 END EXTENSIONS
     =======================================================================*/
-
 
     /**=====================================================================
                   PLUGINS - Adds additional eleventy functionality 
@@ -56,14 +52,14 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(pluginEleventyNavigation);
 
     /**
-     *  AUTOMATIC SITEMAP GENERATION 
+     *  AUTOMATIC SITEMAP GENERATION
      *  Automatically generate a sitemap, using the domain in _data/client.json
      *  https://www.npmjs.com/package/@quasibit/eleventy-plugin-sitemap
      */
     eleventyConfig.addPlugin(pluginSitemap, configSitemap);
 
     /**
-     *  MINIFIER 
+     *  MINIFIER
      *  When in production ("npm run build" is ran), minify all HTML, CSS, JSON, XML, XSL and webmanifest files.
      *  https://github.com/benjaminrancourt/eleventy-plugin-files-minifier
      */
@@ -74,18 +70,12 @@ module.exports = function (eleventyConfig) {
                                 END PLUGINS
     =======================================================================*/
 
-
     /**======================================================================
        PASSTHROUGHS - Copy source files to /public with no 11ty processing
     ========================================================================*/
     /** https://www.11ty.dev/docs/copy/ */
 
-    eleventyConfig.addPassthroughCopy("./src/assets", {
-        filter: [
-            "**/*",
-            "!**/*.js"
-        ]
-    });
+    eleventyConfig.addPassthroughCopy("./src/assets");
     eleventyConfig.addPassthroughCopy("./src/admin");
     eleventyConfig.addPassthroughCopy("./src/_redirects");
     /**=====================================================================
@@ -119,14 +109,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
     /**=====================================================================
                                 END SHORTCODES
-    =======================================================================*/
-
-    /**=====================================================================
-                                SERVER SETTINGS
-    =======================================================================*/
-    eleventyConfig.setServerOptions(configServer);
-    /**=====================================================================
-                              END SERVER SETTINGS
     =======================================================================*/
 
     return {
