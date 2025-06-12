@@ -5,7 +5,6 @@ const pluginMinifier = require("@codestitchofficial/eleventy-plugin-minify");
 const pluginSitemap = require("@quasibit/eleventy-plugin-sitemap");
 
 // Configs
-const configCss = require("./src/config/css");
 const less = require("./src/config/less");
 const javascript = require("./src/config/javascript");
 const configSitemap = require("./src/config/sitemap");
@@ -24,8 +23,6 @@ module.exports = function (eleventyConfig) {
      *  CSS EXTENSION
      *  Setting up CSS files to be recognised as aN eleventy template language. This allows our minifier to read CSS files and minify them
      */
-    eleventyConfig.addTemplateFormats("css");
-    eleventyConfig.addExtension("css", configCss);
 
     /**
      *  JS EXTENSION
