@@ -6,6 +6,7 @@ const pluginSitemap = require("@quasibit/eleventy-plugin-sitemap");
 
 // Configs
 const configCss = require("./src/config/css");
+const less = require("./src/config/less");
 const javascript = require("./src/config/javascript");
 const configSitemap = require("./src/config/sitemap");
 
@@ -31,6 +32,7 @@ module.exports = function (eleventyConfig) {
      *  Sets up JS files as an eleventy template language, which are compiled by esbuild. Allows bundling and minification of JS
      */
     eleventyConfig.on("eleventy.after", javascript);
+    eleventyConfig.on("eleventy.after", less);
     /**=====================================================================
                                 END EXTENSIONS
     =======================================================================*/
