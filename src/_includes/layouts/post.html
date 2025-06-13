@@ -24,35 +24,26 @@
     </div>
 
     <!-- ============================================ -->
-    <!--              Main Blog Content               -->
+    <!--                Post Content                  -->
     <!-- ============================================ -->
 
     <div id="single-article">
-        <!--Main content -->
         <div class="cs-container">
-            <!-- ============================================ -->
-            <!--                  Blog Article                -->
-            <!-- ============================================ -->
-
             <article class="cs-article-post">
-                <!--Main Article Image-->
                 <picture class="cs-article-image">
                     <source media="(max-width: 600px)" srcset="{{ image }}">
                     <source media="(min-width: 601px)" srcset="{{ image }}">
                     <img loading="lazy" decoding="async" src="{{ image }}" alt="{{ alt }}" width="630" height="630" aria-hidden="true">
                 </picture>
 
-                <!--Article Info-->
                 <div class="cs-article-group">
                     <h1 class="cs-article-title">{{ title }}</h1>
                     <div class="cs-author-group">
-                        <!--Author Image-->
                         <picture class="cs-author-img">
                             <img src="/assets/svgs/profile.svg" alt="Profile icon" width="32" height="32" decoding="async" loading="lazy" aria-hidden="true"/>
                         </picture>
                         <span class="cs-author-name">{{ author }}</span>
                         <span aria-hidden="true" class="cs-dot"></span>
-                        <!--Blog Date-->
                         <span class="cs-date">{{ date | postDate }}</span>
                     </div>
                 </div>
@@ -61,7 +52,6 @@
                 </section>
             </article>
         </div>
-        <!-- End .cs-content -->
 
         {% include 'components/featured-posts.html' %}
     </div>

@@ -42,7 +42,6 @@ permalink: "/blog/"
             {% else %}
                 {%- for post in collections.post | reverse -%}
                     <article class="cs-article">
-                        <!--Main Article Image-->
                         <picture class="cs-article-image">
                             <!--Mobile Image-->
                             <source media="(max-width: 600px)" srcset="{% getUrl post.data.image | resize({ width: 576, height: 400 }) | avif %}" type="image/avif">
@@ -58,16 +57,13 @@ permalink: "/blog/"
                             <source media="(min-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1648, height: 800 }) | jpeg %}" type="image/jpeg">
                             <img src="{% getUrl post.data.image | resize({ width: 1648, height: 800 }) | jpeg %}" alt="{{ post.data.alt }}" width="824" height="400" decoding="async">
                         </picture>
-                        <!--Article Info-->
                         <div class="cs-article-group">
                             <div class="cs-author-group">
-                                <!--Author Image-->
                                 <picture class="cs-author-img">
                                     <img src="/assets/svgs/profile.svg" alt="Profile icon" width="32" height="32" decoding="async" loading="lazy" aria-hidden="true"/>
                                 </picture>
                                 <span class="cs-author-name">{{ post.data.author }}</span>
                                 <span aria-hidden="true" class="cs-dot"></span>
-                                <!--Blog Date-->
                                 <span class="cs-date">{{ post.date | postDate }}</span>
                             </div>
                             <h2 class="cs-article-title">
