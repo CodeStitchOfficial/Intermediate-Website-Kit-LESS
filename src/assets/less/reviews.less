@@ -1,111 +1,138 @@
-/* PAGE-SPECIFIC STYLES FOR THE REVIEWS PAGE */
-
 /*-- -------------------------- -->
-<---           Reviews          -->
+<---          Reviews           -->
 <--- -------------------------- -*/
 
-/* Mobile */
+/* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    #reviews {
-        margin: auto;
-        padding-top: (120/16rem);
-        padding-bottom: (50/16rem);
+    #reviews-67 {
+        padding: var(--sectionPadding);
 
-        .container {
-            max-width: (1320/16rem);
-            width: 96%;
-        }
-
-        .review {
-            position: relative;
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
             display: flex;
             flex-direction: column;
-            border-radius: (5/16rem);
-            margin: auto;
-            margin-bottom: (100/16rem);
-            background: #fff;
-            max-width: (410/16rem);
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
             width: 100%;
-            padding: (64/16rem) (30/16rem) (18/16rem) (30/16rem);
-            box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
 
-            .profile {
-                position: absolute;
-                top: calc(-51 / 16 * 1rem);
-                left: (30/16rem);
-                display: block;
-                border-radius: 50%;
-                margin-bottom: (16/16rem);
-                margin-left: 0;
-                height: (99/16rem);
-                width: (99/16rem);
-            }
+        .cs-card-group {
+            padding: 0;
+            margin: 0;
+            display: grid;
+            column-gap: (20/16rem);
+            row-gap: (64/16rem);
+            width: 100%;
+            grid-template-columns: repeat(12, 1fr);
+        }
 
-            p {
-                margin-bottom: (28/16rem);
-                line-height: 1.5em;
-                text-align: left;
-            }
+        .cs-item {
+            grid-column: span 12;
+            text-align: left;
+            list-style: none;
+            width: 100%;
+            /* pushes up the same amount the cs-item-img overlaps the card */
+            margin: (40/16rem) 0 0 0;
+            /* Padding L & R - 16px - 32px */
+            padding: (60/16rem) clamp(1rem, 3.2vw, 2rem) 0;
+            /* 32px - 40px */
+            padding-bottom: clamp(2rem, 5.4vw, 2.5rem);
+            box-shadow: 0px 20px 39px 0px rgba(0, 0, 0, 0.05);
+            border-radius: (4/16rem);
+            background: #fff;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+            /* Prevents padding from affecting height & width */
+            box-sizing: border-box;
 
-            .star-group {
-                display: flex;
-                flex-wrap: nowrap;
-                justify-content: space-between;
-                align-items: center;
-                border-top: 1px solid #e7e7e7;
-                margin-top: auto;
-                padding-top: (16/16rem);
-
-                .name {
-                    display: block;
-                    line-height: (24/16rem);
-                    font-weight: bold;
-                    color: #1a1a1a;
-                    text-align: left;
-                }
-
-                .desc {
-                    display: block;
-                    font-weight: 400;
-                    color: #575757;
-                }
-
-                img {
-                    display: block;
-                    margin: 0;
-                    height: (15/16rem);
-                    width: (91/16rem);
-                }
-            }
             &:last-of-type {
                 margin-bottom: 0;
             }
         }
+
+        .cs-item-img {
+            width: (80/16rem);
+            height: (80/16rem);
+            position: absolute;
+            top: (-40/16rem);
+        }
+
+        .cs-item-text {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            margin: 0 0 (20/16rem);
+            padding-bottom: (20/16rem);
+            color: var(--bodyTextColor);
+            border-bottom: 1px solid #e8e9ec;
+        }
+
+        .cs-info {
+            width: 100%;
+            /* margin-top auto pushes up against the rest of the card, that way when one card has more text than the other, the reviewer info is always pushed to the bottom and lined up with the rest of them.  This ensures better responsiveness for changing content */
+            margin: auto 0 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cs-flex-group {
+            width: 100%;
+            margin: 0;
+        }
+
+        .cs-name {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            font-weight: 700;
+            width: 40%;
+            margin: 0;
+            display: block;
+            color: var(--headerColor);
+        }
+
+        .cs-desc {
+            font-size: (14/16rem);
+            font-weight: 400;
+            color: #7d799c;
+            display: block;
+        }
+
+        .cs-item-stars {
+            width: (96/16rem);
+            height: (16/16rem);
+        }
     }
 }
 
-/* Tablet */
+/* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-    #reviews {
-        padding-top: (150/16rem);
-        padding-bottom: (50/16rem);
-
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 0;
-            font-size: ~"min(1.4vw, 1em)";
-            column-gap: (30/16rem);
+    #reviews-67 {
+        .cs-item {
+            grid-column: span 6;
         }
+    }
+}
 
-        .review {
-            margin: 0;
-            margin-bottom: (150/16rem);
-
-            &:last-of-type {
-                margin-bottom: (150/16rem);
-            }
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #reviews-67 {
+        .cs-item {
+            grid-column: span 4;
         }
     }
 }
@@ -113,18 +140,20 @@
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
-        #reviews {
-            .review {
-                background: var(--medium);
+        #reviews-67 {
+            .cs-title,
+            .cs-text,
+            .cs-item-text,
+            .cs-name {
+                color: var(--bodyTextColorWhite);
+            }
 
-                .name {
-                    color: #fff;
-                }
+            .cs-item {
+                background: rgba(0, 0, 0, 0.2);
+            }
 
-                .desc {
-                    opacity: 0.7;
-                    color: #fff;
-                }
+            .cs-desc {
+                color: var(--primaryLight);
             }
         }
     }

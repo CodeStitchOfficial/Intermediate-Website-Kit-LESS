@@ -35,60 +35,59 @@
 
 {% block body %}
     <!-- ============================================ -->
-    <!--                    LANDING                   -->
+    <!--                   Banner                     -->
     <!-- ============================================ -->
 
-    <section id="int-hero">
-        <picture>
-            <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-            <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-            <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="kitchen cabinets" loading="eager" width="2500" height="1667">
+    <div id="banner-310">
+        <div class="cs-container"></div>
+        <!--Background Image-->
+        <picture class="cs-background">
+            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/Banners/library-m.jpg">
+            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/Banners/library.jpg">
+            <img aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Banners/library.jpg" alt="library" width="1920" height="375">
         </picture>
-    </section>
+    </div>
 
     <!-- ============================================ -->
     <!--              Main Blog Content               -->
     <!-- ============================================ -->
 
-    <div class="blog-container main-content-wrapper">
+    <div id="single-article">
         <!--Main content -->
-        <div class="main-content">
+        <div class="cs-container">
             <!-- ============================================ -->
             <!--                  Blog Article                -->
             <!-- ============================================ -->
 
-            <article class="blog-article">
+            <article class="cs-article-post">
                 <!--Main Article Image-->
-                <picture class="blog-mainImage">
-                    <img src="{{ image }}" alt="{{ imageAlt }}" width="795" height="400" decoding="async"/>
+                <picture class="cs-article-image">
+                    <source media="(max-width: 600px)" srcset="{{ image }}">
+                    <source media="(min-width: 601px)" srcset="{{ image }}">
+                    <img loading="lazy" decoding="async" src="{{ image }}" alt="{{ alt }}" width="630" height="630" aria-hidden="true">
                 </picture>
 
                 <!--Article Info-->
-                <div class="article-group">
-                    <h1 class="blog-h1">{{ title }}</h1>
-                    <div class="blog-authorGroup">
+                <div class="cs-article-group">
+                    <h1 class="cs-article-title">{{ title }}</h1>
+                    <div class="cs-author-group">
                         <!--Author Image-->
-                        <picture class="blog-author-img">
-                            <img
-                            src="/assets/svgs/profile.svg"
-                            alt="house"
-                            width="32"
-                            height="32"
-                            decoding="async">
+                        <picture class="cs-author-img">
+                            <img src="/assets/svgs/profile.svg" alt="Profile icon" width="32" height="32" decoding="async" loading="lazy" aria-hidden="true"/>
                         </picture>
-                        <span class="blog-author">{{ author }}</span>
-                        <span aria-hidden="true" class="blog-dot"></span>
+                        <span class="cs-author-name">{{ author }}</span>
+                        <span aria-hidden="true" class="cs-dot"></span>
                         <!--Blog Date-->
-                        <span class="blog-date">{{ date | postDate }}</span>
+                        <span class="cs-date">{{ date | postDate }}</span>
                     </div>
                 </div>
-                <section id="blog-content">
+                <section class="cs-article-content">
                     {{ content | safe }}
                 </section>
             </article>
         </div>
-        <!-- End .main-content -->
+        <!-- End .cs-content -->
 
-        {% include 'components/featured-post.html' %}
+        {% include 'components/featured-posts.html' %}
     </div>
 {% endblock %}
