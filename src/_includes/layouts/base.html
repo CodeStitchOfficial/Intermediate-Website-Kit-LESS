@@ -32,11 +32,6 @@
         <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-regular.woff2" crossorigin>
         <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-700.woff2" crossorigin>
 
-        <!-- Preload an image - tag not rendered if preloadImg is blank to stop console errors -->
-        {% if preloadImg != '' %}
-            <link rel="preload" as="image" href="{{ preloadImg }}"/>
-        {% endif %}
-
         <!-- Sitewide Stylesheets and Scripts -->
         <link rel="stylesheet" href="/assets/css/root.css">
         <script defer src="/assets/js/dark.js"></script>
@@ -50,11 +45,11 @@
         <!--Screen reader skip main nav-->
         <a class="skip" aria-label="skip to main content" href="#main" tabindex="1">Click To Skip To Main Content</a>
 
-        {% include "components/header.html" %}
+        {% include "sections/header.html" %}
         <main id="main">
             {% block body %}{% endblock %}
         </main>
-        {% include "components/footer.html" %}
+        {% include "sections/footer.html" %}
 
     </body>
 </html>

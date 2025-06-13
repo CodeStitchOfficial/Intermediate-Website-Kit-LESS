@@ -8,46 +8,23 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <link rel="stylesheet" href="/assets/css/local.css"/>
+    {# Critical styles are loaded first #}
     <link rel="stylesheet" href="/assets/css/critical.css"/>
 
-    <!-- JSON Schema Markup -->
-    <script type="application/ld+json">
-        {
-            "@context": "http://schema.org",
-            "@type": "LocalBusiness",
-            "name": "{{ client.name }}",
-            {% if preloadImg %}"image": "{{ preloadImg }}",{% endif %}
-            {% if client.phoneFormatted %}"telephone": "{{ client.phoneFormatted }}",{% endif %}
-            {% if client.email %}"email": "{{ client.email }}",{% endif %}
-            {% if client.address %}
-                "address": {
-                    "@type": "PostalAddress"{% if client.address.lineOne %},
-                        "streetAddress": "{{ client.address.lineOne }}{% if client.address.lineTwo %}, {{ client.address.lineTwo }}{% endif %}"
-                    {% endif %}
-                    {% if client.address.city %},
-                        "addressLocality": "{{ client.address.city }}"
-                    {% endif %}
-                    {% if client.address.state %},
-                        "addressRegion": "{{ client.address.state }}"
-                    {% endif %}
-                    {% if client.address.zip %},
-                        "postalCode": "{{ client.address.zip }}"
-                    {% endif %}
-                    {% if client.address.country %},
-                        "addressCountry": "{{ client.address.country }}"
-                    {% endif %}
-                },
-            {% endif %}
-            {% if client.domain and page.url %}"url": "{{ client.domain }}{{ page.url }}",{% endif %}
-            {% if client.socials %}
-                "sameAs": [{% for platform, url in client.socials %}
-                        {% if not loop.first %},{% endif %}
-                        "{{ url }}"
-                    {% endfor %}]
-            {% endif %}
-        }
-    </script>
+    {# If we're in production, defer the rest of the home page styles. In development, always load it. Otherwise the site will break when hot-reload is used. #}
+    {% if kit.isProduction %}
+        <link rel="preload" href="/assets/css/local.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript>
+            <link rel="stylesheet" href="/assets/css/local.css">
+        </noscript>
+
+    {% else %}
+        <link rel="stylesheet" href="/assets/css/local.css"/>
+    {% endif %}
+
+    {# To ensure proper validation, prevent errors, and encourage developers to check, schema's are an opt-in feature. They're very bespoke and requires some customising  #}
+    {# Uncomment the code below to enable Structured Data, and test it when you deploy to Netlify - https://developers.google.com/search/docs/appearance/structured-data #}
+    {# {% include "components/home-schema.html" %} #}
 {% endblock %}
 
 {% block body %}
@@ -314,5 +291,5 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
         </div>
     </section>
 
-    {% include 'components/cta.html' %}
+    {% include 'sections/cta.html' %}
 {% endblock %}

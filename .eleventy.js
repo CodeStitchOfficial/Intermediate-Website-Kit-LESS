@@ -19,6 +19,7 @@ const javascript = require("./src/config/processors/javascript");
 
 // 🛠️ Utilities
 const filterPostDate = require("./src/config/filters/postDate");
+const filterIsoDate = require("./src/config/filters/isoDate");
 const isProduction = process.env.ELEVENTY_ENV === "PROD";
 
 module.exports = function (eleventyConfig) {
@@ -84,12 +85,20 @@ module.exports = function (eleventyConfig) {
     // ═════════════════════════════════════════════════════════════════════════
 
     /*
-     * 📅 Date Formatting Filter
+     * 📅 Human-Readable Date Formatting Filter
      * Converts JavaScript dates to human-readable format
      * Usage: {{ "2023-12-02" | postDate }}
      * Powered by Luxon: https://moment.github.io/luxon/api-docs/
      */
     eleventyConfig.addFilter("postDate", filterPostDate);
+
+    /*
+     * 📅 ISO Date Formatting Filter
+     * Converts JavaScript dates to ISO 8601 format
+     * Usage: {{ "2023-12-02" | isoDate }}
+     * Powered by Luxon: https://moment.github.io/luxon/api-docs/
+     */
+    eleventyConfig.addFilter("isoDate", filterIsoDate);
 
     // ═════════════════════════════════════════════════════════════════════════
     // SHORTCODES

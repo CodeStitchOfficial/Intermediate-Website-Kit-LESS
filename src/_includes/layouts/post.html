@@ -3,34 +3,9 @@
 {% block head %}
     <link rel="stylesheet" href="/assets/css/blog.css">
 
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Article",
-            {% if title %}"headline": "{{ title }}",{% endif %}
-            {% if image %}
-                "image": ["{{ image }}"],
-            {% endif %}
-            {% if date %}"datePublished": "{{ date | postDate }}",{% endif %}
-            {% if client.name %}
-                "publisher": {
-                    "@type": "Organization",
-                    "name": "{{ client.name }}"
-                },
-            {% endif %}
-            {% if author %}
-                "author": [
-                    {
-                        "@type": "Person",
-                        "name": "{{ author }}"
-                    }
-                ],
-            {% endif %}
-            {% if description %}"articleBody": "{{ description | safe }}",{% endif %}
-            {% if client.domain and page.url %}"url": "{{ client.domain }}{{ page.url }}",{% endif %}
-            {% if tags %}"articleSection": "{{ tags }}"{% endif %}
-        }
-    </script>
+    {# To ensure proper validation, prevent errors, and encourage developers to check, schema's are an opt-in feature. They're very bespoke and requires some customising  #}
+    {# Uncomment the code below to enable Structured Data, and test it when you deploy to Netlify - https://developers.google.com/search/docs/appearance/structured-data #}
+    {# {% include "components/post-schema.html" %} #}
 {% endblock %}
 
 {% block body %}
