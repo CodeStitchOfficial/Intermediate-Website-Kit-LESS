@@ -1,77 +1,108 @@
-/* CODESTITCH STYLES, RESET, HEADER/NAVIGATION AND FOOTER */
+// ─────────────────────────────────────────────────────────────────────────────
+// CODESTITCH GLOBAL STYLES
+// Core stylesheet containing CSS variables, dark mode styles, base element
+// styling, typography rules, utility classes, component styles, navigation,
+// footer, and other repeated section styles for the entire site
+// ─────────────────────────────────────────────────────────────────────────────
 
 /*-- -------------------------- -->
 <---        Core Styles         -->
 <--- -------------------------- -*/
 
-/* CodeStitch Root and Helpers */
+/* CodeStitch Core Styles + Reset */
 @media only screen and (min-width: 0rem) {
-    // Website colors
+    /* All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
     :root {
-        --primary: #ffba19;
-        --primaryLight: #ffd675;
-        --secondary: #001f3f;
-        --secondaryLight: #001f3f;
+        --primary: #ff6a3e;
+        --primaryLight: #ffba43;
+        --secondary: #ffba43;
+        --secondaryLight: #ffba43;
         --headerColor: #1a1a1a;
         --bodyTextColor: #4e4b66;
         --bodyTextColorWhite: #fafbfc;
+
+        /* Dark Mode Styles */
+        --dark: #082032;
+        --medium: #2c394b;
+        --accent: #334756;
 
         /* 13px - 16px */
         --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
         /* 31px - 49px */
         --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
         --bodyFontSize: 1rem;
-
         /* 60px - 100px top and bottom */
         --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
     }
 
-    // Text styles - can be replaced using CodeStitch's "Content Flair" Stitches
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        font-family: "Roboto", Arial, sans-serif;
+        font-size: 100%;
+        transition: background-color 0.3s;
+        color: var(--bodyTextColor);
+    }
+
+    *,
+    *:before,
+    *:after {
+        /* prevents padding from affecting height and width */
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
     .cs-topper {
-        display: block;
-        margin-bottom: 0.25rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
         font-size: var(--topperFontSize);
         line-height: 1.2em;
+        text-transform: uppercase;
+        text-align: inherit;
+        letter-spacing: 0.1em;
         font-weight: 700;
         color: var(--primary);
-        text-align: inherit;
+        margin-bottom: 0.25rem;
+        display: block;
     }
 
     .cs-title {
-        position: relative;
-        margin: 0 0 1rem 0;
-        max-width: 43.75rem;
         font-size: var(--headerFontSize);
-        line-height: 1.2em;
         font-weight: 900;
-        color: var(--headerColor);
+        line-height: 1.2em;
         text-align: inherit;
+        max-width: 43.75rem;
+        margin: 0 0 1rem 0;
+        color: var(--headerColor);
+        position: relative;
     }
 
     .cs-text {
-        margin: 0;
-        max-width: 40.625rem;
-        width: 100%;
         font-size: var(--bodyFontSize);
         line-height: 1.5em;
-        color: var(--bodyTextColor);
         text-align: inherit;
+        width: 100%;
+        max-width: 40.625rem;
+        margin: 0;
+        color: var(--bodyTextColor);
     }
+}
 
-    // Button - can be replaced using CodeStitch's "Button" Stitches
+/* Components + Utilities */
+@media only screen and (min-width: 0rem) {
+    // Buttons - can be replaced using CodeStitch's "Button" Stitches. Make sure to clear the default .cs-button-solid/outline styles from any new stitches you place.
     .cs-button-solid {
         z-index: 1;
         position: relative;
         display: inline-block;
         background-color: var(--primary);
         width: auto;
-        padding: 0 (30/16rem);
+        padding: (16/16rem) (32/16rem);
         text-decoration: none;
         text-transform: uppercase;
         font-size: (16/16rem);
-        line-height: (50/16em);
+        line-height: (16/16em);
         font-weight: bold;
 
         // Transition Properties
@@ -82,6 +113,7 @@
 
         &:hover {
             color: #fff;
+
             &:before {
                 width: 100%;
             }
@@ -104,79 +136,47 @@
         }
     }
 
-    .cs-hide-on-mobile {
-        display: none;
-    }
-}
-
-/* Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-    .cs-hide-on-mobile {
-        display: block;
-    }
-
-    .cs-hide-on-desktop {
-        display: none;
-    }
-}
-
-/* Fonts and general styles */
-@media only screen and (min-width: 0rem) {
-    body,
-    html {
-        margin: 0;
-        overflow-x: hidden;
-        padding: 0;
-        font-family: "Roboto", Arial, sans-serif;
-        font-size: 100%;
-        color: var(--bodyTextColor);
-    }
-
-    *,
-    *:before,
-    *:after {
-        margin: 0;
-        box-sizing: border-box;
-        padding: 0;
-    }
-
-    body {
-        transition: background-color 0.3s;
-    }
-
-    .container {
+    .cs-button-outline {
+        z-index: 1;
         position: relative;
-        margin: auto;
-        width: 92%;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        margin: 0;
-        color: var(--headerColor);
-    }
-
-    p,
-    li,
-    a {
-        margin: 0;
+        display: inline-block;
+        width: auto;
+        padding: (16/16rem) (32/16rem);
+        text-decoration: none;
+        text-transform: uppercase;
         font-size: (16/16rem);
-        line-height: 1.5em;
-    }
+        line-height: (16/16em);
+        font-weight: bold;
+        border: 2px solid #000;
 
-    p,
-    li {
-        color: #353535;
-    }
+        // Transition Properties
+        color: #000;
+        transition: color 0.3s;
+        transition-delay: 0.1s;
+        text-align: center;
 
-    a,
-    button {
         &:hover {
-            cursor: pointer;
+            color: #fff;
+
+            &:before {
+                width: 100%;
+            }
+        }
+
+        &:before {
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "";
+            opacity: 1;
+            display: block;
+            background-color: #000;
+            height: 100%;
+
+            //Transition properties
+            width: 0;
+            transition: width 0.3s;
         }
     }
 
@@ -188,8 +188,102 @@
         left: 0;
         opacity: 0;
     }
-    // Grab your fonts to locally host from https://google-webfonts-helper.herokuapp.com/fonts
 
+    .cs-color {
+        color: var(--primary);
+    }
+
+    .cs-hide-on-mobile {
+        display: none !important;
+    }
+
+    .cs-dark,
+    .dark {
+        display: none !important;
+    }
+
+    body.dark-mode {
+        .cs-light,
+        .light {
+            display: none !important;
+        }
+
+        .cs-dark,
+        .dark {
+            display: block !important;
+        }
+
+        .cs-button-outline {
+            border-color: #fff;
+            color: #fff;
+        }
+    }
+}
+
+/* Desktop Utilities */
+@media only screen and (min-width: 64rem) {
+    .cs-hide-on-mobile {
+        display: block !important;
+    }
+
+    .cs-hide-on-desktop {
+        display: none !important;
+    }
+}
+
+/* Base Element Styles */
+@media only screen and (min-width: 0rem) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: var(--headerColor);
+    }
+
+    p,
+    li,
+    a {
+        font-size: (16/16rem);
+        line-height: 1.5em;
+    }
+
+    p,
+    li {
+        color: var(--bodyTextColor);
+    }
+
+    a {
+        color: var(--primary);
+    }
+
+    a,
+    button {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    body.dark-mode {
+        background-color: var(--dark);
+
+        p,
+        li,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #fff;
+        }
+    }
+}
+
+/* Fonts */
+@media only screen and (min-width: 0rem) {
+    // Grab your fonts to locally host from https://gwfh.mranftl.com/fonts
     /* roboto-regular - latin */
     @font-face {
         font-style: normal;
@@ -199,6 +293,7 @@
         src: local(""), url("/assets/fonts/roboto-v29-latin-regular.woff2") format("woff2"),
             /* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/roboto-v29-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
     }
+
     /* roboto-700 - latin */
     @font-face {
         font-style: normal;
@@ -208,6 +303,7 @@
         src: local(""), url("/assets/fonts/roboto-v29-latin-700.woff2") format("woff2"),
             /* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/roboto-v29-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
     }
+
     /* roboto-900 - latin */
     @font-face {
         font-style: normal;
@@ -216,23 +312,6 @@
         font-display: swap;
         src: local(""), url("/assets/fonts/roboto-v29-latin-900.woff2") format("woff2"),
             /* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/roboto-v29-latin-900.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    }
-}
-
-/* Reset Margins */
-@media only screen and (min-width: 1024px) {
-    body,
-    html {
-        margin: 0;
-        padding: 0;
-    }
-}
-
-/* Scale full website with the viewport width */
-@media only screen and (min-width: 3000px) {
-    body,
-    html {
-        font-size: 0.55vw;
     }
 }
 
