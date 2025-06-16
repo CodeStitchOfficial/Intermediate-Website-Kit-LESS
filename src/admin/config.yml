@@ -1,4 +1,6 @@
 # Copy and paste the backend snippet from Decapbridge here
+backend:
+    name: git-gateway
 
 # Keep this to allow you to edit the cms locally
 local_backend: true

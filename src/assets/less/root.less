@@ -33,6 +33,9 @@
         --bodyFontSize: 1rem;
         /* 60px - 100px top and bottom */
         --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+
+        --headerFont: "Roboto", Arial, sans-serif;
+        --bodyFont: "Roboto", Arial, sans-serif;
     }
 
     html,
@@ -40,7 +43,7 @@
         margin: 0;
         padding: 0;
         overflow-x: hidden;
-        font-family: "Roboto", Arial, sans-serif;
+        font-family: var(--bodyFont);
         font-size: 100%;
         transition: background-color 0.3s;
         color: var(--bodyTextColor);
@@ -241,6 +244,8 @@
     h4,
     h5,
     h6 {
+        font-family: var(--headerFont);
+        line-height: 1.2em;
         color: var(--headerColor);
     }
 
@@ -254,10 +259,10 @@
     p,
     li {
         color: var(--bodyTextColor);
-    }
 
-    a {
-        color: var(--primary);
+        a {
+            color: var(--primary);
+        }
     }
 
     a,
