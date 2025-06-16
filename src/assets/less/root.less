@@ -94,6 +94,15 @@
 
 /* Components + Utilities */
 @media only screen and (min-width: 0rem) {
+    // Hidden screen reader skip nav button
+    .skip {
+        z-index: -1111111;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+
     // Buttons - can be replaced using CodeStitch's "Button" Stitches. Make sure to clear the default .cs-button-solid/outline styles from any new stitches you place.
     .cs-button-solid {
         z-index: 1;
@@ -185,17 +194,13 @@
         }
     }
 
-    // Hidden Screen reader skip nav button
-    .skip {
-        z-index: -1111111;
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-    }
-
+    // Utilities - small classes useful in various common situations
     .cs-color {
         color: var(--primary);
+    }
+
+    .cs-bold {
+        font-weight: 700;
     }
 
     .cs-hide-on-mobile {
