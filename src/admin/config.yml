@@ -1,4 +1,4 @@
-# Copy and paste the backend snippet from Decapbridge here
+# Replace the "backend" object below with the snippet from DecapBridge. We need something here to get the CMS to work locally, but this alone won't work in production
 backend:
     name: git-gateway
 
