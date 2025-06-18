@@ -26,9 +26,9 @@ permalink: "/contact/"
         </div>
         <!--Background Image-->
         <picture class="cs-background">
-            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/Banners/library-m.jpg">
-            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/Banners/library.jpg">
-            <img aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Banners/library.jpg" alt="library" width="1920" height="375">
+            <source media="(max-width: 600px)" srcset="/assets/images/cabinets.jpg">
+            <source media="(min-width: 601px)" srcset="/assets/images/cabinets.jpg">
+            <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/cabinets.jpg" alt="library" width="1920" height="375">
         </picture>
     </div>
 
@@ -73,19 +73,23 @@ permalink: "/contact/"
             <div class="cs-right-section">
                 <!--Email-->
                 <span class="cs-header">Email</span>
-                <a class="cs-link" href="mailto:support@yourdomain.com">support@yourdomain.com</a>
+                <a class="cs-link" href="mailto:{{ client.email }}">{{ client.email }}</a>
                 <!--Phone-->
                 <span class="cs-header">Phone</span>
-                <a class="cs-link" href="tel:219-555-1234">(219) 555-1234</a>
+                <a class="cs-link" href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>
                 <!--Address-->
                 <span class="cs-header">Address</span>
-                <a class="cs-link" href="">2553 Woodbridge Lane, <span class="cs-block">Boston Ware 120</span></a>
-
+                <a class="cs-link" href="{{ client.address.mapLink }}">
+                    {{ client.address.lineOne }}, <br>
+                    {{ client.address.lineTwo }}, <br>
+                    {{ client.address.city }}, {{ client.address.state }}
+                    {{ client.address.zip }}
+                </a>
                 <!-- Background Image-->
                 <picture class="cs-bg-picture">
-                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/Contact-Page/skyscraper-m.jpg">
-                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/Contact-Page/skyscraper.jpg">
-                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Contact-Page/skyscraper.jpg" alt="building" width="542" height="662" aria-hidden="true">
+                    <source media="(max-width: 600px)" srcset="/assets/images/construction.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/construction.jpg">
+                    <img loading="lazy" decoding="async" src="/assets/images/construction.jpg" alt="building" width="542" height="662" aria-hidden="true">
                 </picture>
             </div>
         </div>
