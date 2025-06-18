@@ -38,7 +38,7 @@ module.exports = async function () {
                     ? false
                     : {
                           outputSourceFiles: true,
-                          sourceMapFileInline: false,
+                          sourceMapFileInline: true,
                       },
             });
 
@@ -50,7 +50,7 @@ module.exports = async function () {
                     ? false
                     : {
                           prev: lessOutput.map,
-                          inline: false,
+                          inline: true,
                           annotation: true,
                       },
             });

@@ -17,9 +17,19 @@
         <div class="cs-container"></div>
         <!--Background Image-->
         <picture class="cs-background">
-            <source media="(max-width: 600px)" srcset="/assets/images/cabinets.jpg">
-            <source media="(min-width: 601px)" srcset="/assets/images/cabinets.jpg">
-            <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/cabinets.jpg" alt="library" width="1920" height="375">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | avif %}" type="image/avif">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | webp %}" type="image/webp">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | jpeg %}" type="image/jpeg">
+            <!--Tablet Image-->
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2048, height: 942 }) | avif %}" type="image/avif">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2048, height: 942 }) | webp %}" type="image/webp">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2048, height: 942 }) | jpeg %}" type="image/jpeg">
+            <!--Desktop Image-->
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | avif %}" type="image/avif">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" type="image/jpeg">
+            <img src="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="library" width="1920" height="482" decoding="async">
         </picture>
     </div>
 
@@ -31,11 +41,20 @@
         <div class="cs-container">
             <article class="cs-article-post">
                 <picture class="cs-article-image">
-                    <source media="(max-width: 600px)" srcset="{{ image }}">
-                    <source media="(min-width: 601px)" srcset="{{ image }}">
-                    <img loading="lazy" decoding="async" src="{{ image }}" alt="{{ alt }}" width="630" height="630" aria-hidden="true">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="{% getUrl image | resize({ width: 576, height: 400 }) | avif %}" type="image/avif">
+                    <source media="(max-width: 600px)" srcset="{% getUrl image | resize({ width: 576, height: 400 }) | webp %}" type="image/webp">
+                    <source media="(max-width: 600px)" srcset="{% getUrl image | resize({ width: 576, height: 400 }) | jpeg %}" type="image/jpeg">
+                    <!--Tablet Image-->
+                    <source media="(max-width: 1024px)" srcset="{% getUrl image | resize({ width: 1600, height: 614 }) | avif %}" type="image/avif">
+                    <source media="(max-width: 1024px)" srcset="{% getUrl image | resize({ width: 1600, height: 614 }) | webp %}" type="image/webp">
+                    <source media="(max-width: 1024px)" srcset="{% getUrl image | resize({ width: 1600, height: 614 }) | jpeg %}" type="image/jpeg">
+                    <!--Desktop Image-->
+                    <source media="(min-width: 1024px)" srcset="{% getUrl image | resize({ width: 1600, height: 800 }) | avif %}" type="image/avif">
+                    <source media="(min-width: 1024px)" srcset="{% getUrl image | resize({ width: 1600, height: 800 }) | webp %}" type="image/webp">
+                    <source media="(min-width: 1024px)" srcset="{% getUrl image | resize({ width: 1600, height: 800 }) | jpeg %}" type="image/jpeg">
+                    <img src="{% getUrl image | resize({ width: 1600, height: 800 }) | jpeg %}" alt="{{ alt }}" width="800" height="400" loading="lazy" decoding="async" aria-hidden="true">
                 </picture>
-
                 <div class="cs-article-group">
                     <h1 class="cs-article-title">{{ title }}</h1>
                     <div class="cs-author-group">
