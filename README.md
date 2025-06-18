@@ -22,33 +22,33 @@
 
 ## Table of Contents
 
-- <a href="#overview">Overview</a>
-- <a href="#prerequisites">Prerequisites</a>
-  - <a href="#must-knows">Must Knows</a>
-  - <a href="#good-to-knows">Good-to-knows</a>
-- <a href="#quick-start-guide">Quick Start Guide</a>
-- <a href="#explanation-of-file-structure">Explanation of File Structure</a>
-  - <a href="#root-files">Root Files</a>
-    - <a href="#eleventyjs">.eleventy.js</a>
-    - <a href="#netlifytoml">netlify.toml</a>
-    - <a href="#packagejson-and-package-lockjson">package.json and package-lock.json</a>
-  - <a href="#nodemodules">node_modules/</a>
-  - <a href="#public">public/</a>
-  - <a href="#src">src/</a>
-    - <a href="#_data">\_data/</a>
-    - <a href="#_includes">\_includes</a>
-      - <a href="#nav-auto">Navigations \- Rendering Automatically</a>
-      - <a href="#nav-manual">Navigations \- Rendering Manually</a>
-  - <a href="#admin">admin/</a>
-  - <a href="#assets">assets/</a>
-  - <a href="#config">config/</a>
-  - <a href="#content">content/</a>
-  - <a href="#root-src-files">Root src/ Files</a>
-    - <a href="#redirects">\_redirects</a>
-    - <a href="#indexhtml">index.html</a>
-    - <a href="#robotshtml">robots.html</a>
-    - <a href="#sitemaphtml">sitemap.html</a>
-- <a href="#deployment">Deployment</a>
+-   <a href="#overview">Overview</a>
+-   <a href="#prerequisites">Prerequisites</a>
+    -   <a href="#must-knows">Must Knows</a>
+    -   <a href="#good-to-knows">Good-to-knows</a>
+-   <a href="#quick-start-guide">Quick Start Guide</a>
+-   <a href="#explanation-of-file-structure">Explanation of File Structure</a>
+    -   <a href="#root-files">Root Files</a>
+        -   <a href="#eleventyjs">.eleventy.js</a>
+        -   <a href="#netlifytoml">netlify.toml</a>
+        -   <a href="#packagejson-and-package-lockjson">package.json and package-lock.json</a>
+    -   <a href="#nodemodules">node_modules/</a>
+    -   <a href="#public">public/</a>
+    -   <a href="#src">src/</a>
+        -   <a href="#_data">\_data/</a>
+        -   <a href="#_includes">\_includes</a>
+            -   <a href="#nav-auto">Navigations \- Rendering Automatically</a>
+            -   <a href="#nav-manual">Navigations \- Rendering Manually</a>
+    -   <a href="#admin">admin/</a>
+    -   <a href="#assets">assets/</a>
+    -   <a href="#config">config/</a>
+    -   <a href="#content">content/</a>
+    -   <a href="#root-src-files">Root src/ Files</a>
+        -   <a href="#redirects">\_redirects</a>
+        -   <a href="#indexhtml">index.html</a>
+        -   <a href="#robotshtml">robots.html</a>
+        -   <a href="#sitemaphtml">sitemap.html</a>
+-   <a href="#deployment">Deployment</a>
 
 <a name="overview"></a>
 
@@ -68,10 +68,10 @@ An example website is also provided, with easy substitution of website sections 
 
 _Knowledge requirements before using the kit_
 
-- HTML/CSS
-- Beginner-level JS
-- Familiarity with working in a NodeJS-powered project (handling dependencies with npm, source vs built files, etc)
-- Familiarity with templating languages (this kit uses Nunjucks)
+-   HTML/CSS
+-   Beginner-level JS
+-   Familiarity with working in a NodeJS-powered project (handling dependencies with npm, source vs built files, etc)
+-   Familiarity with templating languages (this kit uses Nunjucks)
 
 <a name="good-to-knows"></a>
 
@@ -79,14 +79,14 @@ _Knowledge requirements before using the kit_
 
 _Not required for light-medium kit usage, but helpful if you want to customise the kit beyond base functionality_
 
-- Nunjucks ([Docs found here](https://mozilla.github.io/nunjucks/))
-  - If you've never used Nunjucks before, [this excellent article by Hyunbin](https://hyunbinseo.medium.com/nunjucks-settings-for-vs-code-a0da0dc66b95) explains how to set up VSCode to best support Nunjucks, including formatting, syntax highlighting and Emmet.
-- Eleventy ([Docs found here](https://www.11ty.dev/docs/)). Key topics include:
-  - [The Data Cascade](https://www.11ty.dev/docs/data-cascade/)
-  - [Layouts](https://www.11ty.dev/docs/layouts/)
-  - [Permalinks](https://www.11ty.dev/docs/permalinks/)
-  - [Passthroughs](https://www.11ty.dev/docs/copy/)
-- Decap CMS ([Docs found here](https://decapcms.org/docs/intro/))
+-   Nunjucks ([Docs found here](https://mozilla.github.io/nunjucks/))
+    -   If you've never used Nunjucks before, [this excellent article by Hyunbin](https://hyunbinseo.medium.com/nunjucks-settings-for-vs-code-a0da0dc66b95) explains how to set up VSCode to best support Nunjucks, including formatting, syntax highlighting and Emmet.
+-   Eleventy ([Docs found here](https://www.11ty.dev/docs/)). Key topics include:
+    -   [The Data Cascade](https://www.11ty.dev/docs/data-cascade/)
+    -   [Layouts](https://www.11ty.dev/docs/layouts/)
+    -   [Permalinks](https://www.11ty.dev/docs/permalinks/)
+    -   [Passthroughs](https://www.11ty.dev/docs/copy/)
+-   Decap CMS ([Docs found here](https://decapcms.org/docs/intro/))
 
 <a name="quick-start-guide"></a>
 
@@ -152,14 +152,14 @@ The heart of the kit, the `.eleventy.js` file configures the Eleventy static sit
 
 The `.eleventy.js` file is well-documented, with all necessary extra documentation provided for extra reading if desired. A full list of functionalities added via `.eleventy.js` is given below:
 
-- Sets up CSS and JS as template languages, allowing modification at build time by Eleventy. JS is bundled and minified by esbuild.
-- Adds the following plugins:
-  - [Eleventy Navigation](https://github.com/11ty/eleventy-navigation) - Allows the option to define navigation data within the template front matter.
-  - [Eleventy Sitemap](https://www.npmjs.com/package/@quasibit/eleventy-plugin-sitemap) - Automatically generates a sitemap from all files in `./src/content`.
-  - [Eleventy Minification](https://github.com/benjaminrancourt/eleventy-plugin-files-minifier) - Minifies HTML and CSS (only run in production - when `npm run build` is executed).
-- Passes through all assets (in `./src/assets`) without modification by Eleventy.
-- Adds date formatting filters and a year shortcode.
-- Sets some basic server options.
+-   Sets up CSS and JS as template languages, allowing modification at build time by Eleventy. JS is bundled and minified by esbuild.
+-   Adds the following plugins:
+    -   [Eleventy Navigation](https://github.com/11ty/eleventy-navigation) - Allows the option to define navigation data within the template front matter.
+    -   [Eleventy Sitemap](https://www.npmjs.com/package/@quasibit/eleventy-plugin-sitemap) - Automatically generates a sitemap from all files in `./src/content`.
+    -   [Eleventy Minification](https://github.com/benjaminrancourt/eleventy-plugin-files-minifier) - Minifies HTML and CSS (only run in production - when `npm run build` is executed).
+-   Passes through all assets (in `./src/assets`) without modification by Eleventy.
+-   Adds date formatting filters and a year shortcode.
+-   Sets some basic server options.
 
 <a name="netlifytoml"></a>
 
@@ -261,27 +261,24 @@ Decap CMS has been chosen due to its open-source nature, good UX/DX, and stabili
 
 The CMS is configured through a `config.yml` file, as per the Decap documentation. If you wish to use the blog as-is, you shouldn't need to make any changes here. If you want to extend the kit and modify the CMS for your own needs, we recommend referring to the Decap documentation for guidance on how to do so.
 
-Styling the Decap preview pane
-This template includes custom styles for the Decap CMS preview pane, so that blog posts in the admin dashboard look similar to the live site.
+Styling the Decap preview pane This template includes custom styles for the Decap CMS preview pane, so that blog posts in the admin dashboard look similar to the live site.
 
 1. How it works:
 
-The preview styles are defined in /admin/decap-preview-styles.css.
-The CMS preview script in /admin/index.html:
+The preview styles are defined in /admin/decap-preview-styles.css. The CMS preview script in /admin/index.html:
 
-- pulls the props from the collection
-- creates the DOM elements
-- registers these elements and styles for the preview panel to use
+-   pulls the props from the collection
+-   creates the DOM elements
+-   registers these elements and styles for the preview panel to use
 
 2. How to update or customize:
 
-Edit /admin/decap-preview-styles.css and the preview pane script in /admin/index.html to match your site's branding or layout changes.
-Use Decap's documentation on [customizing the preview pane](https://decapcms.org/docs/customization/)
+Edit /admin/decap-preview-styles.css and the preview pane script in /admin/index.html to match your site's branding or layout changes. Use Decap's documentation on [customizing the preview pane](https://decapcms.org/docs/customization/)
 
 3.Notes
 
-- The style sheet must be a CSS file
-- The style sheet does not support nested CSS.
+-   The style sheet must be a CSS file
+-   The style sheet does not support nested CSS.
 
 <a name="assets"></a>
 
@@ -289,13 +286,13 @@ Use Decap's documentation on [customizing the preview pane](https://decapcms.org
 
 All other non-content files are stored in `assets/`, which is set up in `.eleventy.js` to be passed through to `public/`. A brief overview of each of the folders within `assets/`, and any relevant notes, is provided below:
 
-- `css/` - SASS/LESS files from the `less/` or `sass/` directories are built into `css/`. From here, the CSS is processed as an Eleventy template, where we minify the code (production only), and pass it through to `public/`. **Do not** make CSS changes here - instead, use the SASS or LESS asset directory (depending on which kit you're using).
-- `favicons/` - Any favicon files can be stored here. We recommend using [this tool](https://realfavicongenerator.net/) to generate favicons for all devices.
-- `fonts/` - If you have any non-standard fonts you wish to locally host, you can put the files here. You can use [this tool](https://gwfh.mranftl.com/fonts) to download font files to be stored in `fonts/`, as well as generate the code to be put in your `root.scss` or `root.less` file.
-- `images/` - Any images can go here. No processing will occur.
-- `js/` - Put any JavaScript in this directory. It will be processed, bundled, and minified by esbuild.
-- `sass/` or `less/` - Depending on whether you're using the SASS or LESS version of the kit, you'll find your preprocessor files in one of these directories. Make your changes to styling here, not in `assets/css`
-- `svgs/` - A separate directory for SVGs. This makes it easier to bulk-compress SVGs separate from `images/` if you're using a tool like [compressor.io](https://compressor.io/).
+-   `css/` - SASS/LESS files from the `less/` or `sass/` directories are built into `css/`. From here, the CSS is processed as an Eleventy template, where we minify the code (production only), and pass it through to `public/`. **Do not** make CSS changes here - instead, use the SASS or LESS asset directory (depending on which kit you're using).
+-   `favicons/` - Any favicon files can be stored here. We recommend using [this tool](https://realfavicongenerator.net/) to generate favicons for all devices.
+-   `fonts/` - If you have any non-standard fonts you wish to locally host, you can put the files here. You can use [this tool](https://gwfh.mranftl.com/fonts) to download font files to be stored in `fonts/`, as well as generate the code to be put in your `root.scss` or `root.less` file.
+-   `images/` - Any images can go here. No processing will occur.
+-   `js/` - Put any JavaScript in this directory. It will be processed, bundled, and minified by esbuild.
+-   `sass/` or `less/` - Depending on whether you're using the SASS or LESS version of the kit, you'll find your preprocessor files in one of these directories. Make your changes to styling here, not in `assets/css`
+-   `svgs/` - A separate directory for SVGs. This makes it easier to bulk-compress SVGs separate from `images/` if you're using a tool like [compressor.io](https://compressor.io/).
 
 <a name="config"></a>
 
@@ -395,11 +392,9 @@ When you're happy with your website, you can deploy it to your hosting provider 
 
 With slight modifications for usage with 11ty, this setup guide for DecapBridge was written by Geoffrey on the [Intermediate Astro Decap kit](https://github.com/CodeStitchOfficial/Intermediate-Astro-Decap-CMS/blob/main/README.md?plain=1#deployment)
 
-> [!IMPORTANT]
-> This kit now uses decapbridge.com for its authentication solution. If you still use Netlify Identity, please refer to [the Netlify Identity branch](https://github.com/CodeStitchOfficial/Intermediate-Website-Kit-LESS/tree/deprecated---using-Netlify-Identity)
+> [!IMPORTANT] This kit now uses decapbridge.com for its authentication solution. If you still use Netlify Identity, please refer to [the Netlify Identity branch](https://github.com/CodeStitchOfficial/Intermediate-Website-Kit-LESS/tree/deprecated---using-Netlify-Identity)
 
-> [!TIP]
-> If you are updating your kit from Netlify Identity to decapbridge.com:
+> [!TIP] If you are updating your kit from Netlify Identity to decapbridge.com:
 >
 > 1. Login to your Netlify account
 > 2. Navigate to Projects/Your-Site
@@ -412,31 +407,30 @@ With slight modifications for usage with 11ty, this setup guide for DecapBridge 
 2. Navigate to https://decapbridge.com/ and create an account. It’s free.
 3. Navigate to the dashboard and Create New Site. You see this screen:
 
-![decapbridge.com dashboard](readme-images/decapbridge-dashboard.png)
+![decapbridge.com dashboard](github/decapbridge-dashboard.png)
 
 Fill in the 3 input fields:
 
-- Github repository: it has to be in a `user-or-org/repository-name` format. e.g. `BuckyBuck135/testing-decapbridge`
-- Github access token.
-  To create a personal access token in GitHub, follow these steps:
+-   Github repository: it has to be in a `user-or-org/repository-name` format. e.g. `BuckyBuck135/testing-decapbridge`
+-   Github access token. To create a personal access token in GitHub, follow these steps:
 
-  1. Log into your Github account.
-  2. Click on your profile picture (top right) (not the repository profile), and click the “Settings” link.
-  3. Scroll down and click the “Developer Settings” link.
-  4. Click the GitHub “Personal access tokens” link and choose `fine-grained tokens`
-  5. Click the “Generate new token” button and provide your password again if required.
-  6. Provide a name for the GitHub personal access token in the “Note” field.
-  7. Set the access token’s “expiration” timeout to “No expiration.”
-  8. Set the “Repository access” to the desired repository only.
-  9. Set the “Permissions / Repository permissions” to **read-write access** for this repository's **Contents** and **Pull requests**. (This is needed by DecapCMS to read your markdown, and write new content via Pull Requests.)
-  10. Click “Generate token.”, double check the permissions and click the Generate Token button
-  11. **Make sure to copy your GitHub Personal Access Token now as you will not be able to see this again.**
+    1. Log into your Github account.
+    2. Click on your profile picture (top right) (not the repository profile), and click the “Settings” link.
+    3. Scroll down and click the “Developer Settings” link.
+    4. Click the GitHub “Personal access tokens” link and choose `fine-grained tokens`
+    5. Click the “Generate new token” button and provide your password again if required.
+    6. Provide a name for the GitHub personal access token in the “Note” field.
+    7. Set the access token’s “expiration” timeout to “No expiration.”
+    8. Set the “Repository access” to the desired repository only.
+    9. Set the “Permissions / Repository permissions” to **read-write access** for this repository's **Contents** and **Pull requests**. (This is needed by DecapCMS to read your markdown, and write new content via Pull Requests.)
+    10. Click “Generate token.”, double check the permissions and click the Generate Token button
+    11. **Make sure to copy your GitHub Personal Access Token now as you will not be able to see this again.**
 
-      ![The Permissions settings](readme-images/github-permissions.png)
+        ![The Permissions settings](github/github-permissions.png)
 
-  12. Double check your permissions before generating the token. It must have read and write access to Contents and Pull Requests.
+    12. Double check your permissions before generating the token. It must have read and write access to Contents and Pull Requests.
 
-- Decap CMS URL: provide the (deployed) URL of the Decap CMS dashboard. e.g [`https://testing-decapbridge.netlify.app/admin/#/`](https://testing-decapbridge.netlify.app/admin/#/)
+-   Decap CMS URL: provide the (deployed) URL of the Decap CMS dashboard. e.g [`https://testing-decapbridge.netlify.app/admin/#/`](https://testing-decapbridge.netlify.app/admin/#/)
 
 ### On your CS Decap kit:
 
@@ -445,20 +439,20 @@ Fill in the 3 input fields:
 ```yaml
 # Use DecapBridge auth (required)
 backend:
-  name: git-gateway
-  repo: BuckyBuck135/testing-decapbridge # provided by decapbridge
-  branch: main
-  identity_url: https://auth.decapbridge.com/sites/5605bbe7-08f2-4ce5-bce2-7d97def08bed # provided by decapbridge
-  gateway_url: https://gateway.decapbridge.com # provided by decapbridge
+    name: git-gateway
+    repo: BuckyBuck135/testing-decapbridge # provided by decapbridge
+    branch: main
+    identity_url: https://auth.decapbridge.com/sites/5605bbe7-08f2-4ce5-bce2-7d97def08bed # provided by decapbridge
+    gateway_url: https://gateway.decapbridge.com # provided by decapbridge
 
-  # Quickly see who did what (optional)
-  commit_messages:
-    create: Create {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
-    update: Update {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
-    delete: Delete {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
-    uploadMedia: Upload “{{path}}” - {{author-name}} <{{author-login}}> via DecapBridge
-    deleteMedia: Delete “{{path}}” - {{author-name}} <{{author-login}}> via DecapBridge
-    openAuthoring: Message {{message}} - {{author-name}} <{{author-login}}> via DecapBridge
+    # Quickly see who did what (optional)
+    commit_messages:
+        create: Create {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
+        update: Update {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
+        delete: Delete {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
+        uploadMedia: Upload “{{path}}” - {{author-name}} <{{author-login}}> via DecapBridge
+        deleteMedia: Delete “{{path}}” - {{author-name}} <{{author-login}}> via DecapBridge
+        openAuthoring: Message {{message}} - {{author-name}} <{{author-login}}> via DecapBridge
 
 # Better Decap + Bridge logo (optional)
 logo_url: https://decapbridge.com/decapcms-with-bridge.svg
