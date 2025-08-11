@@ -32,7 +32,7 @@
         "cssnano": "^7.1.0",
         "decap-server": "^3.0.4",
         "esbuild": "^0.25.8",
-        "glob": "^10.4.5",
+        "glob": "^11.0.3",
         "less": "^4.4.0",
         "netlify-plugin-cache": "^1.0.3",
         "npm-run-all2": "^5.0.0",
