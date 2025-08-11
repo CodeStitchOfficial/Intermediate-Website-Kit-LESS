@@ -24,7 +24,7 @@
     "dependencies": {
         "@11ty/eleventy": "^3.1.1",
         "@codestitchofficial/eleventy-plugin-minify": "^1.1.3",
-        "@codestitchofficial/eleventy-plugin-sharp-images": "^2.1.1",
+        "@codestitchofficial/eleventy-plugin-sharp-images": "^2.2.0",
         "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
         "autoprefixer": "^10.4.21",
         "codestitch-sharp-image-automation": "^0.3.0",
