@@ -1,0 +1,43 @@
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: [
+    'config:recommended',
+    'schedule:monthly',
+    ':semanticPrefixFixDepsChoreOthers',
+    ':automergePatch',
+    ':disableDependencyDashboard',
+  ],
+  labels: ['dependencies'],
+  rangeStrategy: 'bump',
+  postUpdateOptions: ['npmDedupe'],
+  minimumReleaseAge: '2 days',
+  packageRules: [
+    {
+      description: 'Group ALL non-major updates together',
+      groupName: 'all-dependencies',
+      matchUpdateTypes: ['minor', 'patch'],
+    },
+    {
+      description: 'Group major updates by ecosystem',
+      groupName: 'eleventy-ecosystem-major',
+      matchUpdateTypes: ['major'],
+      matchPackagePatterns: [
+        '^@11ty/',
+        '^eleventy-',
+        '^@.*eleventy',
+      ],
+      matchPackageNames: [
+        '@quasibit/eleventy-plugin-sitemap',
+      ],
+    },
+    {
+      description: 'Group CodeStitch major updates',
+      groupName: 'codestitch-tools-major',
+      matchUpdateTypes: ['major'],
+      matchPackagePatterns: [
+        '^@codestitchofficial/',
+        '^codestitch-',
+      ],
+    },
+  ],
+}
