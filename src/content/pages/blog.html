@@ -7,7 +7,7 @@ permalink: "/blog/"
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <link rel="preload" as="image" href="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | avif %}"/>
+    <link rel="preload" as="image" href="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | avif %}" />
     <link rel="stylesheet" href="/assets/css/blog.css">
 {% endblock %}
 
@@ -49,7 +49,9 @@ permalink: "/blog/"
     <div id="blog-listing">
         <div class="cs-container">
             {% if collections.post | length == 0 %}
-                <h1 class="cs-title">No Recent Posts</h1>
+                <h1 class="cs-title">
+                    No Recent Posts
+                </h1>
             {% else %}
                 {%- for post in collections.post | reverse -%}
                     <article class="cs-article">
@@ -71,7 +73,7 @@ permalink: "/blog/"
                         <div class="cs-article-group">
                             <div class="cs-author-group">
                                 <picture class="cs-author-img">
-                                    <img src="/assets/svgs/profile.svg" alt="Profile icon" width="32" height="32" decoding="async" loading="lazy" aria-hidden="true"/>
+                                    <img src="/assets/svgs/profile.svg" alt="Profile icon" width="32" height="32" decoding="async" loading="lazy" aria-hidden="true" />
                                 </picture>
                                 <span class="cs-author-name">{{ post.data.author }}</span>
                                 <span aria-hidden="true" class="cs-dot"></span>
