@@ -9,7 +9,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 
 {% block head %}
     <!-- Critical styles are loaded first -->
-    <link rel="stylesheet" href="/assets/css/critical.css" />
+    <link rel="stylesheet" href="/assets/css/critical.css"/>
 
     <!-- If we're in production, defer the rest of the home page styles. In development, always load it. Otherwise the site will break when hot-reload is used. -->
     {% if client.isProduction %}
@@ -19,7 +19,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
         </noscript>
 
     {% else %}
-        <link rel="stylesheet" href="/assets/css/local.css" />
+        <link rel="stylesheet" href="/assets/css/local.css"/>
     {% endif %}
 
     <!-- To ensure proper validation, prevent errors, and encourage developers to check, schema's are an opt-in feature. They're very bespoke and requires some customising  -->
