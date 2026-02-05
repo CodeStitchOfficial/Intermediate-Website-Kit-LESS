@@ -1,12 +1,14 @@
-import fs from "fs";
-import { join } from "path";
+const fs = require("fs");
+const { join } = require("path");
+
 /**
- * * search through files in passed folder (including subdirectories) and replace text
- * @param path: string folder path to search through
- * @param regex: regex string to match
- * @param replacement: replacement text to replace each regex match with
+ * Search through files in passed folder (including subdirectories) and replace text
+ * @param {string} path - folder path to search through
+ * @param {string} regex - regex string to match
+ * @param {string} replacement - replacement text to replace each regex match with
+ * @param {boolean} logging - whether to log updated files
  */
-export function replaceInFiles(path, regex, replacement, logging = false) {
+function replaceInFiles(path, regex, replacement, logging = false) {
 	const files = fs.readdirSync(path);
 	for (const file of files) {
 		const filePath = join(path, file);
@@ -16,7 +18,6 @@ export function replaceInFiles(path, regex, replacement, logging = false) {
 			replaceInFiles(filePath, regex, replacement);
 		} else {
 			try {
-				// console.log("processing file", filePath);
 				// Read file content
 				const content = fs.readFileSync(filePath, "utf-8");
 				// Create regex object from string
@@ -36,4 +37,5 @@ export function replaceInFiles(path, regex, replacement, logging = false) {
 		}
 	}
 }
-//# sourceMappingURL=replace-in-files.js.map
+
+module.exports = { replaceInFiles };

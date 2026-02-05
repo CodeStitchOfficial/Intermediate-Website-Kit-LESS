@@ -1,6 +1,8 @@
-import { readdir } from "fs/promises";
-import { resolve, extname } from "path";
-const ALLOWED_EXTENSIONS = [".astro", ".mdx", ".md", ".tsx", ".ts", ".js", ".mjs", ".cjs"];
+const { readdir } = require("fs/promises");
+const { resolve, extname } = require("path");
+
+const ALLOWED_EXTENSIONS = [".html", ".njk", ".less", ".md", ".ts", ".js", ".mjs", ".cjs"];
+
 // Collect files with specific extensions
 async function collectFiles(files, dir) {
 	const dirents = await readdir(dir, { withFileTypes: true });
@@ -13,5 +15,5 @@ async function collectFiles(files, dir) {
 		}
 	}
 }
-export { collectFiles };
-//# sourceMappingURL=collect-files.js.map
+
+module.exports = { collectFiles };

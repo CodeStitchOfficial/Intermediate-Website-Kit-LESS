@@ -199,7 +199,7 @@ async function scanForReferences(removedBlog) {
 		await collectFiles(files, srcDir);
 	} catch (error) {
 		console.error(`Error collecting files: ${error}`);
-		return;
+		return { decapRefs: [], blogRefs: [] };
 	}
 
 	const decapRefs = [];
