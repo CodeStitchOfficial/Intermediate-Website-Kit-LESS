@@ -15,7 +15,7 @@ eleventyComputed:
     
     <link rel="stylesheet" href="/assets/css/{{ page.fileSlug }}.css">
 
-        <!-- Any page-specific tags that belong in the <head> -->
+    <!-- Any page-specific tags that belong in the <head> -->
 
 
 {% endblock %}
@@ -24,7 +24,9 @@ eleventyComputed:
 
     <!-- Page HTML goes here, without a <main> wrapper. The <main> tag is already presented in layouts/base.html -->
 
-        {% include 'sections/cta.html' %}
+    <!-- If you want the page to have a "CTA", uncomment the line below -->
+
+    <!-- {% include 'sections/cta.html' %} -->
 
 {% endblock %}
 

@@ -20,6 +20,7 @@ const javascript = require("./src/config/processors/javascript");
 // 🛠️ Utilities
 const filterPostDate = require("./src/config/filters/postDate");
 const filterIsoDate = require("./src/config/filters/isoDate");
+const filterTitleCase = require("./src/config/filters/titleCase");
 const isProduction = process.env.ELEVENTY_ENV === "PROD";
 
 module.exports = function (eleventyConfig) {
@@ -85,12 +86,7 @@ module.exports = function (eleventyConfig) {
   // ═════════════════════════════════════════════════════════════════════════
 
   // Custom filter to convert file slug to title case (e.g., about-us -> About Us)
-  eleventyConfig.addFilter("titleCase", function (value) {
-    return value
-      .split("-")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-      .join(" ");
-  });
+  eleventyConfig.addFilter("titleCase", filterTitleCase);
 
   /*
    * 📅 Human-Readable Date Formatting Filter

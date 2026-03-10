@@ -4,7 +4,7 @@ const path = require("path");
 const input = process.argv[2];
 
 if (!input) {
-  console.log('Please provide page names. Example: npm run page -- "Contact, About, Services"');
+  console.log('Please provide page names. Example: npm run create-page -- "Contact, About, Services"');
   process.exit(1);
 }
 
@@ -26,9 +26,9 @@ pages.forEach((page) => {
   const htmlPath = path.join("src/content/pages", `${slug}.html`);
   const lessPath = path.join("src/assets/less", `${slug}.less`);
 
-  const pageTemplate = template.replaceAll("{{PAGE}}", slug);
+  // const pageTemplate = template.replaceAll("{{PAGE}}", slug);
 
-  fs.writeFileSync(htmlPath, pageTemplate);
+  fs.writeFileSync(htmlPath, template);
   fs.writeFileSync(lessPath, "");
 
   console.log(`Created ${htmlPath} and ${lessPath}`);

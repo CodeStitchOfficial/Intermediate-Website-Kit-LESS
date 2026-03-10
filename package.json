@@ -13,7 +13,7 @@
     "remove-dark-mode": "node scripts/remove-dark-mode.js",
     "remove-decap": "node scripts/remove-decap.js",
     "remove-demo": "node scripts/remove-demo.js",
-    "new-page": "node scripts/create-page.js"
+    "create-page": "node scripts/create-page.js"
   },
   "repository": {
     "type": "git",
