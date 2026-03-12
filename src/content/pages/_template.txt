@@ -1,16 +1,33 @@
 ---
-title: "Page title for <title> and OG tags"
-description: "Description for <meta> description and OG tags"
-permalink: "/page-path/"
+description: "Meta description for the page"
 image: "OPTIONAL - If an image path is specified here, it will be used for that page's OG image. Useful for blog posts (implemented as standard with this kit)"
+eleventyComputed:
+  title: "{{ page.fileSlug | titleCase }} | {{ client.name }} | {{ client.address.city }}, {{ client.address.state }}"
+  permalink: "/{{ page.fileSlug | slugify }}/"
 ---
+
 
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <!-- Any page-specific tags that belong in the <head>, such as a page-specific stylesheet -->
+    
+    <link rel="stylesheet" href="/assets/css/{{ page.fileSlug }}.css">
+
+    <!-- Any page-specific tags that belong in the <head> -->
+
+
 {% endblock %}
 
 {% block body %}
+
     <!-- Page HTML goes here, without a <main> wrapper. The <main> tag is already presented in layouts/base.html -->
+
+    <!-- If you want the page to have a "CTA", uncomment the line below -->
+
+    <!-- {% include 'sections/cta.html' %} -->
+
 {% endblock %}
+
+
+
+
