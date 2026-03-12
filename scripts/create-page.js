@@ -1,35 +1,59 @@
 const fs = require("fs");
 const path = require("path");
 
-const input = process.argv[2];
+// ─── Helpers ─────────────────────────────────────────────────────────────────
 
-if (!input) {
-  console.log('Please provide page names. Example: npm run create-page -- "Contact, About, Services"');
-  process.exit(1);
+function resolvePath(p) {
+  return path.join(process.cwd(), p);
 }
 
-const pages = input.split(",").map((p) => p.trim());
-
-const templatePath = path.join("src/content/pages", "_template.txt");
-let template = fs.readFileSync(templatePath, "utf8");
-
-pages.forEach((page) => {
-  const slug = page
+function slugify(name) {
+  return name
     .toLowerCase()
     .replace(/[^a-z0-9\s-]/g, "")
     .replace(/\s+/g, "-")
     .replace(/-+/g, "-")
     .replace(/^-+|-+$/g, "");
+}
 
-  if (!slug) return;
+// ─── Main ─────────────────────────────────────────────────────────────────────
 
-  const htmlPath = path.join("src/content/pages", `${slug}.html`);
-  const lessPath = path.join("src/assets/less", `${slug}.less`);
+function main() {
+  const input = process.argv[2];
 
-  // const pageTemplate = template.replaceAll("{{PAGE}}", slug);
+  if (!input) {
+    console.log('Please provide page names. Example: npm run create-page -- "Contact, About, Services"');
+    process.exit(1);
+  }
 
-  fs.writeFileSync(htmlPath, template);
-  fs.writeFileSync(lessPath, "");
+  const templatePath = resolvePath("src/content/pages/_template.txt");
 
-  console.log(`Created ${htmlPath} and ${lessPath}`);
-});
+  if (!fs.existsSync(templatePath)) {
+    console.log(`Template not found: ${templatePath}`);
+    process.exit(1);
+  }
+
+  const template = fs.readFileSync(templatePath, "utf8");
+  const pages = input.split(",").map((p) => p.trim());
+
+  pages.forEach((page) => {
+    const slug = slugify(page);
+
+    if (!slug) return;
+
+    const htmlPath = resolvePath(`src/content/pages/${slug}.html`);
+    const lessPath = resolvePath(`src/assets/less/${slug}.less`);
+
+    if (fs.existsSync(htmlPath)) {
+      console.log(`Skipped ${slug}.html — already exists`);
+      return;
+    }
+
+    fs.writeFileSync(htmlPath, template);
+    fs.writeFileSync(lessPath, "");
+
+    console.log(`Created ${htmlPath} and ${lessPath}`);
+  });
+}
+
+main();
