@@ -40,7 +40,7 @@
     "glob": "^13.0.6",
     "less": "^4.6.4",
     "netlify-plugin-cache": "^1.0.3",
-    "npm-run-all2": "^5.0.2",
+    "npm-run-all2": "^8.0.4",
     "postcss": "^8.5.12"
   }
 }
