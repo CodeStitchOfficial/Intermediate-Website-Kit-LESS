@@ -167,9 +167,6 @@ function removeBlog() {
 	// Move blog images
 	moveItem("src/assets/images/blog", path.join(destinationDir, "images-blog"));
 
-	// Move cabinets.jpg (used as blog banner in post.html and blog.html)
-	moveItem("src/assets/images/cabinets.jpg", path.join(destinationDir, "cabinets.jpg"));
-
 	// Update header – remove blog <li> nav link
 	updateFile("src/_includes/sections/header.html", [
 		{

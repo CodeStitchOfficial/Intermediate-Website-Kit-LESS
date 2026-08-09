@@ -5,18 +5,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
     <title>Content Manager</title>
 </head>
 
 <body>
-    <script src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js"></script>
+    <script src="https://unpkg.com/decap-cms@3.0.0/dist/decap-cms.js"></script>
 
     <!-- Decap CMS preview pane script -->
     <!-- Edit this script to customize the preview pane for your blog posts.  -->
     <!-- Documentation: https://decapcms.org/docs/customization/ -->
-    <script>
-        const { createClass, h } = window;
-
+    <script type="text/babel">
         const BlogPreview = createClass({
             render: function () {
                 // Get all the props from the collection
@@ -34,25 +36,25 @@
 
                 const cover = this.props.getAsset(image);
 
-                // Use Decap's renderer helpers to avoid loading a second React runtime.
-                return h(
-                    "div",
-                    { className: "blog" },
-                    h("h1", { className: "title" }, title || ""),
-                    h(
-                        "div",
-                        { className: "metadata" },
-                        h("span", { className: "author" }, author || ""),
-                        h("span", { className: "dot" }),
-                        h("span", { className: "date" }, formattedDate)
-                    ),
-                    h("img", {
-                        src: cover ? cover.toString() : "",
-                        className: "cover",
-                        alt: "Cover"
-                    }),
-                    h("hr", { className: "divider" }),
-                    h("div", { className: "markdown" }, this.props.widgetFor("body"))
+                // Create elements for the preview pane in JSX, to be processed by Babel
+                return (
+                    <div className="blog">
+                        <h1 className="title">{title}</h1>
+
+                        <div className="metadata">
+                            <span className="author">{author}</span>
+                            <span className="dot"></span>
+                            <span className="date">{formattedDate}</span>
+                        </div>
+
+                        <img src={cover?.toString()} className="cover" alt="Cover" />
+
+                        <hr className="divider" />
+
+                        <div className="markdown">
+                            {this.props.widgetFor("body")}
+                        </div>
+                    </div>
                 );
             }
         });
